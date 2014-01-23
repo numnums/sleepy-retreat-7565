@@ -17,7 +17,25 @@
        <%= render 'layouts/messages' %>
        <%= yield %>
      </div>
+    <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div><!-- /.modal -->
+    <!-- 
+      Twitters modal has a bug where it won't reload after items that refresh
+      it's content.  This is the workaround from : 
+      http://stackoverflow.com/questions/12449890/reload-content-in-modal-twitter-bootstrap -->
+    <script>
 
+      $("a[data-target=#modal]").click(function(ev) {
+          ev.preventDefault();
+          var target = $(this).attr("href");
+
+          // load the url and show modal on success
+          $("#modal").load(target, function() { 
+               $("#modal").modal("show"); 
+          });
+      });
+      
+    </script>
     </main>
   </body>
 </html>
