@@ -11,10 +11,12 @@
  
 <% @students.each do |student| %>
   <tr>
-    <td><%= link_to student.firstname, student_path(student) %></td>
+<!--    <td><%= link_to student.firstname, student_path(student) %></td> -->
+    <td> <%= link_to student.firstname, student_path(student), data: { toggle: "modal", target: "#modal" , remote: student_path(student)} %>
+    </td>
     <td><%= student.lastname %></td>
   </tr>
 <% end %>
 </table>
 
-<%= link_to 'New student', new_student_path, class: 'btn btn-primary' %>
+<%= link_to "New student", new_student_path, data: { toggle: "modal", target: "#modal" , remote: new_student_path} , class: 'btn btn-primary'%>

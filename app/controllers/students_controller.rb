@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   end
 
 	def new
+      render layout: false
 	end
 
   #shows edit form
@@ -26,11 +27,12 @@ class StudentsController < ApplicationController
 	def create
   		@student = Student.new(student_params)
   		@student.save
-  		redirect_to @student
+  		redirect_to :action => 'index'
   end
 
   def show
   		@student = Student.find(params[:id])
+      render layout: false
   end
 
   def destroy
