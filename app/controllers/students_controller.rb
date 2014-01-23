@@ -7,15 +7,15 @@ class StudentsController < ApplicationController
   		@student = Student.new(student_params)
   		@student.save
   		redirect_to @student
-  	end
+  end
 
-  	def show
+  def show
   		@student = Student.find(params[:id])
-  	end
+  end
 
-  	private
-  		def student_params
+  private
+  	def student_params
   			params.require(:student).permit(:firstname, :lastname, :gender)
-  		end
+  	end
 
 end

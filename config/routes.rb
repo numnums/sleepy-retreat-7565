@@ -3,16 +3,19 @@ PBNC::Application.routes.draw do
   root 'welcome#index'
   resources :charges
   resources :students
+  resources :schools
 
   #static routes
   # match '/home' => 'pages#home'
   # match '/about' => 'pages#about'
   # match '/contact' => 'pages#contact'
 
+
+#dvu:   , :as => 'parents'...this gives us an alias like "parents_path" which we can use in our code/templates
   get "pages/home", :as => 'home'
   get "pages/parents", :as => 'parents'
   # get "pages/payments"
-  get "pages/schools", :as => 'schools'
+  get "pages/schools", :as => 'schools_static'
   get "pages/FAQ", :as => 'faq'
   get "pages/our_work", :as => 'our_work'
   get "pages/our_impact", :as => 'our_impact'
