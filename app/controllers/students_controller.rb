@@ -7,6 +7,22 @@ class StudentsController < ApplicationController
 	def new
 	end
 
+  #shows edit form
+  def edit
+    @student = Student.find(params[:id])
+  end
+
+  #processes update
+  def update
+    @student = Student.find(params[:id])
+   
+    if @student.update(params[:student].permit(:firstname, :lastname, :gender))
+      redirect_to @student
+    else
+      render 'edit'
+    end
+  end
+
 	def create
   		@student = Student.new(student_params)
   		@student.save

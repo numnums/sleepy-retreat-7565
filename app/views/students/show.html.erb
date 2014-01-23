@@ -12,3 +12,7 @@
   <strong>Gender:</strong>
   <%= @student.gender %>
 </p>
+
+<%= link_to 'Back to students', students_path, class: 'btn btn-default' %>
+
+<%= link_to 'Edit student', edit_student_path(@student), class: 'btn btn-primary' %>
