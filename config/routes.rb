@@ -3,6 +3,21 @@ PBNC::Application.routes.draw do
   root 'welcome#index'
   resources :charges
   resources :students
+
+  #static routes
+  # match '/home' => 'pages#home'
+  # match '/about' => 'pages#about'
+  # match '/contact' => 'pages#contact'
+
+  get "pages/home", :as => 'home'
+  get "pages/parents", :as => 'parents'
+  # get "pages/payments"
+  get "pages/schools", :as => 'schools'
+  get "pages/FAQ", :as => 'faq'
+  get "pages/our_work", :as => 'our_work'
+  get "pages/our_impact", :as => 'our_impact'
+  get "pages/our_partners", :as => 'our_partners'
+  get "pages/get_involved", :as => 'get_involved'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
