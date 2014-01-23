@@ -1,0 +1,30 @@
+<h1>Editing School</h1>
+ 
+<%= form_for :school, url: school_path(@school), method: :patch do |f| %>
+  <% if @school.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@school.errors.count, "error") %> prohibited
+      this school from being saved:</h2>
+    <ul>
+    <% @school.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= link_to 'Cancel', schools_path, class: 'btn btn-default' %>
+    <%= f.submit :class => 'btn btn-primary' %>
+  </p>
+<% end %>
+ 

@@ -12,6 +12,7 @@
   </p>
  
   <p>
-    <%= f.submit %>
+  	<%= link_to 'Cancel', schools_path, class: 'btn btn-default' %>
+    <%= f.submit :class => 'btn btn-primary'%>
   </p>
 <% end %>
