@@ -1,18 +1,18 @@
 <h1>New School</h1>
 
 <%= form_for :school, url: schools_path do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <p class = "form-group">
+    <%= f.label :name  %><br>
+    <%= f.text_field :name , :class => 'form-control' %>
   </p>
  
-  <p>
+  <p class = "form-group">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :class => 'form-control'  %>
   </p>
  
-  <p>
+  <p class = "form-group">
   	<%= link_to 'Cancel', schools_path, class: 'btn btn-default' %>
-    <%= f.submit :class => 'btn btn-primary'%>
+    <%= f.submit :class => 'btn btn-primary' %>
   </p>
 <% end %>
