@@ -1,7 +1,8 @@
 <div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel">New Student</h4>          
+          <h4 class="modal-title" id="myModalLabel">New Student</h4>  
+        </div>          
         <div class="modal-body">
           <%= form_for :student, url: students_path do |f| %>
             <p class = "form-group">
@@ -18,11 +19,13 @@
               <%= f.label :gender %><br>
               <%= f.text_field :gender , :class => 'form-control'   %>
             </p>
+          </div> <!-- modal-body -->            
+          <div class="modal-footer"> 
             <p class ="form-group">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <%= f.submit :class => 'btn btn-primary' %>
             </p>
           <% end %>
-        <div class="modal-body">
+        </div> <!-- modal-footer -->
   </div>
 </div>
