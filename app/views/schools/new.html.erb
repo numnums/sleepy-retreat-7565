@@ -15,8 +15,8 @@
                 <%= f.text_field :description, :class => 'form-control'  %>
               </p>
              
-              <p class = "form-group">
-              	<%= link_to 'Cancel', schools_path, class: 'btn btn-default' %>
+              <p class = "form-group">              	
+                <%= link_to_function 'Cancel', '$("#modal").modal("hide")' , class: 'btn btn-default' %>
                 <%= f.submit :class => 'btn btn-primary' %>
               </p>
             <% end %>
