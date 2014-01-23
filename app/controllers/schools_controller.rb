@@ -3,11 +3,9 @@ class SchoolsController < ApplicationController
 	# http_basic_authenticate_with :name => "PBAdmin", :password => "preventblindness!!" 
 	before_filter :authenticate
 
-	def new
- 	  respond_to do |format|
-	      format.html
-	      format.js
-  		end
+	# loaded from modal, so don't use layout
+	def new	  
+  		render layout: false
 	end
 
 	def create
