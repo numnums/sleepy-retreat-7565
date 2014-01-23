@@ -4,12 +4,16 @@ class SchoolsController < ApplicationController
 	before_filter :authenticate
 
 	def new
+ 	  respond_to do |format|
+	      format.html
+	      format.js
+  		end
 	end
 
 	def create
 		@school = School.new(school_params)
 		@school.save
-		redirect_to @school
+		redirect_to :action => 'index'
 	end
 
 	def index
