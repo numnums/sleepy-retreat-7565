@@ -20,6 +20,7 @@ class SchoolsController < ApplicationController
 
 	def show
 		@school = School.find(params[:id])
+		render layout: false
 	end
 
 	def edit
@@ -30,7 +31,7 @@ class SchoolsController < ApplicationController
 	  @school = School.find(params[:id])
 	 
 	  if @school.update(params[:school].permit(:name, :description))
-	    redirect_to @school
+	    redirect_to :action => 'index'
 	  else
 	    render 'edit'
 	  end

@@ -11,7 +11,8 @@
  
 <% @schools.each do |school| %>
   <tr>
-    <td><%= link_to school.name, school_path(school) %></td>
+    <!-- <td><%= link_to school.name, school_path(school) %></td> -->
+    <td><%= link_to school.name, school_path(school) , data: { toggle: "modal", target: "#modal" }  %></td>
     <td><%= school.description %></td>
   </tr>
 <% end %>
@@ -24,7 +25,7 @@
 <%= link_to "New school", new_school_path, data: { toggle: "modal", target: "#modal" } , class: 'btn btn-primary'%>
 
 <!-- Modal dvu: move into main layout?  Should only ever have one modal.-->
-<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   
 </div><!-- /.modal -->
 

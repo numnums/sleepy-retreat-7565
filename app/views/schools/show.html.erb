@@ -1,15 +1,15 @@
+ <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel"><%= @school.name %></h4>          
+        </div>
+        <div class="modal-body">
 
-<p>
-  <strong>School Name:</strong>
-  <br/>
-  <%= @school.name %>
-</p>
- 
-<p>
-  <strong>Description:</strong>
-  <br/>
-  <%= @school.description %>
-</p>
+			<p>
+			  <strong>Description:</strong>
+			  <br/>
+			  <%= @school.description %>
+			</p>
 
 <%= link_to 'Back to schools', schools_path, class: 'btn btn-default' %>
 
@@ -17,3 +17,7 @@
 
 <%= link_to 'Delete', school_path(@school), class: 'btn btn-danger',
                     method: :delete, data: { confirm: 'Are you sure?' } %>
+
+        </div> <!-- modal-body -->
+    </div>
+</div>    
