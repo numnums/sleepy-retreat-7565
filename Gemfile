@@ -38,6 +38,13 @@ ruby "2.1.0"
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+
+
+gem 'bootstrap-sass', '~> 3.0.3.0'
+group :development do
+  gem 'rails_layout'
+end
+
 end
 
 # Use ActiveModel has_secure_password
