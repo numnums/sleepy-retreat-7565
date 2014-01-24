@@ -2,8 +2,12 @@ PBNC::Application.routes.draw do
 
   root 'welcome#index'
   resources :charges
-  resources :students
-  resources :schools
+  resources :students do
+    resources :school
+  end
+  resources :schools do
+    resources :students
+  end
 
   #static routes
   # match '/home' => 'pages#home'

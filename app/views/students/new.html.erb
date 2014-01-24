@@ -19,6 +19,13 @@
               <%= f.label :gender %><br>
               <%= f.text_field :gender , :class => 'form-control'   %>
             </p>
+
+            <%=
+            f.collection_select( :school_id, @schools, :id, :name, {:prompt => true})
+            #f.collection_select :school_id, School.all, :id, :name
+            # f.collection_select(:student, :school_id, School.all, :id, :name, prompt: true)
+            %>
+
           </div> <!-- modal-body -->            
           <div class="modal-footer"> 
             <p class ="form-group">

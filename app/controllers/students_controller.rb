@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
   end
 
 	def new
+      @schools = School.all
       render layout: false
 	end
 
@@ -25,13 +26,20 @@ class StudentsController < ApplicationController
   end
 
 	def create
-  		@student = Student.new(student_params)
-  		@student.save
+      @school = School.find(student_params[:school_id])
+      @student =  @school.students.create(student_params)
+  		# @student = Student.new(student_params.permit(:firstname,:lastname,:gender))
+  		# @school.students << @student
+    #   @student.save
+
+      # @student = Student.new(student_params)
+      @student.save
   		redirect_to :action => 'index'
   end
 
   def show
   		@student = Student.find(params[:id])
+      @school = @student.school
       render layout: false
   end
 
@@ -44,7 +52,7 @@ class StudentsController < ApplicationController
 
   private
 	def student_params
-			params.require(:student).permit(:firstname, :lastname, :gender)
+			params.require(:student).permit(:firstname, :lastname, :gender, :school_id)
 	end
 
 end
