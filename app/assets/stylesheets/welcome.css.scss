@@ -1,3 +1,50 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.hero {
+  color: white;
+  background: image-url("hero-bg.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 800px;
+  .row {
+    padding: 60px 0;
+  }
+  .hero-logo {
+    float: left;
+    height: 450px;
+    margin-right: 40px;
+    display: inline-block;
+  }
+  .descript {
+    float: left;
+    display: inline-block;
+    max-width: 600px;
+  }
+  h1 {
+    font-size: 54px;
+    font-family: "museo-slab";
+    font-weight: 100;
+  }
+  h2 {
+    font-size: 34px;
+    font-family: "museo-slab";
+    font-weight: 100;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 300;
+    max-width: 450px;
+  }
+  ul {
+    -moz-padding-start: 0px;
+    -webkit-padding-start: 0px;
+    padding-start: 0px;
+    font-size: 18px;
+    font-weight: 700;
+    max-width: 450px;
+  }
+}

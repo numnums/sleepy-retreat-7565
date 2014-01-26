@@ -1,21 +1,24 @@
 <%# navigation styled for Bootstrap 3.0 %>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">      
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    <a class="navbar-brand" href="#">PBNC</a>
-      <%= link_to 'home', home_path, class: 'navbar-brand' %>
-    </div>
+<header id="header" class="header">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">      
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to home_path do %>
+          <div class="logo"></div>
+        <% end %>
+      </div>
 
-    <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
-      </ul>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <%= render 'layouts/navigation_links' %>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
