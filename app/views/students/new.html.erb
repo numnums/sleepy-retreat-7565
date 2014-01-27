@@ -6,24 +6,24 @@
         <div class="modal-body">
           <%= form_for :student, url: students_path do |f| %>
             <p class = "form-group">
-              <%= f.label :firstname %><br>
+              <%= f.label :firstname, "First Name"%><br>
               <%= f.text_field :firstname , :class => 'form-control'   %>
             </p>
            
             <p class = "form-group">
-              <%= f.label :lastname %><br>
+              <%= f.label :lastname, "Last Name" %><br>
               <%= f.text_field :lastname , :class => 'form-control'  %>
             </p>
            
              <p class = "form-group">
-              <%= f.label :gender %><br>
+              <%= f.label :gender, "Gender" %><br>
               <%= f.text_field :gender , :class => 'form-control'   %>
             </p>
 
+            <p class = "form-group">
+              <%= f.label :school_id, "Select a school" %><br>
             <%=
             f.collection_select( :school_id, @schools, :id, :name, {:prompt => true})
-            #f.collection_select :school_id, School.all, :id, :name
-            # f.collection_select(:student, :school_id, School.all, :id, :name, prompt: true)
             %>
 
           </div> <!-- modal-body -->            
