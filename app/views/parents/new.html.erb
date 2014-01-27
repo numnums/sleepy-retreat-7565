@@ -1,0 +1,31 @@
+ <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">New Parent</h4>          
+        </div>
+        <div class="modal-body">
+            <%= form_for :parent, url: parents_path do |f| %>
+              <p class = "form-group">
+                <%= f.label :firstname  %><br>
+                <%= f.text_field :firstname , :class => 'form-control' , :required => true   %>
+              </p>
+             
+              <p class = "form-group">
+                <%= f.label :lastname %><br>
+                <%= f.text_field :lastname, :class => 'form-control'  ,:required => true %>
+              </p>
+              <p class = "form-group">
+                <%= f.label :email %><br>
+                <%= f.text_field :email, :class => 'form-control'  ,:required => true %>
+              </p>
+
+          </div> <!-- modal-body -->
+          <div class="modal-footer">
+              <p class = "form-group">              	
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <%= f.submit :class => 'btn btn-primary' %>
+              </p>
+            <% end %>
+          </div><!-- modal-footer -->
+      </div> <!-- modal-content -->
+</div>    

@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
 	belongs_to :school
+	belongs_to :parent
 	validates_associated :school
 	validates :firstname, presence: true
 	validates :lastname, presence: true

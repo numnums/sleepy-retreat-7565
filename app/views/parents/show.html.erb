@@ -1,0 +1,36 @@
+ <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel"><%= @parent.firstname + " " +@parent.lastname%></h4>          
+        </div>
+        <div class="modal-body">
+
+			<p>
+			  <strong>First Name:</strong>
+			  <br/>
+			  <%= @parent.firstname %>
+			</p>
+			<p>
+			  <strong>Last Name:</strong>
+			  <br/>
+			  <%= @parent.lastname %>
+			</p>
+			<p>
+			  <strong>Email Address:</strong>
+			  <br/>
+			  <%= @parent.email %>
+			</p>
+
+		</div> <!-- modal-body -->
+		<div class="modal-footer">
+
+<!--            <%= link_to_function 'Cancel', class: 'btn btn-default' , "data-dismiss"=>"modal" %> -->
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+			<%= link_to 'Edit Parent', edit_parent_path(@parent), class: 'btn btn-primary' %>
+
+			<%= link_to 'Delete', parent_path(@parent), class: 'btn btn-danger',
+			                    method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div> <!-- modal-footer -->
+    </div>
+</div>    
