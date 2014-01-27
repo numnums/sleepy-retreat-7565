@@ -1,5 +1,7 @@
 class StudentsController < ApplicationController
 	
+  before_filter :authenticate, :except => [:new]
+
   def index
     @students = Student.all
   end
@@ -56,5 +58,14 @@ class StudentsController < ApplicationController
 	def student_params
 			params.require(:student).permit(:firstname, :lastname, :gender, :school_id)
 	end
+
+  #dvu: redundant code, cut and pasted from schools controller
+  private
+  def authenticate
+    authenticate_or_request_with_http_basic do |user_name, password|
+      session[:admin] = (user_name == "PBAdmin" && password == "preventblindness!!")
+    end
+  end
+
 
 end

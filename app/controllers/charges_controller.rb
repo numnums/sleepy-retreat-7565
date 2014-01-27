@@ -6,8 +6,8 @@ class ChargesController < ApplicationController
 	# <%= form_tag charges_path do %> in new.html.erb routes to the Charges controller.  Because it's a form, the default
 	# method is a POST, which maps to the 'create' method.  If you run 'rake routes' you can see this automatic mapping.
 	def create
-		# Amount in cents ($5.00)
-	  	@amount = 500
+		# Amount in cents ($20.00)
+	  	@amount = 2000
 
 		customer = Stripe::Customer.create(
 			:email => 'example@stripe.com',
