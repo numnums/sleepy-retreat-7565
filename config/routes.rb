@@ -26,6 +26,11 @@ PBNC::Application.routes.draw do
   get "pages/our_impact", :as => 'our_impact'
   get "pages/our_partners", :as => 'our_partners'
   get "pages/get_involved", :as => 'get_involved'
+
+  get "register_parent", to: 'charges#registerparent'
+  get "register_student", to: 'charges#registerstudent'
+  get "payment", to: 'charges#payment'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

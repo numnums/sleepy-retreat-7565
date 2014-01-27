@@ -15,7 +15,7 @@ class ParentsController < ApplicationController
 			redirect_to :action => 'index'
 		else
 			session[:new_parent_id] = @parent.id;
-  			redirect_to new_charge_path
+  			redirect_to register_student_path
   		end			
 	end
 

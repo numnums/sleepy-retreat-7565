@@ -45,7 +45,7 @@ class StudentsController < ApplicationController
               redirect_to :action => 'index'
            else
               session[:new_student_id] = @student.id;
-              redirect_to new_charge_path
+              redirect_to payment_path
           end     
       else
         # a little buggy because of the modal window...
