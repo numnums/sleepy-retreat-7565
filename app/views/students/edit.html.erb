@@ -26,17 +26,18 @@
     <%= f.label :gender %><br>
     <%= f.text_area :gender , :class => 'form-control' , :required => true %>
   </p>
-  <!-- <p class = "form-group">
-    <%= f.label :school_id, "Select a school" %><br>
+  <p class = "form-group">
+  <%= f.label :school_id, "Select a school" %><br>
     <%=
     f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
-  %>
+    %>
+ 
 
   <p class = "form-group">
     <%= f.label :parent_id, "Select a parent" %><br>
     <%=
     f.collection_select( :parent_id, @parents, :id, :firstname, {:prompt => true} , :required => true) 
-  %> -->
+  %> 
 
   <p class = "form-group">
     <%= link_to 'Cancel', students_path, class: 'btn btn-default' %>

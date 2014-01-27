@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
    
-    if @student.update(params[:student].permit(:firstname, :lastname, :gender))
+    if @student.update(params[:student].permit(:firstname, :lastname, :gender, :school_id, :parent_id))
       redirect_to :action => 'index'
     else
       render 'edit'
