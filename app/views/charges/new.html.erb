@@ -2,6 +2,15 @@
 <!-- firstname, lastname, gender, DOB, AM/PM? -->
 <!-- school, dropdown -->
 
+<%= @new_parent.firstname if @new_parent %>
+
+<%= @new_student.firstname if @new_student %>
+
+<%= link_to "New parent", new_parent_path, data: { toggle: "modal", target: "#modal" , remote: new_parent_path} , class: 'btn btn-primary'%>
+
+<%= link_to "New student", new_student_path, data: { toggle: "modal", target: "#modal" , remote: new_student_path} , class: 'btn btn-primary'%>
+
+
 <%= form_tag charges_path do %>
   <article>
     <label class="amount">

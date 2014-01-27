@@ -1,17 +1,22 @@
 class ParentsController < ApplicationController
 
 		# http_basic_authenticate_with :name => "PBAdmin", :password => "preventblindness!!" 
-	before_filter :authenticate
+	before_filter :authenticate, :except => [:new, :create]
 
 	# loaded from modal, so don't use layout
-	def new	  
-  		render layout: false
+	def new
+		render layout: false
 	end
 
 	def create
 		@parent = Parent.new(parent_params)
 		@parent.save
-		redirect_to :action => 'index'
+		if session[:admin] 
+			redirect_to :action => 'index'
+		else
+			session[:new_parent_id] = @parent.id;
+  			redirect_to new_charge_path
+  		end			
 	end
 
 	def index

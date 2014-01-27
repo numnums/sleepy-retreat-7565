@@ -1,6 +1,12 @@
 class ChargesController < ApplicationController
 
 	def new
+		if session[:new_parent_id]
+			@new_parent = Parent.find(session[:new_parent_id])
+		end	
+		if session[:new_student_id]
+			@new_student = Student.find(session[:new_student_id])
+		end
 	end
 
 	# <%= form_tag charges_path do %> in new.html.erb routes to the Charges controller.  Because it's a form, the default

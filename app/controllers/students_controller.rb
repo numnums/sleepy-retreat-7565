@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 	
-  before_filter :authenticate, :except => [:new]
+  before_filter :authenticate, :except => [:new, :create]
 
   def index
     @students = Student.all
@@ -10,6 +10,10 @@ class StudentsController < ApplicationController
       @schools = School.all
       @parents = Parent.all
       @student = Student.new
+      if session[:new_parent_id]
+        @parent = Parent.find(session[:new_parent_id])
+      end 
+
       render layout: false
 	end
 
@@ -36,8 +40,13 @@ class StudentsController < ApplicationController
       @school = School.find(student_params[:school_id])
       @student =  @school.students.create(student_params)
       # @parent = Parent.find(student_params[:parent_id])
-      if @student.save
-        redirect_to :action => 'index'
+      if @student.save        
+           if session[:admin] 
+              redirect_to :action => 'index'
+           else
+              session[:new_student_id] = @student.id;
+              redirect_to new_charge_path
+          end     
       else
         # a little buggy because of the modal window...
         redirect_to :action => 'new' 

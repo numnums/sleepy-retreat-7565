@@ -36,15 +36,22 @@
 
             <p class = "form-group">
               <%= f.label :school_id, "Select a school" %><br>
-            <%=
-            f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
-            %>
+              <%=
+              f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
+              %>
 
-            <p class = "form-group">
-              <%= f.label :parent_id, "Select a parent" %><br>
-            <%=
-            f.collection_select( :parent_id, @parents, :id, :firstname, {:prompt => true} , :required => true) 
-            %>
+            <!-- if a parent is registering, assign this student to that parent automatically.  Otherwise, this is an admin who may assign a parent via dropdown -->
+            <% if @parent %>                 
+                <%= f.hidden_field :parent_id, :value => @parent.id %>          
+            <% else %>  
+              <p class = "form-group">
+                <%= f.label :parent_id, "Select a parent" %><br>
+                <%=
+                f.collection_select( :parent_id, @parents, :id, :firstname, {:prompt => true} , :required => true) 
+                %>
+            <% end %>
+
+
 
           </div> <!-- modal-body -->            
           <div class="modal-footer"> 
