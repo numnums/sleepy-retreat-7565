@@ -14,17 +14,17 @@
   <% end %>
   <p class = "form-group">
     <%= f.label :firstname %><br>
-    <%= f.text_field :firstname , :class => 'form-control' %>
+    <%= f.text_field :firstname , :class => 'form-control', :required => true %>
   </p>
  
   <p class = "form-group">
     <%= f.label :lastname %><br>
-    <%= f.text_area :lastname , :class => 'form-control' %>
+    <%= f.text_area :lastname , :class => 'form-control' , :required => true%>
   </p>
  
  <p class = "form-group">
     <%= f.label :gender %><br>
-    <%= f.text_area :gender , :class => 'form-control'  %>
+    <%= f.text_area :gender , :class => 'form-control' , :required => true %>
   </p>
   <p class = "form-group">
     <%= link_to 'Cancel', students_path, class: 'btn btn-default' %>

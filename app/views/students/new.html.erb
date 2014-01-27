@@ -5,25 +5,39 @@
         </div>          
         <div class="modal-body">
           <%= form_for :student, url: students_path do |f| %>
+          <!-- buggy, I don't think we ever hit the error markup because we're using html validation to
+          require the form input fields -->
+          <% if @student.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+           
+              <ul>
+              <% @student.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
             <p class = "form-group">
               <%= f.label :firstname, "First Name"%><br>
-              <%= f.text_field :firstname , :class => 'form-control'   %>
+              <%= f.text_field :firstname , :class => 'form-control' , :required => true  %>
             </p>
            
             <p class = "form-group">
               <%= f.label :lastname, "Last Name" %><br>
-              <%= f.text_field :lastname , :class => 'form-control'  %>
+              <%= f.text_field :lastname , :class => 'form-control' , :required => true  %>
             </p>
            
              <p class = "form-group">
               <%= f.label :gender, "Gender" %><br>
-              <%= f.text_field :gender , :class => 'form-control'   %>
+              <%= f.text_field :gender , :class => 'form-control' , :required => true %>
             </p>
 
             <p class = "form-group">
               <%= f.label :school_id, "Select a school" %><br>
             <%=
-            f.collection_select( :school_id, @schools, :id, :name, {:prompt => true})
+            f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
             %>
 
           </div> <!-- modal-body -->            

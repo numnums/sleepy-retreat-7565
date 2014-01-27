@@ -6,6 +6,7 @@ class StudentsController < ApplicationController
 
 	def new
       @schools = School.all
+      @student = Student.new
       render layout: false
 	end
 
@@ -28,13 +29,14 @@ class StudentsController < ApplicationController
 	def create
       @school = School.find(student_params[:school_id])
       @student =  @school.students.create(student_params)
-  		# @student = Student.new(student_params.permit(:firstname,:lastname,:gender))
-  		# @school.students << @student
-    #   @student.save
 
-      # @student = Student.new(student_params)
-      @student.save
-  		redirect_to :action => 'index'
+      if @student.save
+        redirect_to :action => 'index'
+      else
+        # a little buggy because of the modal window...
+        redirect_to :action => 'new' 
+      end
+  		# redirect_to :action => 'index'
   end
 
   def show
