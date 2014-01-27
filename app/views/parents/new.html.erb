@@ -6,12 +6,12 @@
         <div class="modal-body">
             <%= form_for :parent, url: parents_path do |f| %>
               <p class = "form-group">
-                <%= f.label :firstname  %><br>
-                <%= f.text_field :firstname , :class => 'form-control' , :required => true   %>
+                <%= f.label :firstname,  "First Name"  %><br>
+                <%= f.text_field :firstname, :class => 'form-control' , :required => true   %>
               </p>
              
               <p class = "form-group">
-                <%= f.label :lastname %><br>
+                <%= f.label :lastname, "Last Name" %><br>
                 <%= f.text_field :lastname, :class => 'form-control'  ,:required => true %>
               </p>
               <p class = "form-group">
