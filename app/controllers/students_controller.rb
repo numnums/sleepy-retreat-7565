@@ -8,6 +8,7 @@ class StudentsController < ApplicationController
 
 	def new
       @schools = School.all
+      @parents = Parent.all
       @student = Student.new
       render layout: false
 	end
@@ -15,6 +16,9 @@ class StudentsController < ApplicationController
   #shows edit form
   def edit
     @student = Student.find(params[:id])
+   @schools = School.all
+   @parents = Parent.all
+
   end
 
   #processes update
@@ -31,7 +35,7 @@ class StudentsController < ApplicationController
 	def create
       @school = School.find(student_params[:school_id])
       @student =  @school.students.create(student_params)
-
+      # @parent = Parent.find(student_params[:parent_id])
       if @student.save
         redirect_to :action => 'index'
       else
@@ -44,6 +48,7 @@ class StudentsController < ApplicationController
   def show
   		@student = Student.find(params[:id])
       @school = @student.school
+      # @parent = @student.parent
       render layout: false
   end
 
@@ -56,7 +61,7 @@ class StudentsController < ApplicationController
 
   private
 	def student_params
-			params.require(:student).permit(:firstname, :lastname, :gender, :school_id)
+			params.require(:student).permit(:firstname, :lastname, :gender, :school_id, :parent_id)
 	end
 
   #dvu: redundant code, cut and pasted from schools controller

@@ -40,6 +40,11 @@
             f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
             %>
 
+            <p class = "form-group">
+              <%= f.label :parent_id, "Select a parent" %><br>
+            <%=
+            f.collection_select( :parent_id, @parents, :id, :firstname, {:prompt => true} , :required => true) 
+            %>
 
           </div> <!-- modal-body -->            
           <div class="modal-footer"> 

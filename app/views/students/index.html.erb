@@ -5,7 +5,7 @@
     <th>First Name</th>
     <th>Last Name</th>
     <th>School</th>
-    <th>Misc</th>
+    <th>Parent</th>
     <th></th>
   </tr>
  
@@ -16,7 +16,7 @@
     </td>
     <td><%= student.lastname %></td>
     <td><%= student.school.name if student.school %><td>
-    
+    <td><%= student.parent.firstname if student.parent %><td>
 
   </tr>
 <% end %>

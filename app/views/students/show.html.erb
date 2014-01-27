@@ -26,6 +26,11 @@
             <br/>
             <%= @student.school.name if @student.school %>
           </p>
+          <p>
+            <strong>Parent:</strong>
+            <br/>
+            <%= @student.parent.firstname if @student.parent %>
+          </p>
         </div> <!-- modal-body -->
         <div class="modal-footer">
           <%= link_to 'Back to students', students_path, class: 'btn btn-default' %>
