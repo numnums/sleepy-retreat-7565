@@ -22,11 +22,16 @@
     <%= f.text_area :lastname , :class => 'form-control' , :required => true%>
   </p>
  
- <p class = "form-group">
+  <%= f.radio_button(:gender, "M") %>
+  <%= label_tag("Male") %>
+  <%= f.radio_button(:gender, "F") %>
+  <%= label_tag("Female") %>
+
+ <!-- <p class = "form-group">
     <%= f.label :gender %><br>
     <%= f.text_area :gender , :class => 'form-control' , :required => true %>
   </p>
-
+ -->
  <p class = "form-group">
   <%= f.label :wearsglasses, "Does this child wear glasses?" %><br>
   <%= f.text_field :wearsglasses , :class => 'form-control' , :required => true %>
