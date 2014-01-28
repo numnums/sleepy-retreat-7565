@@ -47,7 +47,7 @@
 
             <p class = "form-group">
               <%= f.label :birthdate, "Birth Date" %><br>
-              <%=date_select :student, :birthdate, { start_year: 30.years.ago.year, end_year: Date.today.year, default: Date.today} %>
+              <%=date_select :student, :birthdate, { start_year: 30.years.ago.year, end_year: Date.today.year, default: Date.today, order: [:month, :day, :year]}  %>
             </p>
 
             <p class = "form-group">
