@@ -33,6 +33,11 @@
 </p>
 
   <p class = "form-group">
+    <%= f.label :birthdate, "Birth Date" %><br>
+    <%=date_select :student, :birthdate, { start_year: 30.years.ago.year, end_year: Date.today.year, default: Date.today} %>
+  </p>
+
+  <p class = "form-group">
   <%= f.label :school_id, "Select a school" %><br>
     <%=
     f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
