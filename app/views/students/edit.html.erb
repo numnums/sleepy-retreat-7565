@@ -54,8 +54,14 @@
   </p>
 
    <p class = "form-group">
-    <%= f.label :classroomtime, "What time is the class? (am/pm)" %><br>
-    <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %>
+    <%= f.label :classroomtime, "Is class in the morning or the evening?" %><br>
+    <!-- <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %> -->
+
+     <%= f.radio_button(:classroomtime, "AM") %>
+    <%= label_tag("AM") %>
+    <%= f.radio_button(:classroomtime, "PM") %>
+    <%= label_tag("PM") %>
+
   </p>
 
   <p class = "form-group">

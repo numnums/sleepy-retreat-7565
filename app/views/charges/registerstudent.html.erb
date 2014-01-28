@@ -62,8 +62,14 @@
             </p>
 
              <p class = "form-group">
-              <%= f.label :classroomtime, "What time is the class? (am/pm)" %><br>
-              <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %>
+              <%= f.label :classroomtime, "Is class in the morning or the evening?" %><br>
+              <!-- <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %> -->
+
+               <%= f.radio_button(:classroomtime, "AM") %>
+              <%= label_tag("AM") %>
+              <%= f.radio_button(:classroomtime, "PM") %>
+              <%= label_tag("PM") %>
+
             </p>
 
             <!-- if a parent is registering, assign this student to that parent automatically.  Otherwise, this is an admin who may assign a parent via dropdown -->
