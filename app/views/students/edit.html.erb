@@ -26,6 +26,12 @@
     <%= f.label :gender %><br>
     <%= f.text_area :gender , :class => 'form-control' , :required => true %>
   </p>
+
+ <p class = "form-group">
+  <%= f.label :wearsglasses, "Does this child wear glasses?" %><br>
+  <%= f.text_field :wearsglasses , :class => 'form-control' , :required => true %>
+</p>
+
   <p class = "form-group">
   <%= f.label :school_id, "Select a school" %><br>
     <%=

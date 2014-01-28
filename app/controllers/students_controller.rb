@@ -29,7 +29,7 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
    
-    if @student.update(params[:student].permit(:firstname, :lastname, :gender, :school_id, :parent_id))
+    if @student.update(params[:student].permit(:firstname, :lastname, :gender, :school_id, :parent_id, :wearsglasses))
       redirect_to :action => 'index'
     else
       render 'edit'
@@ -70,7 +70,7 @@ class StudentsController < ApplicationController
 
   private
 	def student_params
-			params.require(:student).permit(:firstname, :lastname, :gender, :school_id, :parent_id)
+			params.require(:student).permit(:firstname, :lastname, :gender, :school_id, :parent_id, :wearsglasses)
 	end
 
   #dvu: redundant code, cut and pasted from schools controller
