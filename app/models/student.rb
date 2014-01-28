@@ -7,4 +7,9 @@ class Student < ActiveRecord::Base
 	validates :gender, presence: true
 	#validates_presence_of :firstname, :lastname, :school
 	validates_inclusion_of :gender, :in => %w( m f M F)
+
+	def fullname
+		"#{firstname} #{lastname}"
+	end
+
 end

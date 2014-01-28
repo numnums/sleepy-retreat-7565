@@ -2,6 +2,7 @@ PBNC::Application.routes.draw do
 
   root 'welcome#index'
   resources :charges
+  resources :payments  
   resources :students do
     resources :school
   end

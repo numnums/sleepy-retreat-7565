@@ -1,0 +1,21 @@
+<h1>Listing Payments</h1>
+
+<table class="table">
+  <tr>
+    <th>Payment Date</th>
+    <th>Parent</th>
+    <th>Student</th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @payments.each do |payment| %>
+  <tr>    
+    <td><%= link_to payment.created_at, payment_path(payment) , data: { toggle: "modal", target: "#modal", remote: payment_path(payment)}  %></td>
+    <td><%= payment.parent.fullname %></td>
+    <td><%= payment.student.fullname %></td>
+  </tr>
+<% end %>
+</table>
+
+
