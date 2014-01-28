@@ -50,6 +50,16 @@
               f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
               %>
 
+             <p class = "form-group">
+              <%= f.label :classroomdescription, "What class is your child in? (Room #, Teacher)" %><br>
+              <%= f.text_field :classroomdescription , :class => 'form-control' , :required => true %>
+            </p>
+
+             <p class = "form-group">
+              <%= f.label :classroomtime, "What time is the class? (am/pm)" %><br>
+              <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %>
+            </p>
+
             <!-- if a parent is registering, assign this student to that parent automatically.  Otherwise, this is an admin who may assign a parent via dropdown -->
             <% if @parent %>                 
                 <%= f.hidden_field :parent_id, :value => @parent.id %>          

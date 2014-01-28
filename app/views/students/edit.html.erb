@@ -43,6 +43,15 @@
     f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
     %>
  
+    <p class = "form-group">
+    <%= f.label :classroomdescription, "What class is your child in? (Room #, Teacher)" %><br>
+    <%= f.text_field :classroomdescription , :class => 'form-control' , :required => true %>
+  </p>
+
+   <p class = "form-group">
+    <%= f.label :classroomtime, "What time is the class? (am/pm)" %><br>
+    <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %>
+  </p>
 
   <p class = "form-group">
     <%= f.label :parent_id, "Select a parent" %><br>
