@@ -1,9 +1,7 @@
-<div class="modal-dialog">
-    <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="myModalLabel">New Student</h4>  
-        </div>          
-        <div class="modal-body">
+          
+        <h3>
+          Register your child
+        </h3>
           <%= form_for :student, url: students_path do |f| %>
           <!-- buggy, I don't think we ever hit the error markup because we're using html validation to
           require the form input fields -->
@@ -20,15 +18,16 @@
           <% end %>
 
             <p class = "form-group">
-              <%= f.label :firstname, "First Name"%><br>
+              <%= f.label :firstname, "Student's First Name"%><br>
               <%= f.text_field :firstname , :class => 'form-control' , :required => true  %>
             </p>
            
             <p class = "form-group">
-              <%= f.label :lastname, "Last Name" %><br>
+              <%= f.label :lastname, "Student's Last Name" %><br>
               <%= f.text_field :lastname , :class => 'form-control' , :required => true  %>
             </p>
            
+            <%= f.label :gender %>
             <p class = "form-group">
              <%= f.radio_button(:gender, "M") %>
             <%= label_tag("Male") %>
@@ -73,7 +72,7 @@
             </p>
 
             <!-- if a parent is registering, assign this student to that parent automatically.  Otherwise, this is an admin who may assign a parent via dropdown -->
-            <% if @parent %>                 
+<!--             <% if @parent %>                 
                 <%= f.hidden_field :parent_id, :value => @parent.id %>          
             <% else %>  
               <p class = "form-group">
@@ -82,15 +81,13 @@
                 f.collection_select( :parent_id, @parents, :id, :firstname, {:prompt => true} , :required => true) 
                 %>
             <% end %>
+ -->
 
 
-
-          </div> <!-- modal-body -->            
-          <div class="modal-footer"> 
-            <p class ="form-group">
-              <%= f.submit :class => 'btn btn-primary' %>
+              
+          
+            <p class ="form-group">              
+              <%= f.submit "Next", :class => 'btn btn-primary' %>
             </p>
           <% end %>
-        </div> <!-- modal-footer -->
-  </div>
-</div>
+        

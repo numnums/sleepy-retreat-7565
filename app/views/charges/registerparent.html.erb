@@ -1,15 +1,19 @@
+            <h3>
+              Tell us about yourself:
+            </h3>
+
             <%= form_for :parent, url: parents_path do |f| %>
               <p class = "form-group">
-                <%= f.label :firstname,  "First Name"  %><br>
+                <%= f.label :firstname,  "Your First Name"  %><br>
                 <%= f.text_field :firstname, :class => 'form-control' , :required => true   %>
               </p>
              
               <p class = "form-group">
-                <%= f.label :lastname, "Last Name" %><br>
+                <%= f.label :lastname, "Your Last Name" %><br>
                 <%= f.text_field :lastname, :class => 'form-control'  ,:required => true %>
               </p>
               <p class = "form-group">
-                <%= f.label :email %><br>
+                <%= f.label :email, "Your email address" %><br>
                 <%= f.text_field :email, :class => 'form-control'  ,:required => true %>
               </p>
 

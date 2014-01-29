@@ -11,11 +11,14 @@ class ParentsController < ApplicationController
 	def create
 		@parent = Parent.new(parent_params)
 		@parent.save
+		session[:new_parent_id] = @parent.id
 		if session[:admin] 
 			redirect_to :action => 'index'
 		else
-			session[:new_parent_id] = @parent.id;
-  			redirect_to register_student_path
+			@student = Student.find(session[:new_student_id])
+			@student.parent = @parent
+			@student.save
+  			redirect_to new_payment_path
   		end			
 	end
 
