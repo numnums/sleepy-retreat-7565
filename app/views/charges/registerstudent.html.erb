@@ -19,12 +19,12 @@
           <% end %>
 
             <p class = "form-group">
-              <%= f.label :firstname, "Student's First Name"%><br>
+              <%= f.label :firstname, "Your Child's First Name"%><br>
               <%= f.text_field :firstname , :class => 'form-control' , :required => true  %>
             </p>
            
             <p class = "form-group">
-              <%= f.label :lastname, "Student's Last Name" %><br>
+              <%= f.label :lastname, "Your Child's Last Name" %><br>
               <%= f.text_field :lastname , :class => 'form-control' , :required => true  %>
             </p>
            
@@ -46,18 +46,18 @@
             </p>
 
           <p class = "form-group">
-            <%= f.label :birthdate, "Birth Date" %><br>
+            <%= f.label :birthdate, "When is your child's birthdate?" %><br>
             <%=date_select :student, :birthdate, { start_year: 30.years.ago.year, end_year: Date.today.year, default: Date.today, order: [:month, :day, :year]}  %>
           </p>
 
             <p class = "form-group">
-              <%= f.label :school_id, "Select a school" %><br>
+              <%= f.label :school_id, "Which school does your child attend?" %><br>
               <%=
               f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
               %>
 
              <p class = "form-group">
-              <%= f.label :classroomdescription, "What class is your child in? (Room #, Teacher)" %><br>
+              <%= f.label :classroomdescription, "In which class is your child? (Room #, Teacher)" %><br>
               <%= f.text_field :classroomdescription , :class => 'form-control' , :required => true %>
             </p>
 
