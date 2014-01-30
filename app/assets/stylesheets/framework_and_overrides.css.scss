@@ -9,7 +9,7 @@ img {
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
-  }
+}
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -34,9 +34,9 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
-  padding: 60px 0 0 0; // accommodate the navbar
-  width: 100%;
+    // background-color: #eee;
+    padding: 60px 15px 0; // accommodate the navbar
+    width: 100%;
   }
 section {
   @extend .row;
@@ -46,6 +46,10 @@ section {
 body {
   font-family: "proxima-nova";
   font-size: 16px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "proxima-nova";
 }
 
 // header/nav styles

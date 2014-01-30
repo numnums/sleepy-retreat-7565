@@ -1,44 +1,49 @@
-<% if session[:buy_one_get_one] == "yes" %>
-  <h2>Thanks, you paid <strong>$40.00</strong>!</h2>
-<% else %>
-  <h2>Thanks, you paid <strong>$20.00</strong>!</h2>
-<% end %>
+<div class="container">
+  <div class="row">
+    <% if session[:buy_one_get_one] == "yes" %>
+      <h2>Thanks, you paid <strong>$40.00</strong>!</h2>
+    <% else %>
+      <h2>Thanks, you paid <strong>$20.00</strong>!</h2>
+    <% end %>
 
-<div class="panel panel-primary">
-   <div class="panel-heading">
-    <h3 class="panel-title">Your child's information</h3>
-  </div>
-  <div class="panel-body">    
-        <strong>First Name:</strong>
-        <%= @student.firstname %>
-      </p>       
-      <p>
-        <strong>Last Name:</strong>
-        <%= @student.lastname %>
-      </p>
-      <p>
-      <strong>School:</strong>      
-      <%= @student.school.name if @student.school %>
-      </p>
-  </div>  
-</div>
+    <div class="panel panel-primary">
+       <div class="panel-heading">
+        <h3 class="panel-title">Your child's information</h3>
+      </div>
+      <div class="panel-body">    
+            <strong>First Name:</strong>
+            <%= @student.firstname %>
+          </p>       
+          <p>
+            <strong>Last Name:</strong>
+            <%= @student.lastname %>
+          </p>
+          <p>
+          <strong>School:</strong>      
+          <%= @student.school.name if @student.school %>
+          </p>
+      </div>  
+    </div>
 
-<div class="panel panel-primary">
-   <div class="panel-heading">
-    <h3 class="panel-title">Your information</h3>
-  </div>
-  <div class="panel-body">    
+    <div class="panel panel-primary">
+       <div class="panel-heading">
+        <h3 class="panel-title">Your information</h3>
+      </div>
+      <div class="panel-body">
+        <p>
         <strong>First Name:</strong>
-        <%= @parent.firstname %>
-      </p>       
-      <p>
-        <strong>Last Name:</strong>
-        <%= @parent.lastname %>
-      </p>
-      <p>
-      <strong>Email Address:</strong>      
-      <%= @parent.email %>
-      </p>
-      <p>[we should add thank you info and some destination or other call to action here]</p>
-  </div>  
+          <%= @parent.firstname %>
+        </p>       
+        <p>
+          <strong>Last Name:</strong>
+          <%= @parent.lastname %>
+        </p>
+        <p>
+        <strong>Email Address:</strong>      
+        <%= @parent.email %>
+        </p>
+        <p>[we should add thank you info and some destination or other call to action here]</p>
+      </div>  
+    </div>
+  </div>
 </div>

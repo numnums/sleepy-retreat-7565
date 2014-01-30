@@ -1,0 +1,71 @@
+#homepage {
+  .hero {
+    color: white;
+    background: image-url("hero-bg.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 800px;
+    .row {
+      padding: 60px 0;
+    }
+    .hero-logo {
+      float: left;
+      height: 450px;
+      margin-right: 40px;
+      display: inline-block;
+    }
+    .descript {
+      float: left;
+      display: inline-block;
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 54px;
+      font-family: "museo-slab";
+      font-weight: 100;
+    }
+    h2 {
+      font-size: 34px;
+      font-family: "museo-slab";
+      font-weight: 100;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      max-width: 450px;
+    }
+    ul {
+      -moz-padding-start: 0px;
+      -webkit-padding-start: 0px;
+      padding-start: 0px;
+      font-size: 18px;
+      font-weight: 700;
+      max-width: 450px;
+    }
+  }
+  .benefits {
+    background: hsla(34, 94.5652%, 63.9216%, 1.0000);
+  }
+}
+#vision360 {
+  section {
+    padding: 40px 0;
+  }
+  .header {
+    background: hsla(184, 44.9541%, 42.7451%, 1.0000);
+  }
+  .work {
+    background: hsla(168, 37.2881%, 53.7255%, 1.0000);
+  }
+  .impact {
+    background: hsla(30, 78.2178%, 80.1961%, 1.0000);
+  }
+  .partners {
+    background: hsla(356, 86.0140%, 71.9608%, 1.0000);
+  }
+  .get-involved {
+    background: hsla(346, 81.1518%, 62.5490%, 1.0000);
+  }
+}
