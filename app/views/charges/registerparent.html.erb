@@ -2,10 +2,10 @@
   <div class="row">
     <div class="panel panel-primary">
        <div class="panel-heading">
-        <h3 class="panel-title">Tell us about yourself</h3>
+        <h3 class="panel-title">Please provide your contact information</h3>
       </div>
       <div class="panel-body">    
-
+		<p>We will use this information to process your payment and to [communicate with you] if you opt in below.</p> 
                 <%= form_for :parent, url: parents_path do |f| %>
                   <p class = "form-group">
                     <%= f.label :firstname,  "Your First Name"  %><br>
@@ -17,10 +17,11 @@
                     <%= f.text_field :lastname, :class => 'form-control'  ,:required => true %>
                   </p>
                   <p class = "form-group">
-                    <%= f.label :email, "Your email address" %><br>
+                    <%= f.label :email, "Your Email Address" %><br>
                     <%= f.text_field :email, :class => 'form-control', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' ,:required => true %>
                   </p>
-
+                  <p>[checkbox here]I am interested in learning more about the work Prevent Blindness does to ensure all preschool-aged children in Northern California are prepared to succeed in school.</p>
+                  <p>
                     <%= f.submit "Next", :class => 'btn btn-primary pull-right' %>
                   </p>
                 <% end %>
