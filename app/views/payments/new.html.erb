@@ -1,5 +1,5 @@
 <h3>
-  Enter payment details for your child's screening
+  Submit payment details for your child's screening
 </h3>
 
 
@@ -47,10 +47,10 @@
 
     <div class="panel panel-primary">
        <div class="panel-heading">
-        <h3 class="panel-title">You've opted to sponsor another child</h3>
-      </div>
+        <h3 class="panel-title">Your payment</h3>
+       </div>
       <div class="panel-body">    
-
+       <p>[let's add payment summary info here]</p>
       </div>  
     </div>
 
@@ -67,7 +67,7 @@
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-              data-description="Your child's test fee"
+              data-description="Your child's vision screening fee"
               data-amount="4000"
               data-email=<%= @parent.email %>
               ></script>
