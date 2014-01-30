@@ -45,6 +45,7 @@ class StudentsController < ApplicationController
               redirect_to :action => 'index'
            else
               session[:new_student_id] = @student.id;
+              session[:buy_one_get_one] = params[:buy_one_get_one]
               redirect_to register_parent_path
           end     
       else

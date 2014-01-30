@@ -17,7 +17,11 @@ class PaymentsController < ApplicationController
 		@parent = Parent.find(session[:new_parent_id])
 
 		# Amount in cents ($20.00)
-	  	@amount = 2000
+		if session[:buy_one_get_one] == "yes"
+			@amount = 4000	
+		else
+	  		@amount = 2000
+	  	end	
 
 		customer = Stripe::Customer.create(
 			:email => 'example@stripe.com',

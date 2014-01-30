@@ -1,4 +1,8 @@
-<h2>Thanks, you paid <strong>$20.00</strong>!</h2>
+<% if session[:buy_one_get_one] == "yes" %>
+  <h2>Thanks, you paid <strong>$40.00</strong>!</h2>
+<% else %>
+  <h2>Thanks, you paid <strong>$20.00</strong>!</h2>
+<% end %>
 
 <div class="panel panel-primary">
    <div class="panel-heading">
