@@ -1,109 +1,114 @@
-<div class="container">
-  <div class="row">
-    <div class="panel panel-primary">
-       <div class="panel-heading">
-        <h3 class="panel-title">Register your child for a screening</h3>
-      </div>
-      <div class="panel-body">
-      	<p>Please use the following forms to sign up and pay for your child’s vision screening.  </br>
-		All demographic and screening information collected will be safely secured according to HIPAA regulations.</p>
-              
-              <%= form_for :student, url: students_path do |f| %>
-              <!-- buggy, I don't think we ever hit the error markup because we're using html validation to
-              require the form input fields -->
-              <% if @student.errors.any? %>
-                <div id="error_explanation">
-                  <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
-               
-                  <ul>
-                  <% @student.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                  <% end %>
-                  </ul>
-                </div>
-              <% end %>
-
-                <p class = "form-group">
-                  <%= f.label :firstname, "Your Child's First Name"%><br>
-                  <%= f.text_field :firstname , :class => 'form-control' , :required => true  %>
-                </p>
-               
-                <p class = "form-group">
-                  <%= f.label :lastname, "Your Child's Last Name" %><br>
-                  <%= f.text_field :lastname , :class => 'form-control' , :required => true  %>
-                </p>
-               
-                <%= f.label :gender %>
-                <p class = "form-group">
-                <%= f.radio_button(:gender, "F") %>
-                <%= label_tag("Female") %>
-                 <%= f.radio_button(:gender, "M") %>
-                <%= label_tag("Male") %>
-                </p>
-    <!--              <p class = "form-group">
-                  <%= f.label :gender, "Gender" %><br>
-                  <%= f.text_field :gender , :class => 'form-control' , :required => true %>
-                </p>
-     -->
-                 <p class = "form-group">
-                  <%= f.label :wearsglasses, "Does your child wear glasses?" %><br>
-                  <%= f.text_field :wearsglasses , :class => 'form-control' , :required => true %>
-                </p>
-
-              <p class = "form-group">
-                <%= f.label :birthdate, "When is your child's birthdate?" %><br>
-                <%=date_select :student, :birthdate, { start_year: 30.years.ago.year, end_year: Date.today.year, default: Date.today, order: [:month, :day, :year]}  %>
-              </p>
-
-                <p class = "form-group">
-                  <%= f.label :school_id, "Which school does your child attend?" %><br>
-                  <%=
-                  f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
-                  %>
-
-                 <p class = "form-group">
-                  <%= f.label :classroomdescription, "In which class is your child? (room # and/or teacher)" %><br>
-                  <%= f.text_field :classroomdescription , :class => 'form-control' , :required => true %>
-                </p>
-
-                 <p class = "form-group">
-                  <%= f.label :classroomtime, "Is Is your child in the morning or afternoon session?" %><br>
-                  <!-- <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %> -->
-
-                   <%= f.radio_button(:classroomtime, "AM") %>
-                  <%= label_tag("Morning") %>
-                  <%= f.radio_button(:classroomtime, "PM") %>
-                  <%= label_tag("Afternoon") %>
-
-                </p>
-
-                <!-- if a parent is registering, assign this student to that parent automatically.  Otherwise, this is an admin who may assign a parent via dropdown -->
-    <!--             <% if @parent %>                 
-                    <%= f.hidden_field :parent_id, :value => @parent.id %>          
-                <% else %>  
-                  <p class = "form-group">
-                    <%= f.label :parent_id, "Select a parent" %><br>
-                    <%=
-                    f.collection_select( :parent_id, @parents, :id, :firstname, {:prompt => true} , :required => true) 
-                    %>
+<div class="register">
+  <div class="container">
+    <div class="row">
+      <div class="panel panel-primary">
+         <div class="panel-heading">
+          <h3 class="panel-title">Register your child for a screening</h3>
+        </div>
+        <div class="panel-body">
+        	<p>Please use the following forms to sign up and pay for your child’s vision screening.  </br>
+  		All demographic and screening information collected will be safely secured according to HIPAA regulations.</p>
+                
+                <%= form_for :student, url: students_path do |f| %>
+                <!-- buggy, I don't think we ever hit the error markup because we're using html validation to
+                require the form input fields -->
+                <% if @student.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+                 
+                    <ul>
+                    <% @student.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
                 <% end %>
-     -->
-     <hr>
-                <label> Please choose among the following options:</label> <br/>
-                <p><%= radio_button_tag(:buy_one_get_one, "no") %>
-                <%= label_tag("One (1) screening for my child") %> </br>
-                A single vision screening costs $20.</p> 
-                <p><%= radio_button_tag(:buy_one_get_one, "yes") %>
-                <%= label_tag("Buy one, Give one: one (1) screening for my child + the gift of one (1) screening for a low-income child") %></br>
-                See Well to Learn also provides vision screening services to low-income children, whose families cannot afford it.  Please consider gifting a screening today to help another preschooler have a clear future.</p>
-             
-              
-                <p class ="form-group">              
-                  <%= f.submit "Next", :class => 'btn btn-primary pull-right' %>
-                </p>
-              <% end %>
 
-      </div>
-    </div>    
-  </div>
-</div>    
+                  <p class = "form-group">
+                    <%= f.label :firstname, "Child's First Name"%><br>
+                    <%= f.text_field :firstname , :class => 'form-control' , :required => true  %>
+                  </p>
+                 
+                  <p class = "form-group">
+                    <%= f.label :lastname, "Child's Last Name" %><br>
+                    <%= f.text_field :lastname , :class => 'form-control' , :required => true  %>
+                  </p>
+                 
+                  <%= f.label :gender %>
+                  <p class = "form-group">
+                  <%= f.radio_button(:gender, "F") %>
+                  <%= label_tag("Female") %>
+                   <%= f.radio_button(:gender, "M") %>
+                  <%= label_tag("Male") %>
+                  </p>
+      <!--              <p class = "form-group">
+                    <%= f.label :gender, "Gender" %><br>
+                    <%= f.text_field :gender , :class => 'form-control' , :required => true %>
+                  </p>
+       -->
+                    <%= f.label :wearsglasses, "Does your child wear glasses?" %><br>
+                    <p class = "form-group">
+                      <%= f.radio_button(:wearsglasses, "Y") %>
+                      <%= label_tag("Yes") %>
+                       <%= f.radio_button(:wearsglasses, "N") %>
+                      <%= label_tag("No") %>
+                    </p>
+
+                <p class = "form-group">
+                  <%= f.label :birthdate, "When is your child's birthdate?" %><br>
+                  <%=date_select :student, :birthdate, { start_year: 30.years.ago.year, end_year: Date.today.year, default: Date.today, order: [:month, :day, :year]}  %>
+                </p>
+
+                  <p class = "form-group">
+                    <%= f.label :school_id, "Which school does your child attend?" %><br>
+                    <%=
+                    f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
+                    %>
+
+                   <p class = "form-group">
+                    <%= f.label :classroomdescription, "In which class is your child? (room # and/or teacher)" %><br>
+                    <%= f.text_field :classroomdescription , :class => 'form-control' , :required => true %>
+                  </p>
+
+                   <p class = "form-group">
+                    <%= f.label :classroomtime, "Is Is your child in the morning or afternoon session?" %><br>
+                    <!-- <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %> -->
+
+                     <%= f.radio_button(:classroomtime, "AM") %>
+                    <%= label_tag("Morning") %>
+                    <%= f.radio_button(:classroomtime, "PM") %>
+                    <%= label_tag("Afternoon") %>
+
+                  </p>
+
+                  <!-- if a parent is registering, assign this student to that parent automatically.  Otherwise, this is an admin who may assign a parent via dropdown -->
+      <!--             <% if @parent %>                 
+                      <%= f.hidden_field :parent_id, :value => @parent.id %>          
+                  <% else %>  
+                    <p class = "form-group">
+                      <%= f.label :parent_id, "Select a parent" %><br>
+                      <%=
+                      f.collection_select( :parent_id, @parents, :id, :firstname, {:prompt => true} , :required => true) 
+                      %>
+                  <% end %>
+       -->
+       <hr>
+                  <label> Please choose among the following options:</label> <br/>
+                  <p><%= radio_button_tag(:buy_one_get_one, "no") %>
+                  <%= label_tag("One (1) screening for my child") %> </br>
+                  A single vision screening costs $20.</p> 
+                  <p><%= radio_button_tag(:buy_one_get_one, "yes") %>
+                  <%= label_tag("Buy one, Give one: one (1) screening for my child + the gift of one (1) screening for a low-income child") %></br>
+                  See Well to Learn also provides vision screening services to low-income children, whose families cannot afford it.  Please consider gifting a screening today to help another preschooler have a clear future.</p>
+               
+                
+                  <p class ="form-group">              
+                    <%= f.submit "Next", :class => 'btn btn-primary pull-right' %>
+                  </p>
+                <% end %>
+
+        </div>
+      </div>    
+    </div>
+  </div>    
+</div>
