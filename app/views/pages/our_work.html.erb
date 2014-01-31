@@ -1,6 +1,22 @@
+<% content_for :script do %>
+  <script>
+    $(document).ready(function(){
+      $("#sidenav").affix({
+        offset: {
+          top: 10
+        }
+      });
+  });
+  </script>
+  <script>
+    $('body').scrollspy({ target: '.navbar-example' })
+  </script>
+<% end %>
+
 <div id="vision360">
+
   <section class="header">
-    <div class="container">  
+    <div class="container">
       <div class="row">
         <div class="col-md-8">
           <h1>Vision 360⁰</h1>
@@ -15,9 +31,21 @@
             To ensure that preschoolers in underserved communities have equal access to comprehensive vision care and are ready for school, Prevent Blindness Northern California (PBNC) and Tipping Point Community established SWTL in 2012 to provide Vision 360⁰ which includes not only advanced vision screening but also complete eye exams by licensed optometrists, prescription glasses, and support for parents and teachers — all for free and on school site.
           </p>
         </div>
+        <div class="col-md-4">
+                   <nav id="sidenav" data-spy="affix">
+            <ul>
+              <li><a href="#">Vision 360⁰</a></li>
+              <li><a href="#">Our Work</a></li>
+              <li><a href="#">Our Impact</a></li>
+              <li><a href="#">Our Partners</a></li>
+              <li><a href="#">Get Involved</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </div>
   </section>
+
   <section class="work">
     <div class="container">  
       <div class="row">
@@ -38,6 +66,7 @@
       </div>
     </div>
   </section>
+
   <section class="impact">
     <div class="container">  
       <div class="row">
@@ -69,6 +98,7 @@
       </div>
     </div>
   </section>
+
   <section class="partners">
     <div class="container">  
       <div class="row">
@@ -102,6 +132,7 @@
       </div>
     </div>
   </section>
+
   <section class="get-involved">
     <div class="container">  
       <div class="row">
@@ -142,5 +173,6 @@
       </div>
     </div>
   </section>
+
 </div>
 
