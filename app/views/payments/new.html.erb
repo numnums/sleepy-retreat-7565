@@ -69,7 +69,7 @@
 
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="Your child's vision screening fee"
+                  data-description="See Well to Learn: 2 vision screenings"
                   data-amount="4000"
                   data-email=<%= @parent.email %>
                   ></script>
@@ -100,7 +100,7 @@
 
           <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                   data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="Your child's test fee"
+                  data-description="See Well to Learn: 1 vision screening"
                   data-amount="2000"
                   data-email=<%= @parent.email %>
                   ></script>
