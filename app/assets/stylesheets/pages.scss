@@ -57,6 +57,7 @@
       color: #fff;
       background: hsla(34, 94.5652%, 63.9216%, 1.0000);
       border-radius: 2px;
+      // @include transition(.35s ease all);
       -webkit-transition:  all .35s ease;
       -moz-transition: all .35s ease;
       transition: all .35s ease;

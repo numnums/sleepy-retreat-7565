@@ -31,21 +31,29 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 
-#heroku docs modifications
-gem 'rails_12factor', group: :production
+  #heroku docs modifications
+  gem 'rails_12factor', group: :production
 
-ruby "2.0.0"
+  ruby "2.0.0"
 
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+  gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-
-
-gem 'bootstrap-sass', '~> 3.0.3.0'
-group :development do
-  gem 'rails_layout'
-end
+  gem 'bootstrap-sass', '~> 3.0.3.0'
+  group :development do
+    gem 'rails_layout'
+  end
 
 end
+
+# #Compass is an open-source CSS Authoring Framework. http://compass-style.org/
+# gem 'compass-rails'
+
+# group :assets do
+#   gem 'compass-colors'
+#   gem 'sassy-buttons'
+#   # non-compass gems omitted for brevity
+# end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
