@@ -1,49 +1,33 @@
 <div class="container">
   <div class="row">
-    <% if session[:buy_one_get_one] == "yes" %>
-      <h2>Thanks, you paid <strong>$40.00</strong>!</h2>
-    <% else %>
-      <h2>Thanks, you paid <strong>$20.00</strong>!</h2>
-    <% end %>
+    <h2>Success! Thank you for your registration. </h2>
 
     <div class="panel panel-primary">
        <div class="panel-heading">
-        <h3 class="panel-title">Your child's information</h3>
+        <h3 class="panel-title">Your receipt</h3>
       </div>
       <div class="panel-body">    
-            <strong>First Name:</strong>
-            <%= @student.firstname %>
-          </p>       
-          <p>
-            <strong>Last Name:</strong>
-            <%= @student.lastname %>
-          </p>
-          <p>
-          <strong>School:</strong>      
-          <%= @student.school.name if @student.school %>
-          </p>
+            <p>1 vision screening for <%= @student.firstname %> $20</p>       
+        <% if session[:buy_one_get_one] == "yes" %>
+        	<p>Thank you for your gift of one vision screening for a low-income preschooler $20</p>
+    	<% end %>
+    	<hr>
+    	<% if session[:buy_one_get_one] == "yes" %>
+     	<p>Total: $40</p>   	
+     	<% else %>
+     	<p>Total: $20</p>   	
+     	<% end %>
       </div>  
     </div>
 
-    <div class="panel panel-primary">
-       <div class="panel-heading">
-        <h3 class="panel-title">Your information</h3>
-      </div>
-      <div class="panel-body">
-        <p>
-        <strong>First Name:</strong>
-          <%= @parent.firstname %>
-        </p>       
-        <p>
-          <strong>Last Name:</strong>
-          <%= @parent.lastname %>
-        </p>
-        <p>
-        <strong>Email Address:</strong>      
-        <%= @parent.email %>
-        </p>
-        <p>[we should add thank you info and some destination or other call to action here]</p>
-      </div>  
-    </div>
+
+	<p>Questions?</br>
+		Please contact us at <a href="mailto:followup@seewelltolearn.org">followup@seewelltolearn.org</a>.
+	</p>
+	<p>
+		See Well to Learn (a <a href="http://www.eyeinfo.org" target="_blank">Prevent Blindness Northern California</a> initiative)</br>
+		1388 Sutter Street, #408
+		San Francisco, CA  94109
+	</p>
   </div>
 </div>
