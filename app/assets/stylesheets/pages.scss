@@ -40,9 +40,6 @@
       letter-spacing: 0.0425em;
     }
     ul {
-      -moz-padding-start: 0px;
-      -webkit-padding-start: 0px;
-      padding-start: 0px;
       font-size: 18px;
       font-weight: 700;
       max-width: 450px;
@@ -56,6 +53,8 @@
       font-weight: 700;
       font-family: "museo-slab";
       text-transform: uppercase;
+      text-decoration: none;
+      text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
       text-align: center;
       max-width: 525px;
     }
@@ -73,33 +72,48 @@
     margin: 20px 0 50px;
     display: block;
   }
-  .visionscreening{
-    background: hsla(200, 81.0427%, 41.3725%, 1.0000) image-url("visionscreen-bg.jpg") no-repeat left top;
-    -webkit-background-size: 100% auto;
-    -moz-background-size: 100% auto;
-    background-size: 100% auto;
+  .visionscreening {
+    background: hsla(201, 80.0830%, 47.2549%, 1.0000) image-url("visionscreen-bg.jpg") no-repeat 30% top;
+    -webkit-background-size: 150% auto;
+    -moz-background-size: 150% auto;
+    background-size: 150% auto;
     padding-bottom: 100px;
     color: white;
+    @media screen and (min-width: 768px) {
+      background: hsla(201, 80.0830%, 47.2549%, 1.0000) image-url("visionscreen-bg.jpg") no-repeat left top;
+      -webkit-background-size: 100% auto;
+      -moz-background-size: 100% auto;
+      background-size: 100% auto;
+    }
     h1 {
       text-transform: uppercase;
+      text-align: center;
       font-weight: 900;
       font-size: 40px;
-      max-width: 600px;
+      padding-top: 60px;
     }
   }
   .busrow {
-    padding-top: 250px;
+    padding-top: 150px;
+    @media screen and (min-width: 2000px) {
+      padding-top: 400px;
+    }
+  }
+  .dabus {
+    padding: 0 30px 0 110px;
   }
   .benefits {
-    background: hsla(34, 94.5652%, 63.9216%, 1.0000);
-    padding: 30px 0 200px;
+    background: hsla(0, 0.0000%, 92.9412%, 1.0000);
+    padding: 60px 0 200px;
+    color: hsla(199, 80.8612%, 40.9804%, 1.0000);
     h1 {
-      font-size: 70px;
+      font-size: 50px;
       font-family: "museo-slab";
       text-align: center;
       margin: 0 auto;
+      text-transform: uppercase;
+      font-weight: 900;
       max-width: 800px;
-      color: hsla(30, 60.4167%, 37.6471%, 1.0000);
     }
     h4 {
       font-size: 35px;
@@ -107,19 +121,32 @@
       text-align: center;
       margin: 0 auto;
       max-width: 800px;
-      color: hsla(30, 60.4167%, 37.6471%, 1.0000);
     }
   }
   .benefit-icon {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    width: 200px;
+    display: inline-block;
+    @media screen and (min-width: 992px) {
+      display: block;
+      width: auto;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
   }
   .benefit-detail {
     font-size: 17px;
     padding: 0 20px;
     font-weight: 400;
     text-align: center;
-    color: hsla(30, 60.4167%, 37.6471%, 1.0000);
+    display: inline-block;
+    max-width: 300px;
+    text-align: left;
+    vertical-align: middle;
+    @media screen and (min-width: 992px) {
+      text-align: center;
+      display: block;
+      width: auto;
+    }
   }
 }
 
@@ -150,9 +177,6 @@
   }
   p {
     font-size: 16px;
-  }
-  ul {
-    padding-left: 20px;
   }
 } 
 
@@ -212,6 +236,29 @@
 //Vision 360 Page
 
 #vision360 {
+  color: white;
+  h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 60px;
+  }
+  h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 40px;
+    font-family: "museo-slab";
+  }
+  h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  p {
+    max-width: 680px;
+  }
+  ol, ul {
+    font-size: 16px;
+    font-weight: 700;
+  }
   #sidenav {
     height: 150px;
   }
@@ -227,46 +274,49 @@
   }
   .row {
      padding-left: 30px;
+     max-width: 680px;
   }
   .header {
-    background: hsla(184, 44.9541%, 42.7451%, 1.0000)image-url("vision360-bg.jpg") no-repeat top right fixed;
-    -webkit-background-size: auto 100%;
-    -moz-background-size: auto 100%;
-    background-size: auto 100%;
+    background: hsla(184, 44.9541%, 42.7451%, 1.0000) image-url("vision360-bg.jpg") no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
     color: white;
     padding: 100px 0 70px;
-    h1 {
-      text-transform: uppercase;
-      font-weight: 900;
-      font-size: 60px;
-    }
-    h3 {
-      font-size: 30px;
-      max-width: 680px;
-      margin-bottom: 20px;
-    }
-    p {
-      max-width: 680px;
-    }
   }
   .work {
-    background: hsla(168, 37.2881%, 53.7255%, 1.0000)image-url("schools-bg.jpg") no-repeat top right fixed;
-    -webkit-background-size: auto 100%;
-    -moz-background-size: auto 100%;
-    background-size: auto 100%;
-    h1 {
-      text-transform: uppercase;
-      font-weight: 900;
-      font-size: 40px;
-    }
+    background: hsla(211, 96.6102%, 53.7255%, 1.0000) image-url("ourwork-bg.jpg") no-repeat top center fixed;
+    padding: 50px 0 75px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
   }
   .impact {
-    background: hsla(30, 78.2178%, 80.1961%, 1.0000);
+    background: hsla(30, 78.2178%, 80.1961%, 1.0000) image-url("impact-bg.jpg") no-repeat top center fixed;
+    padding: 50px 0 75px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    color: hsla(39, 76.9223%, 29.5953%, 1.0000);
   }
   .partners {
-    background: hsla(356, 86.0140%, 71.9608%, 1.0000);
+    background: hsla(25, 100.0000%, 50.0000%, 1.0000);
+    padding: 50px 0 75px;
+    h4 {
+      line-height: 1.4;
+    }
+    .partner-side-text {
+      font-size: 16px;
+      font-style: italic;
+    }
   }
   .get-involved {
-    background: hsla(346, 81.1518%, 62.5490%, 1.0000);
+    background: hsla(30, 78.2178%, 80.1961%, 1.0000) image-url("getinvolved-bg.jpg") no-repeat top center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    padding: 50px 0 200px;
+    a {
+    }
   }
 }

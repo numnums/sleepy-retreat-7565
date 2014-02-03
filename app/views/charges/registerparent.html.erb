@@ -1,10 +1,8 @@
-<div class="register">
+<div id="register">
   <div class="container">
     <div class="row">
       <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Tell us about yourself</h3>
-        </div>
+        <h1 class="panel-title">Tell us about yourself</h1>
         <div class="panel-body">    
           <%= form_for :parent, url: parents_path do |f| %>
             <p class = "form-group">
@@ -19,7 +17,7 @@
               <%= f.label :email, "Your email address" %><br>
               <%= f.text_field :email, :class => 'form-control', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' ,:required => true %>
             </p>
-              <%= f.submit "Next", :class => 'btn btn-primary pull-right' %>            
+              <%= f.submit "Next", :class => 'form-button' %>            
           <% end %>
         </div>
       </div>

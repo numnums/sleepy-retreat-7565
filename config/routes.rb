@@ -23,10 +23,7 @@ PBNC::Application.routes.draw do
   # get "pages/payments"
   get "pages/schools", :as => 'schools_static'
   get "pages/FAQ", :as => 'faq'
-  get "pages/our_work", :as => 'our_work'
-  get "pages/our_impact", :as => 'our_impact'
-  get "pages/our_partners", :as => 'our_partners'
-  get "pages/get_involved", :as => 'get_involved'
+  get "pages/vision360", :as => 'vision360'
 
   get "register_parent", to: 'charges#registerparent'
   get "register_student", to: 'charges#registerstudent'

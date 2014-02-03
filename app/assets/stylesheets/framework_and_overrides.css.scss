@@ -77,6 +77,9 @@ h1 {
 p {
   font-size: 18px;
 }
+ul, ol {
+  padding-left: 23px;
+}
 
 // header/nav styles
 
@@ -91,11 +94,16 @@ header {
 }
 
 .navbar-nav {
-  float: right;
+  float: left;
   font-family: "museo-slab";
   font-weight: 700;
+  text-transform: uppercase;
   color: white;
   font-size: 14px;
+  li {
+    color: white;
+    padding-left: 10px;
+  }
 }
 
 .logo {
@@ -115,22 +123,10 @@ header {
   }
 }
 
-.register-link {
-  background: hsla(195, 78.7037%, 42.3529%, 1.0000);
-  color: white;
-  display: block;
-  width: 100%;
-  font-family: "museo-slab";
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 14px;
-  padding: 8px 20px;
-}
-
 .leftnav-links {
   height: 100%;
   width: 160px;
-  background: hsla(0, 0%, 0.0000%, 1.0000);
+  background: hsla(0, 0%, 0.0000%, 0.8500);
   ul {
     list-style: none;
     padding: 0;
@@ -142,16 +138,33 @@ header {
     font-size: 14px;
     display: block;
     position: relative;
+    line-height: 1;
+    border-bottom: 1px solid hsla(0, 0%, 15.0000%, 1.0000);
     &:first-child {
-      padding-top: 12px;
+      border-bottom: none;
+    }
+    &:last-child {
+      border-bottom: none;
     }
     a {
       color: white;
-      padding: 8px 20px;
+      padding: 10px 20px;
       display: block;
       height: 100%;
       width: 100%;
       text-decoration: none;
+      -webkit-transition: background-color 0.5s ease;
+      -moz-transition: background-color 0.5s ease;
+      transition: background-color 0.5s ease;
+      &:hover {
+        background: hsla(0, 0%, 25.0000%, 1.0000);
+      }
+    }
+  }
+  .register-link {
+    background: hsla(201, 80.0830%, 47.2549%, 1.0000);
+    &:hover {
+      background: hsla(206, 100.0000%, 56.1033%, 1.0000);
     }
   }
 }
@@ -160,32 +173,63 @@ header {
   width: 200px;
 }
 // form 
-.register {
-  padding-top: 60px;
+#register {
   background: hsla(0, 0.0000%, 92.9412%, 1.0000);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
-  padding-bottom: 200px;
-  padding-left: 40px;
-  .panel-primary {
-    border: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+  padding: 80px 0 200px;
+  @media screen and (min-width: 768px) {
+    padding: 60px 0 200px 40px;
   }
-  .panel-body {
-    background: hsla(0, 0.0000%, 92.9412%, 1.0000);
+  .row {
+    // max-width: 700px;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 30px;
+    @media screen and (min-width: 768px) {
+      font-size: 40px;
+    }
+  }
+  p {
+    font-size: 16px;
+  }
+  form {
+    padding-top: 30px;
+  }
+  .form-group {
+    padding-bottom: 20px;
+    border-bottom: 1px dotted hsla(0, 0%, 0.5000%, 1.0000);
+  }
+  .form-button {
+    display: block;
+    padding: 10px 20px;
+    font-size: 20px;
+    background: hsla(34, 94.5652%, 63.9216%, 1.0000);
+    color: white;
+    font-weight: 700;
+    font-family: "museo-slab";
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    border: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
   }
   input[type=text] {
     max-width: 320px;
   }
   input[type=radio] {
     margin-right: 5px;
+    vertical-align: top;
   }
   label {
     font-weight: 700;
     font-size: 16px;
     margin-right: 15px;
+    max-width: 500px;
   }
 }
