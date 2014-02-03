@@ -2,17 +2,15 @@
   <div class="container">
     <div class="row">
       <div class="panel panel-primary">
-         <div class="panel-heading">
+        <div class="panel-heading">
           <h3 class="panel-title">Tell us about yourself</h3>
         </div>
         <div class="panel-body">    
-
           <%= form_for :parent, url: parents_path do |f| %>
             <p class = "form-group">
               <%= f.label :firstname,  "Your First Name"  %><br>
               <%= f.text_field :firstname, :class => 'form-control' , :required => true   %>
-            </p>
-           
+            </p>           
             <p class = "form-group">
               <%= f.label :lastname, "Your Last Name" %><br>
               <%= f.text_field :lastname, :class => 'form-control'  ,:required => true %>
@@ -21,11 +19,8 @@
               <%= f.label :email, "Your email address" %><br>
               <%= f.text_field :email, :class => 'form-control', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' ,:required => true %>
             </p>
-
-              <%= f.submit "Next", :class => 'btn btn-primary pull-right' %>
-            </p>
+              <%= f.submit "Next", :class => 'btn btn-primary pull-right' %>            
           <% end %>
-
         </div>
       </div>
     </div>
