@@ -40,11 +40,13 @@
               <%= f.text_field :gender , :class => 'form-control' , :required => true %>
             </p>
  -->
-             <p class = "form-group">
-              <%= f.label :wearsglasses, "Does this child wear glasses?" %><br>
-              <%= f.text_field :wearsglasses , :class => 'form-control' , :required => true %>
+            <p class = "form-group">
+              <%= f.label :wearsglasses, "Does your child wear glasses?" %><br>
+              <%= f.radio_button(:wearsglasses, "Y") %>
+              <%= label_tag("Yes") %>
+              <%= f.radio_button(:wearsglasses, "N") %>
+              <%= label_tag("No") %>
             </p>
-
             <p class = "form-group">
               <%= f.label :birthdate, "Birth Date" %><br>
               <%=date_select :student, :birthdate, { start_year: 30.years.ago.year, end_year: Date.today.year, default: Date.today, order: [:month, :day, :year]}  %>
