@@ -85,12 +85,18 @@
       -moz-background-size: 100% auto;
       background-size: 100% auto;
     }
+    .row-fluid {
+      padding-left: 30px;
+    }
     h1 {
       text-transform: uppercase;
-      text-align: center;
+      text-align: left;
       font-weight: 900;
       font-size: 40px;
       padding-top: 60px;
+    }
+    h4 {
+      font-weight: 700;
     }
   }
   .busrow {
@@ -116,7 +122,8 @@
       max-width: 800px;
     }
     h4 {
-      font-size: 35px;
+      font-size: 20px;
+      font-weight: 900;
       font-family: "museo-slab";
       text-align: center;
       margin: 0 auto;
