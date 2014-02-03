@@ -1,25 +1,30 @@
-<h1>Listing Students</h1>
+<div class="container">
+  <h1>Listing Students</h1>
 
-<table class="table">
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>School</th>
-    <th>Parent</th>
-    <th></th>
-  </tr>
- 
-<% @students.each do |student| %>
-  <tr>
-<!--    <td><%= link_to student.firstname, student_path(student) %></td> -->
-    <td> <%= link_to student.firstname, student_path(student), data: { toggle: "modal", target: "#modal" , remote: student_path(student)} %>
-    </td>
-    <td><%= student.lastname %></td>
-    <td><%= student.school.name if student.school %><td>
-    <td><%= student.parent.fullname if student.parent %><td>
+  <table class="table">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>School</th>
+      <th>Room Number</th>
+      <th>Parent First Name</th>
+      <th>Parent Last Name</th>        
+    </tr>
+   
+  <% @students.each do |student| %>
+    <tr>
+  <!--    <td><%= link_to student.firstname, student_path(student) %></td> -->
+      <td> <%= link_to student.firstname, student_path(student), data: { toggle: "modal", target: "#modal" , remote: student_path(student)} %>
+      </td>
+      <td><%= student.lastname %></td>
+      <td><%= student.school.name if student.school %></td>
+      <td><%= student.classroomdescription if student.classroomdescription %></td>
+      <td><%= student.parent.firstname if student.parent %></td>
+      <td><%= student.parent.lastname if student.parent %></td>
 
-  </tr>
-<% end %>
-</table>
+    </tr>
+  <% end %>
+  </table>
 
-<%= link_to "New student", new_student_path, data: { toggle: "modal", target: "#modal" , remote: new_student_path} , class: 'btn btn-primary'%>
+  <%= link_to "New student", new_student_path, data: { toggle: "modal", target: "#modal" , remote: new_student_path} , class: 'btn btn-primary'%>
+</div>
