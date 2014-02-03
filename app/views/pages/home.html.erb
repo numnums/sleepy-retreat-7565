@@ -7,40 +7,38 @@
           <div class="descript">
             <h1>We’ve screened over a million children and counting</h1>
             <h4>Preschool kicks off a lifetime of learning, preparing children to read a blackboard and learn from across the room. Catching vision problems at this age through screening—before they become larger learning or behavioral issues—sets children up for educational and social success.</h4>
+            <%= link_to register_student_path, class: "hero-button" do %>
+              Register Now for Your Child’s Screening
+            <% end %>
           </div>
-        </div>
-      </div>
-      <div class="row-fluid">
-        <div class="col-md-4">
-          <%= link_to register_student_path, class: "button-hover" do %>
-            Register Now for Your Child’s Screening
-          <% end %>
         </div>
       </div>
     </div>
   </section>
 
   <section class="visionscreening">
+    <div class="busrow">
+        <%= image_tag "eyebus.png", class: "dabus" %>
+    </div>
     <div class="container">
       <div class="row-fluid">
         <div class="col-md-12">
-          <h1>Preschool Vision Screenings</h1>
-          <div class="col-md-4">
-            <div class="intro-copy">            
-              <p>
-                We bring advanced, progressive vision screening to schools through our two successful onsite initiatives:
-                <br/>
-                <br/>
-                For private preschools, we bring high-tech, thorough vision screening and well-trained, professional screeners to school sites. We send children home with the results of their screenings that very same day, along with any recommendations on follow-up care, so parents can take confident action.
-                <br/>
-                <br/>
-                For publicly funded low-income preschools, we offer Vision 360⁰: the same high-tech, thorough vision screening and well-trained screeners, plus follow-up eye exams with professional optometrists and prescription glasses through our Eye Bus.
-                We are committed to making sure all of Northern California’s children can see well. 
-              </p>
-            </div>
-          </div>
-          <h2>Screen early to ensure children have their best vision for a lifetime of learning</h2>
-          <h4>For private preschools, we bring high-tech, thorough vision screening and well-trained, professional screeners to school sites to ensure children are ready for kindergarten and beyond.</h4>
+          <h1>Preschool 
+          <br/>Vision Screenings</h1>
+          <h3>Screen early to ensure children have their best vision for a lifetime of learning</h3>
+        </div>
+        <div class="col-md-6"> 
+          <h4>For private preschools, we bring high-tech,</h4>
+          <p>
+            thorough vision screening and well-trained, professional screeners to school sites. We send children home with the results of their screenings that very same day, along with any recommendations on follow-up care, so parents can take confident action.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h4>For publicly funded low-income preschools,</h4>
+          <p>
+            we offer Vision 360⁰: the same high-tech, thorough vision screening and well-trained screeners, plus follow-up eye exams with professional optometrists and prescription glasses through our Eye Bus.
+            We are committed to making sure all of Northern California’s children can see well. 
+          </p>
         </div>
       </div>
     </div>

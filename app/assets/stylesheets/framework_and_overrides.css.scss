@@ -37,9 +37,9 @@ body {
   height: 100%;
 }
 main {
-  @extend .container;
   // background-color: #eee;
-  padding: 60px 0 0; // accommodate the navbar
+  // padding: 60px 0 0; // accommodate the navbar
+  height: 100%;
   width: 100%;
 }
 section {
@@ -47,11 +47,23 @@ section {
 }
 
 // general 
+html {
+  // height: 100%;
+}
+
 body {
   font-family: "ff-tisa-sans-web-pro";
   font-size: 16px;
   text-rendering: optimizeLegibility;
   font-weight: 400;
+  position: relative;
+}
+
+.container {
+  margin: 0;
+  @media (min-width: 768px) {
+    padding-left: 250px;
+  }
 }
 
 h1, h2, h3, h4, h5 {
@@ -62,7 +74,17 @@ h1 {
   font-family: "museo-slab";
 }
 
+p {
+  font-size: 18px;
+}
+
 // header/nav styles
+
+header {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
 
 .navbar {
   padding: 8px 0;
@@ -83,6 +105,60 @@ h1 {
     width: 280px;
 }
 
+.leftnav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: block;
+  }
+}
+
+.register-link {
+  background: hsla(195, 78.7037%, 42.3529%, 1.0000);
+  color: white;
+  display: block;
+  width: 100%;
+  font-family: "museo-slab";
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 20px;
+}
+
+.leftnav-links {
+  height: 100%;
+  width: 160px;
+  background: hsla(0, 0%, 0.0000%, 1.0000);
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    font-family: "museo-slab";
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    display: block;
+    position: relative;
+    &:first-child {
+      padding-top: 12px;
+    }
+    a {
+      color: white;
+      padding: 8px 20px;
+      display: block;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+    }
+  }
+}
+
+.big-logo {
+  width: 200px;
+}
 // form 
 .register {
   padding-top: 60px;
@@ -91,6 +167,7 @@ h1 {
   -moz-background-size: cover;
   background-size: cover;
   padding-bottom: 200px;
+  padding-left: 40px;
   .panel-primary {
     border: none;
     -webkit-box-shadow: none;
@@ -101,10 +178,14 @@ h1 {
     background: hsla(0, 0.0000%, 92.9412%, 1.0000);
   }
   input[type=text] {
-    width: 280px;
+    max-width: 320px;
+  }
+  input[type=radio] {
+    margin-right: 5px;
   }
   label {
     font-weight: 700;
     font-size: 16px;
+    margin-right: 15px;
   }
 }

@@ -11,14 +11,15 @@
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
   <body>
-    <header>
+    <header class="header">
       <%= render 'layouts/navigation' %>
     </header>
+    <%= render 'layouts/leftnav' %>
     <main role="main" class="container-full">
       <div>
         <%= render 'layouts/messages' %>
-        <%= yield %>
       </div>
+      <%= yield %>
       <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       </div><!-- /.modal -->
       <!-- 
