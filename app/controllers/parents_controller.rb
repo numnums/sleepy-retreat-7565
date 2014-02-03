@@ -38,7 +38,7 @@ class ParentsController < ApplicationController
 	def update
 	  @parent = Parent.find(params[:id])
 	 
-	  if @parent.update(params[:parent].permit(:firstname, :lastname, :email))
+	  if @parent.update(params[:parent].permit(:firstname, :lastname, :email, :acceptsmarketing))
 	    redirect_to :action => 'index'
 	  else
 	    render 'edit'
@@ -54,7 +54,7 @@ class ParentsController < ApplicationController
 
 	private 
 	def parent_params
-		params.require(:parent).permit(:firstname,:lastname,:email)		
+		params.require(:parent).permit(:firstname,:lastname,:email, :acceptsmarketing)		
 	end		
 
 	private
