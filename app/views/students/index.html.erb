@@ -5,8 +5,9 @@
     <th>First Name</th>
     <th>Last Name</th>
     <th>School</th>
-    <th>Parent</th>
-    <th></th>
+    <th>Room Number</th>
+    <th>Parent First Name</th>
+    <th>Parent Last Name</th>        
   </tr>
  
 <% @students.each do |student| %>
@@ -15,8 +16,10 @@
     <td> <%= link_to student.firstname, student_path(student), data: { toggle: "modal", target: "#modal" , remote: student_path(student)} %>
     </td>
     <td><%= student.lastname %></td>
-    <td><%= student.school.name if student.school %><td>
-    <td><%= student.parent.fullname if student.parent %><td>
+    <td><%= student.school.name if student.school %></td>
+    <td><%= student.classroomdescription if student.classroomdescription %></td>
+    <td><%= student.parent.firstname if student.parent %></td>
+    <td><%= student.parent.lastname if student.parent %></td>
 
   </tr>
 <% end %>
