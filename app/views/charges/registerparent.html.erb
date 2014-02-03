@@ -17,6 +17,9 @@
               <%= f.label :email, "Your email address" %><br>
               <%= f.text_field :email, :class => 'form-control', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' ,:required => true %>
             </p>
+            <p class = "form-group">
+              <%= f.check_box :acceptsmarketing  %> Unclick if you'd like to opt out of learning more about the work Prevent Blindness does to ensure all preschool-aged children in Northern California are prepared to succeed in school
+            </p>
               <%= f.submit "Next", :class => 'form-button' %>            
           <% end %>
         </div>

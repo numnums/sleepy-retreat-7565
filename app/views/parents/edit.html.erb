@@ -27,7 +27,9 @@
       <%= f.label :email %><br>
       <%= f.text_area :email , :class => 'form-control', :required => true  %>
     </p>
-   
+    <p class = "form-group">      
+      <%= f.check_box :acceptsmarketing  %> <%= f.label :acceptsmarketing, "Accepts marketing" %>
+    </p>
     <p>
       <%= link_to 'Cancel', parents_path, class: 'btn btn-default' %>
       <%= f.submit :class => 'btn btn-primary' %>

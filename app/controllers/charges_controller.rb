@@ -4,7 +4,8 @@
 class ChargesController < ApplicationController
 
 	def registerparent
-
+		@parent = Parent.new
+		@parent.acceptsmarketing = true
 	end
 
 	def registerstudent
