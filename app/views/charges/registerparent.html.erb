@@ -2,8 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="panel panel-primary">
-        <h1 class="panel-title">Tell us about yourself</h1>
+        <h1 class="panel-title">Please provide your contact information</h1>
         <div class="panel-body">    
+          We will use this information to process your payment information and communicate with you if you opt in below.
           <%= form_for :parent, url: parents_path do |f| %>
             <p class = "form-group">
               <%= f.label :firstname,  "Your First Name"  %><br>
@@ -18,7 +19,7 @@
               <%= f.text_field :email, :class => 'form-control', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' ,:required => true %>
             </p>
             <p class = "form-group">
-              <%= f.check_box :acceptsmarketing  %> Unclick if you'd like to opt out of learning more about the work Prevent Blindness does to ensure all preschool-aged children in Northern California are prepared to succeed in school
+              <%= f.check_box :acceptsmarketing  %> I am interested in learning more about the work Prevent Blindness does to ensure all preschool-aged children in Northern California are prepared to succeed in school.
             </p>
               <%= f.submit "Next", :class => 'form-button' %>            
           <% end %>
