@@ -147,7 +147,7 @@ header {
     }
     a {
       color: white;
-      padding: 10px 20px;
+      padding: 10px 10px 10px 20px;
       display: block;
       height: 100%;
       width: 100%;
@@ -164,6 +164,19 @@ header {
     background: hsla(36, 99.5129%, 44.3186%, 1.0000);
     &:hover {
       background: hsla(40, 100.0000%, 50.0496%, 1.0000);
+    }
+    i {
+      font-size: 16px;
+      float: right;
+      color: hsla(32, 78.0633%, 41.3711%, 1.0000);
+    }
+  }
+  .social-links {
+    margin-left: 22px;
+    a {
+      color: hsla(0, 0%, 100.0000%, 0.3000);
+      font-size: 20px;
+      margin-right: 6px;
     }
   }
 }
