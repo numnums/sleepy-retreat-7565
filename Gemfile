@@ -31,6 +31,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'pry'
 end
 
 group :doc do
