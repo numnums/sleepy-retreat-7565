@@ -1,6 +1,6 @@
 require "stripe"
 Rails.configuration.stripe = {
-  :publishable_key => "pk_test_QwZn8MgHhFeWmGEzqV2yIjYF",
+  :publishable_key => "",
   # :secret_key      => "sk_test_sN2aKAVijawg4PbLfDh7br9Y"
 }
 
@@ -9,6 +9,8 @@ Rails.configuration.stripe = {
 
 if(Rails.env == 'development' || Rails.env == 'staging')
   Stripe.api_key = "sk_test_mfiW5pBwJFSj9ohtkKKLG0u9"  
+  Rails.configuration.stripe[:publishable_key] = "pk_test_QwZn8MgHhFeWmGEzqV2yIjYF"
 elsif(Rails.env == 'production')
   Stripe.api_key = "sk_test_mfiW5pBwJFSj9ohtkKKLG0u9"  
+  Rails.configuration.stripe[:publishable_key] = "pk_test_QwZn8MgHhFeWmGEzqV2yIjYF"
 end
