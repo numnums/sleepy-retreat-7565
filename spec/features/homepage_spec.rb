@@ -62,7 +62,7 @@ feature "home page" , :js => true do
     find(:xpath, "//*[@id='classroomtime']").should have_content("AM") 
   end
 
-  scenario "make another user" do
+  scenario "user registers a male student, no glasses, school at night" do
   	visit "/"
 
   	student = {
@@ -102,6 +102,48 @@ feature "home page" , :js => true do
     find(:xpath, "//*[@id='wearsglasses']").should have_content(student[:wearsglasses]) 
     find(:xpath, "//*[@id='schoolname']").should have_content("UC High") 
     find(:xpath, "//*[@id='classroomtime']").should have_content("PM") 
+  end
 
+  scenario "registers a student and a parent" do
+  	visit "/"
+
+  	student = {
+	  :firstname => "Tom",
+	  :lastname => "Jones",
+	  :classroomdescription => "456",
+	  :gender => "M",
+	  :wearsglasses => "N"
+	}
+
+    click_link "Register Now"
+
+    expect(page).to have_text("REGISTER YOUR CHILD")
+
+    #Register the student
+    fill_in "student[firstname]", :with => student[:firstname]
+    fill_in "student[lastname]", :with => student[:lastname]
+    page.choose("student_gender_m")
+    
+    page.choose("student_wearsglasses_n")
+    select(@school.name, :from => 'student[school_id]')
+    fill_in "student[classroomdescription]",  :with => student[:classroomdescription]
+    page.choose("student_classroomtime_pm")
+    page.choose("buy_one_get_one_no")
+
+    click_on "next"
+
+    #Register the parent
+    parent = {
+	  :firstname => "Mr.",
+	  :lastname => "Jones",
+	  :email => "mrjones@gmail.com"
+    }
+
+	fill_in "parent_firstname", :with => parent[:firstname]
+    fill_in "parent_lastname", :with => parent[:lastname]
+    fill_in "parent_email", :with => parent[:email]
+	
+	click_on "next"    
+	
   end
 end
