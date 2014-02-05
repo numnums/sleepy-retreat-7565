@@ -143,7 +143,32 @@ feature "home page" , :js => true do
     fill_in "parent_lastname", :with => parent[:lastname]
     fill_in "parent_email", :with => parent[:email]
 	
-	click_on "next"    
-	
+	click_on "next"
+
+	#verify student creation
+	page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/students")
+
+    click_on student[:firstname]
+    
+    find(:xpath, "//*[@id='firstname']").should have_content(student[:firstname])
+    find(:xpath, "//*[@id='lastname']").should have_content(student[:lastname])
+    find(:xpath, "//*[@id='classroomdescription']").should have_content(student[:classroomdescription])
+    find(:xpath, "//*[@id='gender']").should have_content(student[:gender])
+    find(:xpath, "//*[@id='gender']").should_not have_content("F")    
+    find(:xpath, "//*[@id='wearsglasses']").should have_content(student[:wearsglasses]) 
+    find(:xpath, "//*[@id='schoolname']").should have_content("UC High") 
+    find(:xpath, "//*[@id='classroomtime']").should have_content("PM") 
+    find(:xpath, "//*[@id='parent_full_name']").should have_content(parent[:firstname]) 
+    find(:xpath, "//*[@id='parent_full_name']").should have_content(parent[:lastname]) 
+
+    #verify parent creation    
+    click_on "Back to students"
+    click_on "manage parents"
+    click_on parent[:firstname]
+
+    find(:xpath, "//*[@id='firstname']").should have_content(parent[:firstname])
+    find(:xpath, "//*[@id='lastname']").should have_content(parent[:lastname])
+    find(:xpath, "//*[@id='email']").should have_content(parent[:email])
+
   end
 end
