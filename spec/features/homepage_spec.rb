@@ -12,23 +12,12 @@ feature "home page" , :js => true do
 
 	@school = School.create!(:name => "UC High")
 	@school.save	
+  	@basicauthname = "PBAdmin"
+  	@basicauthpassword = "preventblindness!!" 
+
 	end
-  scenario "User visits the home page" do
+  scenario "User visits the home page and registers a female student" do
     
-  	#post schools_path, :school => {:name => "UC High"}
-  	name = "PBAdmin"
-  	password = "preventblindness!!" 
-
-  	# page.visit("http://#{name}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/schools")
-	# page.visit("http://#{name}:#{password}@localhost:3000/schools")
-	
-	# click_link "new_school"
-	# save_and_open_page
-	# fill_in "school_name", :with => "UC High"
-	# fill_in "school_description", :with => "Dan's HS"
-	# click_link "Save School"
-	
-
     visit "/"
 
 	student = {
@@ -56,9 +45,9 @@ feature "home page" , :js => true do
 
     click_on "next"
 
-    page.visit("http://#{name}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/students")
+    page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/students")
 	# binding.pry
-    click_on "Emma"
+    click_on student[:firstname]
     expect(page).to have_content(student[:firstname])
     expect(page).to have_content(student[:lastname])
     expect(page).to have_content(student[:classroomdescription])
@@ -68,7 +57,51 @@ feature "home page" , :js => true do
     find(:xpath, "//*[@id='classroomdescription']").should have_content(student[:classroomdescription])
     find(:xpath, "//*[@id='gender']").should have_content(student[:gender])
     find(:xpath, "//*[@id='gender']").should_not have_content("M")    
-    find(:xpath, "//*[@id='wearsglasses']").should have_content(student[:wearsglasses])  #someone reason this is 1 instead of Y
+    find(:xpath, "//*[@id='wearsglasses']").should have_content(student[:wearsglasses]) 
+    find(:xpath, "//*[@id='schoolname']").should have_content("UC High") 
+    find(:xpath, "//*[@id='classroomtime']").should have_content("AM") 
+  end
+
+  scenario "make another user" do
+  	visit "/"
+
+  	student = {
+	  :firstname => "Tom",
+	  :lastname => "Jones",
+	  :classroomdescription => "456",
+	  :gender => "M",
+	  :wearsglasses => "N"
+	}
+
+    click_link "Register Now"
+
+    expect(page).to have_text("REGISTER YOUR CHILD")
+
+    #Register the student
+    fill_in "student[firstname]", :with => student[:firstname]
+    fill_in "student[lastname]", :with => student[:lastname]
+    page.choose("student_gender_m")
+    
+    page.choose("student_wearsglasses_n")
+    select(@school.name, :from => 'student[school_id]')
+    fill_in "student[classroomdescription]",  :with => student[:classroomdescription]
+    page.choose("student_classroomtime_pm")
+    page.choose("buy_one_get_one_no")
+
+    click_on "next"
+
+    page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/students")
+
+    click_on student[:firstname]
+    
+    find(:xpath, "//*[@id='firstname']").should have_content(student[:firstname])
+    find(:xpath, "//*[@id='lastname']").should have_content(student[:lastname])
+    find(:xpath, "//*[@id='classroomdescription']").should have_content(student[:classroomdescription])
+    find(:xpath, "//*[@id='gender']").should have_content(student[:gender])
+    find(:xpath, "//*[@id='gender']").should_not have_content("F")    
+    find(:xpath, "//*[@id='wearsglasses']").should have_content(student[:wearsglasses]) 
+    find(:xpath, "//*[@id='schoolname']").should have_content("UC High") 
+    find(:xpath, "//*[@id='classroomtime']").should have_content("PM") 
 
   end
 end
