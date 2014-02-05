@@ -58,11 +58,13 @@
             <%= f.text_field :classroomdescription , :class => 'form-control' , :required => true %>
           </p>
           <p class="form-group">
-            <%= f.label :classroomtime, "Is your child in the morning or afternoon session?" %><br>
+            <%= f.label :classroomtime, "When does your child attend preschool?" %><br>
             <%= f.radio_button(:classroomtime, "AM") %>
             <%= label_tag("Morning") %>
             <%= f.radio_button(:classroomtime, "PM") %>
             <%= label_tag("Afternoon") %>
+            <%= f.radio_button(:classroomtime, "DAY") %>
+            <%= label_tag("All Day") %>
           </p>
           <label> Please choose among the following options:</label> <br/>
           <p>
