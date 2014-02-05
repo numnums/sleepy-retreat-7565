@@ -31,18 +31,25 @@ feature "home page" , :js => true do
 
     visit "/"
 
+	student = {
+	  :firstname => "Emma",
+	  :lastname => "Johnson",
+	  :classroomdescription => "123",
+	  :gender => "F",
+	  :wearsglasses => "Y"
+	}
     
     click_link "Register Now"
 
     expect(page).to have_text("REGISTER YOUR CHILD")
 
     #Register the student
-    fill_in "student[firstname]", :with => "Emma"
-    fill_in "student[lastname]", :with => "Johnson"
+    fill_in "student[firstname]", :with => student[:firstname]
+    fill_in "student[lastname]", :with => student[:lastname]
     page.choose("student_gender_f")
     page.choose("student_wearsglasses_1")
     select(@school.name, :from => 'student[school_id]')
-    fill_in "student[classroomdescription]",  :with => "123"
+    fill_in "student[classroomdescription]",  :with => student[:classroomdescription]
     page.choose("student_classroomtime_am")
     page.choose("buy_one_get_one_no")
 
@@ -51,6 +58,17 @@ feature "home page" , :js => true do
     page.visit("http://#{name}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/students")
 	# binding.pry
     click_on "Emma"
+    expect(page).to have_content(student[:firstname])
+    expect(page).to have_content(student[:lastname])
+    expect(page).to have_content(student[:classroomdescription])
+    
+    find(:xpath, "//*[@id='firstname']").should have_content(student[:firstname])
+    find(:xpath, "//*[@id='lastname']").should have_content(student[:lastname])
+    find(:xpath, "//*[@id='classroomdescription']").should have_content(student[:classroomdescription])
+    find(:xpath, "//*[@id='gender']").should have_content(student[:gender])
+    find(:xpath, "//*[@id='gender']").should_not have_content("M")
+    binding.pry
+    # find(:xpath, "//*[@id='wearsglasses']").should have_content(student[:wearsglasses])  #someone reason this is 1 instead of Y
 
   end
 end
