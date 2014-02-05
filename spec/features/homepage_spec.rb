@@ -47,7 +47,8 @@ feature "home page" , :js => true do
     fill_in "student[firstname]", :with => student[:firstname]
     fill_in "student[lastname]", :with => student[:lastname]
     page.choose("student_gender_f")
-    page.choose("student_wearsglasses_1")
+    
+    page.choose("student_wearsglasses_y")
     select(@school.name, :from => 'student[school_id]')
     fill_in "student[classroomdescription]",  :with => student[:classroomdescription]
     page.choose("student_classroomtime_am")
@@ -66,9 +67,8 @@ feature "home page" , :js => true do
     find(:xpath, "//*[@id='lastname']").should have_content(student[:lastname])
     find(:xpath, "//*[@id='classroomdescription']").should have_content(student[:classroomdescription])
     find(:xpath, "//*[@id='gender']").should have_content(student[:gender])
-    find(:xpath, "//*[@id='gender']").should_not have_content("M")
-    binding.pry
-    # find(:xpath, "//*[@id='wearsglasses']").should have_content(student[:wearsglasses])  #someone reason this is 1 instead of Y
+    find(:xpath, "//*[@id='gender']").should_not have_content("M")    
+    find(:xpath, "//*[@id='wearsglasses']").should have_content(student[:wearsglasses])  #someone reason this is 1 instead of Y
 
   end
 end
