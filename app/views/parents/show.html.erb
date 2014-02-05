@@ -4,17 +4,17 @@
           <h4 class="modal-title" id="myModalLabel"><%= @parent.firstname + " " +@parent.lastname%></h4>      
       	</div>
         <div class="modal-body">
-			<p>
+			<p id="firstname">
 			  	<strong>First Name:</strong>
 			  	<br/>
 			  	<%= @parent.firstname %>
 			</p>
-			<p>
+			<p id="lastname">
 			  	<strong>Last Name:</strong>
 			  	<br/>
 			  	<%= @parent.lastname %>
 			</p>
-			<p>
+			<p id="email">
 				<strong>Email Address:</strong>
 			  	<br/>
 			  <%= @parent.email %>

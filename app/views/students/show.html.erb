@@ -4,24 +4,24 @@
           <h4 class="modal-title" id="myModalLabel"><%= @student.firstname + " " + @student.lastname %></h4>          
         </div>
         <div class="modal-body">
-          <p>
+          <p id="firstname">
             <strong>First Name:</strong>
             <br/>
             <%= @student.firstname %>
           </p>
            
-          <p>
+          <p id="lastname">
             <strong>Last Name:</strong>
             <br/>
             <%= @student.lastname %>
           </p>
 
-          <p>
+          <p id="gender">
             <strong>Gender:</strong>
             <br/>
             <%= @student.gender %>
           </p>
-          <p>
+          <p id="wearsglasses">
               <strong>Does this child wear glasses:</strong>
               <%= @student.wearsglasses %>
           </p>
@@ -29,23 +29,23 @@
               <strong>Birth date</strong>
               <%= @student.birthdate %>
 
-          <p>
+          <p id="schoolname">
             <strong>School:</strong>
             <br/>
             <%= @student.school.name if @student.school %>
           </p>
 
-          <p>
+          <p id="classroomdescription">
             <strong>Classroom Description:</strong>
             <%= @student.classroomdescription %>
           <p>
 
-          <p>
+          <p id="classroomtime">
             <strong>Classroom Time:</strong>
             <%= @student.classroomtime %>
           <p>
 
-          <p>
+          <p id="parent_full_name">
             <strong>Parent:</strong>
             <br/>
             <%= @student.parent.fullname if @student.parent %>
