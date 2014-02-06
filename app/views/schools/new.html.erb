@@ -14,13 +14,14 @@
                 <%= f.label :description %><br>
                 <%= f.text_field :description, :class => 'form-control'  %>
               </p>
-          </div> <!-- modal-body -->
-          <div class="modal-footer">
-              <p class = "form-group">              	
+              <p class = "form-group pull-right">              	
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <%= f.submit :class => 'btn btn-primary' %>
               </p>
             <% end %>
+          </div> <!-- modal-body -->
+          <div class="modal-footer">
+<!-- dvu: f.submit in footer breaks submit action in FF -->
           </div><!-- modal-footer -->
       </div> <!-- modal-content -->
 </div>    
