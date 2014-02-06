@@ -4,18 +4,24 @@ require 'capybara/rails'
 
 feature "home page" , :js => true do
 
-	before do
-		
-		Capybara.register_driver :selenium do |app|
-		  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+	#TARGETBROWSER=chrome rake spec : runs tests in chrome
+	#rake spec TARGETBROWSER=chrome : runs tests in chrome
+	#rake spec : runs tests in FF.
+	before :each do
+		if ENV['TARGETBROWSER'] == "chrome"
+			Capybara.register_driver :selenium do |app|
+		  	Capybara::Selenium::Driver.new(app, :browser => :chrome)
 		end
-
-	@school = School.create!(:name => "UC High")
-	@school.save	
-  	@basicauthname = "PBAdmin"
-  	@basicauthpassword = "preventblindness!!" 
-
 	end
+	end
+
+	before :each do
+		@school = School.create!(:name => "UC High")
+		@school.save	
+	  	@basicauthname = "PBAdmin"
+	  	@basicauthpassword = "preventblindness!!" 
+	end
+
   scenario "User visits the home page and registers a female student" do
     
     visit "/"
