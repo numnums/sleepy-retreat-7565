@@ -1,19 +1,59 @@
 #homepage {
   .hero {
     color: white;
-    background: image-url("hero-bg.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    background: hsla(36, 75.6345%, 38.6275%, 1.0000) image-url("hero-bg-yella.jpg") no-repeat top right fixed; 
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
     min-height: 700px;
+    @media screen and (min-width: 1200px) {
+      -webkit-background-size: 80% auto;
+      -moz-background-size: 80% auto;
+      background-size: 80% auto;
+    }
     .row {
       padding: 60px 0;
     }
     .social-links {
       float: right;
+      margin-right: 40px;
       a {
+        display: inline-block;
+        background: hsla(0, 0.0000%, 0%, 0.3000);
         color: white;
         font-size: 30px;
+        width: 40px;
+        text-align: center;
+        margin-right: 1px;
+        line-height: 1;
+        padding: 3px 0 12px;
+        -webkit-border-bottom-right-radius: 25px;
+        -webkit-border-bottom-left-radius: 25px;
+        -moz-border-radius-bottomright: 25px;
+        -moz-border-radius-bottomleft: 25px;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+        -webkit-transition: background-color 0.5s ease;
+        -moz-transition: background-color 0.5s ease;
+        transition: background-color 0.5s ease;
+      }
+      i {
+        font-size: 22px;
+      }
+      .fb {
+        &:hover {
+          background: hsla(224, 48.4411%, 52.8582%, 1.0000);
+        }
+      }
+      .tw {
+        &:hover {
+          background: hsla(207, 59.2812%, 50.1569%, 1.0000);
+        }
+      }
+      .yt {
+        &:hover {
+          background: hsla(360, 100.0000%, 45.0000%, 1.0000);
+        }
       }
     }
     .hero-logo {
@@ -58,6 +98,7 @@
        @media screen and (min-width: 768px) {
         font-size: 17px;
         line-height: 26px;
+        margin-bottom: 20px;
       }
     }
     ul {
@@ -70,6 +111,7 @@
       padding: 10px 20px;
       font-size: 18px;
       background: hsla(0, 0%, 0.0000%, 0.3000);
+      // @include border-radius(25px);
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
