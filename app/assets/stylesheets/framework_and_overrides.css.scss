@@ -42,7 +42,6 @@ main {
   height: 100%;
   width: 100%;
   position: relative;
-  z-index: -2;
 }
 section {
   @extend .row;
@@ -124,6 +123,7 @@ header {
   width: 200px;
   position: fixed;
   display: none;
+  z-index: 1;
   @media screen and (min-width: 768px) {
     display: block;
   }
