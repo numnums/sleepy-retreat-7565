@@ -1,13 +1,60 @@
 #homepage {
   .hero {
     color: white;
-    background: image-url("hero-bg.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    background: hsla(36, 75.6345%, 38.6275%, 1.0000) image-url("hero-bg-yella.jpg") no-repeat top right fixed; 
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
     min-height: 700px;
+    @media screen and (min-width: 1200px) {
+      -webkit-background-size: 80% auto;
+      -moz-background-size: 80% auto;
+      background-size: 80% auto;
+    }
     .row {
       padding: 60px 0;
+    }
+    .social-links {
+      float: right;
+      margin-right: 40px;
+      a {
+        display: inline-block;
+        background: hsla(0, 0.0000%, 0%, 0.3000);
+        color: white;
+        font-size: 30px;
+        width: 40px;
+        text-align: center;
+        margin-right: 1px;
+        line-height: 1;
+        padding: 3px 0 12px;
+        -webkit-border-bottom-right-radius: 25px;
+        -webkit-border-bottom-left-radius: 25px;
+        -moz-border-radius-bottomright: 25px;
+        -moz-border-radius-bottomleft: 25px;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+        -webkit-transition: background-color 0.5s ease;
+        -moz-transition: background-color 0.5s ease;
+        transition: background-color 0.5s ease;
+      }
+      i {
+        font-size: 22px;
+      }
+      .fb {
+        &:hover {
+          background: hsla(224, 48.4411%, 52.8582%, 1.0000);
+        }
+      }
+      .tw {
+        &:hover {
+          background: hsla(207, 59.2812%, 50.1569%, 1.0000);
+        }
+      }
+      .yt {
+        &:hover {
+          background: hsla(360, 100.0000%, 45.0000%, 1.0000);
+        }
+      }
     }
     .hero-logo {
       float: left;
@@ -22,13 +69,23 @@
         margin-left: 40px;
       }
     }
+    .count {
+      font-family: "museo-slab";
+      font-weight: 900;
+      font-size: 80px;
+      border-top: 7px solid white;
+      border-bottom: 7px solid white;
+      line-height: 1;
+      width: inherit;
+      display: inline-block;
+    }
     h1 {
       text-transform: uppercase;
       font-weight: 900;
       font-size: 27px;
       max-width: 600px;
       @media screen and (min-width: 768px) {
-        font-size: 50px;
+        font-size: 43px;
       }
     }
     h4 {
@@ -39,8 +96,9 @@
       max-width: 500px;
       letter-spacing: 0.0425em;
        @media screen and (min-width: 768px) {
-        font-size: 17px;
+        font-size: 15px;
         line-height: 26px;
+        margin-bottom: 20px;
       }
     }
     ul {
@@ -52,13 +110,16 @@
       display: block;
       padding: 10px 20px;
       font-size: 18px;
-      background: hsla(34, 94.5652%, 63.9216%, 1.0000);
+      background: hsla(0, 0%, 0.0000%, 0.3000);
+      // @include border-radius(25px);
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
       color: white;
       font-weight: 700;
       font-family: "museo-slab";
-      text-transform: uppercase;
+      // text-transform: uppercase;
       text-decoration: none;
-      text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
       text-align: center;
       max-width: 525px;
     }
@@ -66,7 +127,7 @@
   .splash {
     margin-top: 75px;
     @media screen and (min-width: 768px) {
-      margin-top: 65px;
+      margin-top: 90px;
     }
   }
   .intro-copy {

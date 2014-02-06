@@ -38,9 +38,9 @@
           </p>
           <%= f.label :wearsglasses, "Does your child wear glasses?" %><br>
           <p class = "form-group">
-            <%= f.radio_button(:wearsglasses, "1") %>
+            <%= f.radio_button(:wearsglasses, "Y") %>
             <%= label_tag("Yes") %>
-            <%= f.radio_button(:wearsglasses, "0") %>
+            <%= f.radio_button(:wearsglasses, "N") %>
             <%= label_tag("No") %>
           </p>
           <p class = "form-group">
@@ -58,11 +58,13 @@
             <%= f.text_field :classroomdescription , :class => 'form-control' , :required => true %>
           </p>
           <p class="form-group">
-            <%= f.label :classroomtime, "Is your child in the morning or afternoon session?" %><br>
+            <%= f.label :classroomtime, "When does your child attend preschool?" %><br>
             <%= f.radio_button(:classroomtime, "AM") %>
             <%= label_tag("Morning") %>
             <%= f.radio_button(:classroomtime, "PM") %>
             <%= label_tag("Afternoon") %>
+            <%= f.radio_button(:classroomtime, "DAY") %>
+            <%= label_tag("All Day") %>
           </p>
           <label> Please choose among the following options:</label> <br/>
           <p>
@@ -76,7 +78,7 @@
               See Well to Learn also provides vision screening services to low-income children, whose families cannot afford it.  Please consider gifting a screening today to help another preschooler have a clear future.
           </p>
 
-          <%= f.submit "Next", :class => 'form-button' %>
+          <%= f.submit "Next", :class => 'form-button', :id => "next" %>
 
         <% end %>
       </div>   

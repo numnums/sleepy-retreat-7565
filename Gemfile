@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 1.2'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0.beta'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'pry'
 end
 
 group :doc do
@@ -49,13 +53,12 @@ group :doc do
 
 end
 
-# #Compass is an open-source CSS Authoring Framework. http://compass-style.org/
-# gem 'compass-rails'
-
+#Compass is an open-source CSS Authoring Framework. http://compass-style.org/
 # group :assets do
+#   gem 'sass-rails'
+#   gem 'compass-rails', '~> 1.1.2'
 #   gem 'compass-colors'
 #   gem 'sassy-buttons'
-#   # non-compass gems omitted for brevity
 # end
 
 

@@ -1,4 +1,4 @@
-<div class="leftnav">
+<div class="leftnav" data-spy="affix">
   <%= link_to home_path, class: 'big-logo' do %>
     <%= image_tag "seewelltolearn-sidenav-logo.png" %>
   <% end %>
@@ -7,13 +7,26 @@
     <ul>
       <li>
       <%= link_to register_student_path, class: 'register-link' do %>
-        Register
+        Register<i class="fa fa-arrow-right"></i>
         <% end %>
       </li>
-      <li><%= link_to 'parents', parents_static_path %></li>
-      <li><%= link_to 'schools', schools_static_path %></li>
-      <li><%= link_to 'FAQ', faq_path %></li>
-      <li><%= link_to 'Vision 360°', vision360_path %></li>
+      <li>
+        <%= link_to 'Private Preschools', vision360_path %>
+        <ul class="subnav pschool-nav">
+          <li><%= link_to 'parents', parents_static_path %></li>
+          <li><%= link_to 'schools', schools_static_path %></li>
+          <li><%= link_to 'FAQ', faq_path %></li>
+        </ul>
+      </li>
+      <li>
+        <%= link_to 'Head Starts & Public Preschools', vision360_path %>
+        <ul class="subnav v360-nav">
+          <li><%= link_to 'our work' %></li>
+          <li><%= link_to 'our impact' %></li>
+          <li><%= link_to 'our partners' %></li>
+          <li><%= link_to 'get involved' %></li>
+        </ul>
+      </li>
       <li><a href="https://donatenow.networkforgood.org/1413766" target="_blank">Give</a></li>
       <li>  
         <% if session[:admin] then %>
