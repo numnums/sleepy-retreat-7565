@@ -5,7 +5,12 @@
     -webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
     background-size: 100% auto;
-    min-height: 700px;
+    min-height: 650px;
+    @media screen and (min-width: 768px) {
+      -webkit-background-size: 100% auto;
+      -moz-background-size: 100% auto;
+      background-size: 100% auto;
+    }
     @media screen and (min-width: 1200px) {
       -webkit-background-size: 80% auto;
       -moz-background-size: 80% auto;
@@ -14,9 +19,39 @@
     .row {
       padding: 60px 0;
     }
+    .yelp-link {
+      float: right;
+      display: inline-block;
+      background: hsla(0, 0.0000%, 0%, 0.3000);
+      color: white;
+      font-size: 30px;
+      width: 40px;
+      text-align: center;
+      margin: 0 25px 0 2px;
+      height: 47px;
+      -webkit-border-bottom-right-radius: 25px;
+      -webkit-border-bottom-left-radius: 25px;
+      -moz-border-radius-bottomright: 25px;
+      -moz-border-radius-bottomleft: 25px;
+      border-bottom-right-radius: 25px;
+      border-bottom-left-radius: 25px;
+      -webkit-transition: background-color 0.5s ease;
+      -moz-transition: background-color 0.5s ease;
+      transition: background-color 0.5s ease;
+      &:hover {
+        background: hsla(360, 100.0000%, 45.0000%, 1.0000);
+      }
+      .yelp-icon {
+        width: 18px;
+        height: 22px;
+        margin: 0 auto;
+        padding-top: 10px;
+      }
+    }
     .social-links {
       float: right;
-      margin-right: 40px;
+      margin-right: 1px;
+      display: inline-block;
       a {
         display: inline-block;
         background: hsla(0, 0.0000%, 0%, 0.3000);
@@ -25,8 +60,7 @@
         width: 40px;
         text-align: center;
         margin-right: 1px;
-        line-height: 1;
-        padding: 3px 0 12px;
+        height: 47px;
         -webkit-border-bottom-right-radius: 25px;
         -webkit-border-bottom-left-radius: 25px;
         -moz-border-radius-bottomright: 25px;
@@ -65,7 +99,9 @@
     .descript {
       float: left;
       display: inline-block;
+      margin-top: 180px;
       @media screen and (min-width: 768px) {
+        margin-top: 0px;
         margin-left: 40px;
       }
     }
