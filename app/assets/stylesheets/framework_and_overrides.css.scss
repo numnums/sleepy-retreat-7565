@@ -41,6 +41,8 @@ main {
   // padding: 60px 0 0; // accommodate the navbar
   height: 100%;
   width: 100%;
+  position: relative;
+  z-index: -2;
 }
 section {
   @extend .row;
@@ -113,6 +115,10 @@ header {
     width: 280px;
 }
 
+.big-logo {
+  width: 200px;
+}
+
 .leftnav {
   height: 100%;
   width: 200px;
@@ -137,17 +143,14 @@ header {
     font-size: 14px;
     display: block;
     position: relative;
-    line-height: 1;
+    line-height: 1.35;
     border-bottom: 1px solid hsla(0, 0%, 15.0000%, 1.0000);
-    &:first-child {
-      border-bottom: none;
-    }
     &:last-child {
       border-bottom: none;
     }
     a {
       color: white;
-      padding: 10px 10px 10px 20px;
+      padding: 10px 10px 10px 18px;
       display: block;
       height: 100%;
       width: 100%;
@@ -159,7 +162,34 @@ header {
         background: hsla(0, 0%, 25.0000%, 1.0000);
       }
     }
+    ul {
+      height: 0px;
+      position: absolute;
+      left: 200px;
+      width: 150px;
+      overflow: hidden;
+      background: hsla(0, 0%, 0.0000%, 0.8500);
+      z-index: 200;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+    }
+    .pschool-nav {
+      margin-top: -39px;
+    }
+    .v360-nav {
+      margin-top: -57px;
+    }
+    &:hover {
+      .pschool-nav {
+        height: 115px;
+      }
+      .v360-nav {
+        height: 155px;
+      }
+    }
   }
+
   .register-link {
     background: hsla(36, 99.5129%, 44.3186%, 1.0000);
     &:hover {
@@ -173,9 +203,7 @@ header {
   }
 }
 
-.big-logo {
-  width: 200px;
-}
+
 // form 
 #register {
   background: hsla(0, 0.0000%, 92.9412%, 1.0000);
