@@ -18,18 +18,24 @@
         </div>
         <div class="testi-module">
           <div class="testimonial">
-            <div class="test-quote">"We were so pleased to work with the See Well to Learn screener.  She did a great job of encouraging our students to complete the vision screening process and we so appreciated her patience, thoroughness, and sense of humor."</div>
+            <div class="test-quote">We were so pleased to work with the See Well to Learn screener.  She did a great job of encouraging our students to complete the vision screening process and we so appreciated her patience, thoroughness, and sense of humor.</div>
             <span class="byline">-- Susan Hemberger, Director of Mother Goose Preschool, San Francisco</span>
           </div>
           <div class="testimonial">
-            <div class="test-quote">"It was incredibly convenient having Cyrus' vision screened at school. His teachers worked with the vision screeners and the process was seamless for me as a parent. I am so grateful to have Cyrus' vision problems detected early on through this screening."</div>
+            <div class="test-quote">It was incredibly convenient having Cyrus' vision screened at school. His teachers worked with the vision screeners and the process was seamless for me as a parent. I am so grateful to have Cyrus' vision problems detected early on through this screening.</div>
             <span class="byline">-- Stacey, mom of Cyrus (screened at age 4)</span>
           </div>
         </div>
       </div>
-      <div class="col-md-4 side-module sm-schools">
-        <h2>How to make vision screening a success</h2>
-        <p>While we take care of the logistics, all you need to do is spread the word about our valuable vision screening service and get parents to sign-up online. As your teachers and staff are the best advocates, the program is most successful when they are excited and involved.</p>
+      <div class="col-md-4">
+        <%= mail_to "followup@seewelltolearn.org", class: 'contact-button-school' do %>
+          Contact us<i class="fa fa-arrow-right"></i>
+        <% end %>
+        <div class="side-module sm-schools">
+          <h2>How to make vision screening a success</h2>
+            <p>While we take care of the logistics, all you need to do is spread the word about our valuable vision screening service and get parents to sign-up online. As your teachers and staff are the best advocates, the program is most successful when they are excited and involved.
+            </p>
+        </div>
       <div>
     </div>
   </div>

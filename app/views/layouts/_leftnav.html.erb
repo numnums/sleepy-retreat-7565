@@ -8,10 +8,10 @@
       <li>
       <%= link_to register_student_path, class: 'register-link' do %>
         Register<i class="fa fa-arrow-right"></i>
-        <% end %>
+      <% end %>
       </li>
       <li>
-        <%= link_to 'Private Preschools', vision360_path %>
+        <%= link_to 'Private Preschools', parents_static_path %>
         <ul class="subnav pschool-nav">
           <li><%= link_to 'parents', parents_static_path %></li>
           <li><%= link_to 'schools', schools_static_path %></li>
@@ -21,10 +21,11 @@
       <li>
         <%= link_to 'Head Starts & Public Preschools', vision360_path %>
         <ul class="subnav v360-nav">
-          <li><%= link_to 'our work' %></li>
-          <li><%= link_to 'our impact' %></li>
-          <li><%= link_to 'our partners' %></li>
-          <li><%= link_to 'get involved' %></li>
+          <li><%= link_to 'Vision 360⁰', vision360_path %></li>
+          <li><%= link_to 'our work', vision360_path(:anchor => 'ourwork') %></li>
+          <li><%= link_to 'our impact', vision360_path(:anchor => 'ourimpact') %></li>
+          <li><%= link_to 'our partners', vision360_path(:anchor => 'partners') %></li>
+          <li><%= link_to 'get involved', vision360_path(:anchor => 'getinvolved') %></li>
         </ul>
       </li>
       <li><a href="https://donatenow.networkforgood.org/1413766" target="_blank">Give</a></li>

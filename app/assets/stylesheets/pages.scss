@@ -1,15 +1,20 @@
 #homepage {
+  .container {
+    @media screen and (min-width: 768px) {
+      padding-left: 240px;
+    }
+  }
   .hero {
     color: white;
     background: hsla(36, 75.6345%, 38.6275%, 1.0000) image-url("hero-bg-yella.jpg") no-repeat top right fixed; 
     -webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
     background-size: 100% auto;
-    min-height: 650px;
     @media screen and (min-width: 768px) {
       -webkit-background-size: 100% auto;
       -moz-background-size: 100% auto;
       background-size: 100% auto;
+      min-height: 650px;
     }
     @media screen and (min-width: 1200px) {
       -webkit-background-size: 80% auto;
@@ -99,10 +104,14 @@
     .descript {
       float: left;
       display: inline-block;
-      margin-top: 180px;
+      margin-top: 80px;
+      @media screen and (min-width: 480px) {
+        margin-top: 180px;
+      }
       @media screen and (min-width: 768px) {
         margin-top: 0px;
         margin-left: 40px;
+        max-width: 500px;
       }
     }
     .count {
@@ -119,20 +128,21 @@
       text-transform: uppercase;
       font-weight: 900;
       font-size: 27px;
-      max-width: 600px;
-      @media screen and (min-width: 768px) {
-        font-size: 43px;
+      @media screen and (min-width: 480px) {
+        font-size: 46px;
+      }
+      @media screen and (min-width: 992px) {
+        font-size: 50px;
       }
     }
     h4 {
-      font-size: 14px;
+      font-size: 15px;
       font-family: "museo-sans";
       font-weight: 500;
       line-height: 22px;
-      max-width: 500px;
       letter-spacing: 0.0425em;
        @media screen and (min-width: 768px) {
-        font-size: 15px;
+        font-size: 16px;
         line-height: 26px;
         margin-bottom: 20px;
       }
@@ -147,17 +157,25 @@
       padding: 10px 20px;
       font-size: 18px;
       background: hsla(0, 0%, 0.0000%, 0.3000);
-      // @include border-radius(25px);
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
       border-radius: 5px;
       color: white;
       font-weight: 700;
       font-family: "museo-slab";
-      // text-transform: uppercase;
+      text-transform: uppercase;
       text-decoration: none;
       text-align: center;
-      max-width: 525px;
+      margin-bottom: 30px;
+      -webkit-transition: background-color 0.5s ease;
+      -moz-transition: background-color 0.5s ease;
+      transition: background-color 0.5s ease;
+      &:hover {
+      background: hsla(37, 100.0000%, 50.0000%, 1.0000);
+      }
+      i {
+        margin-left: 5px;
+      }
     }
   }
   .splash {
@@ -174,20 +192,24 @@
     display: block;
   }
   .visionscreening {
-    background: hsla(201, 80.0830%, 47.2549%, 1.0000) image-url("visionscreen-bg.jpg") no-repeat 30% top;
+    background: hsla(201, 80.0830%, 47.2549%, 1.0000) image-url("visionscreen-bg.png") no-repeat 30% top;
     -webkit-background-size: 150% auto;
     -moz-background-size: 150% auto;
     background-size: 150% auto;
     padding-bottom: 100px;
     color: white;
     @media screen and (min-width: 768px) {
-      background: hsla(201, 80.0830%, 47.2549%, 1.0000) image-url("visionscreen-bg.jpg") no-repeat left top;
+      background: hsla(201, 80.0830%, 47.2549%, 1.0000) image-url("visionscreen-bg.png") no-repeat left top;
       -webkit-background-size: 100% auto;
       -moz-background-size: 100% auto;
       background-size: 100% auto;
     }
     .row-fluid {
-      padding-left: 30px;
+      padding-left: 0px;
+      @media screen and (min-width: 768px) {
+        padding-left: 30px;
+      }
+
     }
     h1 {
       text-transform: uppercase;
@@ -196,31 +218,90 @@
       font-size: 40px;
       padding-top: 60px;
     }
+    h3 {
+      font-weight: 700;
+      font-family: "museo-slab";
+      font-size: 25px;
+      @media screen and (min-width: 480px) {
+        font-size: 40px;
+      }
+    }
     h4 {
+      margin-top: 25px;
+      font-size: 18px;
       font-weight: 700;
     }
   }
   .busrow {
-    padding-top: 150px;
-    @media screen and (min-width: 2000px) {
-      padding-top: 400px;
+    padding-top: 80px;
+    @media screen and (min-width: 480px) {
+      margin-top: 110px;
     }
+    @media screen and (min-width: 1600px) {
+      padding-top: 210px;
+    }
+
   }
   .dabus {
-    padding: 0 30px 0 110px;
+    padding: 0 10px;
+    @media screen and (min-width: 768px) {
+      padding: 0;
+    }
+  }
+  .benefit-button {
+    background: hsla(0, 0.0000%, 0.0000%, 0.2500);
+    font-family: "museo-slab";
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    color: white;
+    padding: 12px 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px 0 10px;
+    text-decoration: none;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+    &:hover {
+      background: hsla(198, 100.0000%, 50.0267%, 1.0000);
+    }
+    i {
+      margin-left: 5px;
+    }
+    &:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+  .learnmore-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    i {
+      margin-left: 5px;
+    }
   }
   .benefits {
-    background: hsla(0, 0.0000%, 92.9412%, 1.0000);
-    padding: 60px 0 200px;
-    color: hsla(199, 80.8612%, 40.9804%, 1.0000);
+    color: white;
+    padding-bottom: 30px;
+    @media screen and (min-width: 768px) {
+      padding-top: 30px;
+    }
     h1 {
-      font-size: 50px;
+      font-size: 35px;
       font-family: "museo-slab";
       text-align: center;
       margin: 0 auto;
       text-transform: uppercase;
       font-weight: 900;
       max-width: 800px;
+      @media screen and (min-width: 768px) {
+        font-size: 50px;
+      }
     }
     h4 {
       font-size: 20px;
@@ -231,9 +312,18 @@
       max-width: 800px;
     }
   }
+  .icon-group {
+    margin: 0 auto;
+  }
+  .benefit-group {
+    text-align: center;
+  }
   .benefit-icon {
-    width: 200px;
+    width: 180px;
     display: inline-block;
+    @media screen and (min-width: 480px) {
+      width: 131px;
+    }
     @media screen and (min-width: 992px) {
       display: block;
       width: auto;
@@ -242,7 +332,7 @@
     }
   }
   .benefit-detail {
-    font-size: 17px;
+    font-size: 16px;
     padding: 0 20px;
     font-weight: 400;
     text-align: center;
@@ -284,10 +374,18 @@
   height: 100%;
   color: white;
   padding: 100px 0 380px;
+  .container {
+    @media screen and (min-width: 768px) {
+      padding-left: 280px;
+    }
+  }
   h1 {
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 60px;
+    font-size: 40px;
+     @media screen and (min-width: 480px) {
+      font-size: 60px;
+    }
   }
   h3 {
     max-width: 450px;
@@ -298,31 +396,87 @@
   p {
     font-size: 16px;
   }
-} 
-
+}
 .parents-page h3 {
   color: hsla(12, 100.0000%, 82.7869%, 1.0000);
 
 }
-
 .schools-page h3 {
   color: hsla(157, 100.0000%, 59.0680%, 1.0000);
 }
-
+.register-button-parent, .contact-button-school {
+  background: hsla(0, 0.0000%, 0.0000%, 0.2500);
+  font-family: "museo-slab";
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  color: white;
+  padding: 12px 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 40px 0 30px;
+  text-decoration: none;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  i {
+    margin-left: 5px;
+  }
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+.register-button-parent {
+  &:hover {
+    background: hsla(10, 97.1154%, 59.2157%, 1.0000);
+  }
+}
+.contact-button-school {
+  &:hover {
+    background: hsla(157, 69.0821%, 40.5882%, 1.0000);
+  }
+}
 .parents-body, .schools-body {
   padding:0 50px 0 30px;
 }
 
 .testimonial {
   margin: 20px 0;
+  padding-left: 42px;
+  position: relative;
+  &:before {
+    content: "\f10d";
+    position: absolute;
+    font-style: normal;
+    z-index: 0;
+    margin-left: -40px;
+    margin-top: -4;
+    font-family: "fontAwesome";
+    font-size: 30px;
+    color:  hsla(0, 0.0000%, 0.0000%, 0.1500);
+  }
 }
 .test-quote {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   font-style: italic;
+  z-index: 2;
+  &:after {
+    content: "\f10e";
+    font-style: normal;
+    font-family: "fontAwesome";
+    margin-left: 4px;
+    color:  hsla(0, 0.0000%, 0.0000%, 0.1500);
+  }
+}
+.byline {
+  display: block;
+  margin-top: 7px;
 }
 .side-module {
-  margin-top: 40px;
   padding-left: 20px;
   h2 {
     margin-top: 0px;
@@ -368,7 +522,16 @@
 //Vision 360 Page
 
 #vision360 {
-  color: white;
+  color: hsla(300, 0.0000%, 30.0487%, 1.0000);
+  section {
+    border-bottom: 1px solid hsla(214, 93.2204%, 88.4314%, 1.0000);
+    &:first-child {
+      border-bottom: none;
+    }
+    &:nth-child(7) {
+      border-bottom: none;
+    }
+  }
   h1 {
     text-transform: uppercase;
     font-weight: 900;
@@ -379,6 +542,7 @@
     font-weight: 900;
     font-size: 40px;
     font-family: "museo-slab";
+    color: hsla(210, 84.3478%, 45.0980%, 1.0000);
   }
   h3 {
     font-size: 24px;
@@ -390,16 +554,44 @@
   ol, ul {
     font-size: 16px;
     font-weight: 700;
+    margin-bottom: 30px;
+    color: hsla(210, 84.3478%, 45.0980%, 1.0000);
   }
   #sidenav {
     height: 150px;
+    display: none;
+    ul {
+      list-style: none;
+    }
+    li {
+
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 2px 7px;
+      margin-bottom: 3px;
+      background: hsla(210, 84.3478%, 45.0980%, 0.6000);
+      width: 140px;
+      font-size: 14px;
+      border-bottom: 1px solid hsla(0, 0%, 100.0000%, 0.5000);
+      // &:before {
+      //   content: "\f06e";
+      //   font-family: "fontAwesome";
+      //   margin-right: 5px;
+      // }
+    }
+    @media screen and (min-width: 992px) {
+      display: block;
+    }
   }
   #sidenav.affix {
     top: 100px;
   }
   #sidenav.affix-top {
     position: static;
-    margin-top: 300px;
+    margin-top: 30px;
   }
   section {
     padding: 40px 0;
@@ -409,30 +601,38 @@
      max-width: 680px;
   }
   .header {
-    background: hsla(184, 44.9541%, 42.7451%, 1.0000) image-url("vision360-bg.jpg") no-repeat top center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    background: hsla(210, 84.3478%, 45.0980%, 1.0000) image-url("vision360-bg.jpg") no-repeat bottom right fixed;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
     color: white;
     padding: 100px 0 70px;
+    @media screen and (min-width: 768px) {
+      background: hsla(210, 84.3478%, 45.0980%, 1.0000) image-url("vision360-bg.jpg") no-repeat bottom right fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+    }
   }
   .work {
-    background: hsla(211, 96.6102%, 53.7255%, 1.0000) image-url("ourwork-bg.jpg") no-repeat top center fixed;
+    background: image-url("ourwork-bg.jpg") no-repeat bottom right fixed;
     padding: 50px 0 75px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
   }
   .impact {
-    background: hsla(30, 78.2178%, 80.1961%, 1.0000) image-url("impact-bg.jpg") no-repeat top center fixed;
+    background: image-url("impact-bg-blue.jpg") no-repeat bottom right fixed;
     padding: 50px 0 75px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    color: hsla(39, 76.9223%, 29.5953%, 1.0000);
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
   }
   .partners {
-    background: hsla(25, 100.0000%, 50.0000%, 1.0000);
+    background: image-url("getinvolved-bg-blue.jpg") no-repeat bottom right fixed;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
     padding: 50px 0 75px;
     h4 {
       line-height: 1.4;
@@ -441,14 +641,21 @@
       font-size: 16px;
       font-style: italic;
     }
+    a {
+      font-weight: 700;
+    }
   }
   .get-involved {
-    background: hsla(30, 78.2178%, 80.1961%, 1.0000) image-url("getinvolved-bg.jpg") no-repeat top center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
+    background: image-url("getinvolved-bg-blue.jpg") no-repeat bottom right fixed;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
     padding: 50px 0 200px;
+    h4 {
+      margin-top: 30px;
+    }
     a {
+      font-weight: 700;
     }
   }
 }

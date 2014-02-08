@@ -14,11 +14,11 @@
 <% end %>
 
 <div id="vision360">
-
   <section class="header">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
+      <div class="row-fluid">
+        <div class="col-md-9">
+          <a name="vision360"></a> 
           <h1>Vision 360⁰</h1>
           <h3>We are committed to making sure all of Northern California’s children can see well </h3>
           <p>
@@ -31,25 +31,32 @@
             To ensure that preschoolers in underserved communities have equal access to comprehensive vision care and are ready for school, Prevent Blindness Northern California (PBNC) and Tipping Point Community established SWTL in 2012 to provide Vision 360⁰ which includes not only advanced vision screening but also complete eye exams by licensed optometrists, prescription glasses, and support for parents and teachers — all for free and on school site.
           </p>
         </div>
-<!--         <div class="col-md-4">
+        <div class="col-md-3">
           <nav id="sidenav" data-spy="affix">
             <ul>
-              <li><a href="#">Vision 360⁰</a></li>
-              <li><a href="#">Our Work</a></li>
-              <li><a href="#">Our Impact</a></li>
-              <li><a href="#">Our Partners</a></li>
-              <li><a href="#">Get Involved</a></li>
+              <li><a href="#vision360">Vision 360⁰</a></li>
+              <li><a href="#ourwork">Our Work</a></li>
+              <li><a href="#ourimpact">Our Impact</a></li>
+              <li><a href="#partners">Our Partners</a></li>
+              <li><a href="#getinvolved">Get Involved</a></li>
+              <li>
+                <%= mail_to "followup@seewelltolearn.org" do %>
+                  Contact us
+                <% end %>
+              </li>
             </ul>
           </nav>
-        </div> -->
+        </div>
       </div>
     </div>
   </section>
 
+  <a name="ourwork"></a>
+
   <section class="work">
     <div class="container">  
-      <div class="row">
-        <div class="col-md-12">
+      <div class="row-fluid">
+        <div class="col-md-9"> 
           <h2>Our Work</h2>
           <h3>See Well to Learn’s Vision 360⁰ employs an innovative, school-based approach to accurately detect preschoolers who have vision problems and ensure that those underserved children receive the care they need for vision correction so they can enter Kindergarten ready to learn.</h3>
           <p>Components of this program include:</p>
@@ -67,10 +74,12 @@
     </div>
   </section>
 
+  <a name="ourimpact"></a> 
+
   <section class="impact">
     <div class="container">  
-      <div class="row">
-        <div class="col-md-12">
+      <div class="row-fluid">
+        <div class="col-md-9">
           <h2>Our Impact</h2>
           <h3>While we have screened over a million children through PBNC’s vision screening programs, SWTL has made the following impact since its launch in 2012:</h3>
           <ul>
@@ -82,32 +91,34 @@
           <h3>Community Feedback</h3>
           <div class="testi-module">
             <div class="testimonial">
-              <div class="test-quote">“When you handed me the referral envelopes for the children that failed your vision screening, it clicked! These are the children that are having behavioral issues in our classroom. It’s because they can’t see well enough to participate in the educational activities!”                                 </div>
-              <span class="byline">Blanca Velasquez, Site Supervisor at Valencia Gardens Head Start, San Francisco</span>
+              <div class="test-quote">When you handed me the referral envelopes for the children that failed your vision screening, it clicked! These are the children that are having behavioral issues in our classroom. It’s because they can’t see well enough to participate in the educational activities!</div>
+              <span class="byline">-- Blanca Velasquez, Site Supervisor at Valencia Gardens Head Start, San Francisco</span>
             </div>
             <div class="testimonial">
-              <div class="test-quote">“We wanted to share the feedback from the family advocates regarding SWTL services.  Thanks to the SWTL program we have better involvement of the parents regarding follow-up. Your SWTL screener was awesome working with the staff, parents &amp; children.”</div>
-              <span class="byline">Jennifer Briscoe, MA Health Services Coordinator at Oakland Head Start, Oakland</span>
+              <div class="test-quote">We wanted to share the feedback from the family advocates regarding SWTL services.  Thanks to the SWTL program we have better involvement of the parents regarding follow-up. Your SWTL screener was awesome working with the staff, parents &amp; children.</div>
+              <span class="byline">-- Jennifer Briscoe, MA Health Services Coordinator at Oakland Head Start, Oakland</span>
             </div>
-            <div class="testimonial">
-              <div class="test-quote">“When my daughter was a toddler, she refused to leave my side. She clung to my legs. I blamed myself for her behavior. It turned out she had a vision problem. Once we got her glasses, she was all over the monkey bars and so friendly with other children.”</div>
-              <span class="byline">X</span>
-            </div>
+<!--             <div class="testimonial">
+              <div class="test-quote">When my daughter was a toddler, she refused to leave my side. She clung to my legs. I blamed myself for her behavior. It turned out she had a vision problem. Once we got her glasses, she was all over the monkey bars and so friendly with other children.</div>
+              <span class="byline">-- Thankful Parent</span>
+            </div> -->
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <a name="partners"></a>
+
   <section class="partners">
     <div class="container">  
-      <div class="row">
-        <div class="col-md-12">
+      <div class="row-fluid">
+        <div class="col-md-9">
           <h2>Our Partners</h2>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-7">
+      <div class="row-fluid">
+        <div class="col-md-5">
           <p>
             SWTL launched in San Francisco and Oakland and is privileged to partner with First 5 San Francisco, First 5 Alameda, the respective Head Start agencies and unified school districts as well as the Department of Public Health in San Francisco to deliver its services.
             <br/>
@@ -125,7 +136,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
           <h4>Learn more about our innovative Private-Public Partnership </h4>
           <p class="partner-side-text">SWTL is currently working with Alameda County Healthcare Services Agency and Tipping Point Community to explore an innovative private-public partnership that will leverage private foundation dollars with Federal matching dollars through Medicaid Administrative Activities claiming. There is precedence for this type of funding mechanism, and its growing success could change the landscape for sustainability of nonprofit organizations. We welcome any funders who are interested in learning more about this opportunity.</p>
         </div>
@@ -133,10 +144,12 @@
     </div>
   </section>
 
+  <a name="getinvolved"></a>
+
   <section class="get-involved">
     <div class="container">  
-      <div class="row">
-        <div class="col-md-12">
+      <div class="row-fluid">
+        <div class="col-md-9">
           <h2>Get involved</h2>
           <h3>See Well to Learn is an exciting new program and we welcome your involvement as it takes off as a model of care around Northern California:</h3>
           <ul>

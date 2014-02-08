@@ -45,6 +45,8 @@ main {
 }
 section {
   @extend .row;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 // general 
@@ -62,8 +64,8 @@ body {
 
 .container {
   margin: 0;
-  @media (min-width: 768px) {
-    padding-left: 250px;
+  @media screen and (min-width: 768px) {
+    padding-left: 280px;
   }
 }
 
@@ -108,10 +110,16 @@ header {
 }
 
 .logo {
-    background: image-url("seewelltolearn_logo.png") no-repeat center center;
-    background-size: 264px 33px;
+    background: image-url("swtl-logo.png") no-repeat center center;
+    background-size: 140px 33px;
     height: 50px;
-    width: 280px;
+    width: 150px;
+    @media screen and (min-width: 480px) {
+      background: image-url("seewelltolearn_logo.png") no-repeat center center;
+      background-size: 264px 33px;
+      height: 50px;
+      width: 280px;
+    }
 }
 
 .big-logo {
@@ -185,7 +193,7 @@ header {
         height: 115px;
       }
       .v360-nav {
-        height: 155px;
+        height: 194px;
       }
     }
   }
@@ -225,15 +233,12 @@ header {
       font-size: 40px;
     }
   }
-  p {
-    font-size: 16px;
-  }
   form {
     padding-top: 30px;
   }
   .form-group {
-    padding-bottom: 20px;
-    border-bottom: 1px dotted hsla(0, 0%, 0.5000%, 1.0000);
+    padding-bottom: 15px;
+    border-bottom: 1px solid hsla(0, 0.0000%, 83.0000%, 1.0000);
   }
   .form-button {
     display: block;
@@ -260,8 +265,14 @@ header {
   }
   label {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 15px;
     max-width: 500px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .room {
+    max-width: 140px;
   }
 }
