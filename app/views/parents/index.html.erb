@@ -1,22 +1,27 @@
-<div class="container">
-  <h1>Listing Parents</h1>
+<div id="register">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="col-md-12">
+        <h1>Listing Parents</h1>
 
-  <table class="table">
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-    </tr>
-   
-  <% @parents.each do |parent| %>
-    <tr>    
-      <td><%= link_to parent.firstname, parent_path(parent) , data: { toggle: "modal", target: "#modal", remote: parent_path(parent)}  %></td>
-      <td><%= parent.lastname %></td>
-      <td><%= parent.email %></td>
-    </tr>
-  <% end %>
-  </table>
+        <table class="table">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+         
+        <% @parents.each do |parent| %>
+          <tr>    
+            <td><%= link_to parent.firstname, parent_path(parent) , data: { toggle: "modal", target: "#modal", remote: parent_path(parent)}  %></td>
+            <td><%= parent.lastname %></td>
+            <td><%= parent.email %></td>
+          </tr>
+        <% end %>
+        </table>
 
-  <%= link_to "New parent", new_parent_path, data: { toggle: "modal", target: "#modal" , remote: new_parent_path} , class: 'btn btn-primary'%>
-
+        <%= link_to "New parent", new_parent_path, data: { toggle: "modal", target: "#modal" , remote: new_parent_path} , class: 'btn btn-primary'%>
+      </div>
+    </div>
+  </div>
 </div>

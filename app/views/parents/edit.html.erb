@@ -1,39 +1,45 @@
-<div class="container">
-  <h1>Editing Parent</h1>
-   
-  <%= form_for :parent, url: parent_path(@parent), method: :patch do |f| %>
-    <% if @parent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@parent.errors.count, "error") %> prohibited
-        this parent from being saved:</h2>
-      <ul>
-      <% @parent.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-    <% end %>
-    <p class = "form-group">
-      <%= f.label :firstname, "First Name" %><br>
-      <%= f.text_field :firstname , :class => 'form-control', :required => true  %>
-    </p>
-   
-    <p class = "form-group">
-      <%= f.label :lastname, "Last Name" %><br>
-      <%= f.text_area :lastname , :class => 'form-control', :required => true  %>
-    </p>
+<div id="register">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="col-md-12">
+        <h1>Editing Parent</h1>
+         
+        <%= form_for :parent, url: parent_path(@parent), method: :patch do |f| %>
+          <% if @parent.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@parent.errors.count, "error") %> prohibited
+              this parent from being saved:</h2>
+            <ul>
+            <% @parent.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+          <% end %>
+          <p class = "form-group">
+            <%= f.label :firstname, "First Name" %><br>
+            <%= f.text_field :firstname , :class => 'form-control', :required => true  %>
+          </p>
+         
+          <p class = "form-group">
+            <%= f.label :lastname, "Last Name" %><br>
+            <%= f.text_area :lastname , :class => 'form-control', :required => true  %>
+          </p>
 
-    <p class = "form-group">
-      <%= f.label :email %><br>
-      <%= f.text_area :email , :class => 'form-control', :required => true  %>
-    </p>
-    <p class = "form-group">      
-      <%= f.check_box :acceptsmarketing  %> <%= f.label :acceptsmarketing, "Accepts marketing" %>
-    </p>
-    <p>
-      <%= link_to 'Cancel', parents_path, class: 'btn btn-default' %>
-      <%= f.submit :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+          <p class = "form-group">
+            <%= f.label :email %><br>
+            <%= f.text_area :email , :class => 'form-control', :required => true  %>
+          </p>
+          <p class = "form-group">      
+            <%= f.check_box :acceptsmarketing  %> <%= f.label :acceptsmarketing, "Accepts marketing" %>
+          </p>
+          <p>
+            <%= link_to 'Cancel', parents_path, class: 'btn btn-default' %>
+            <%= f.submit :class => 'btn btn-primary' %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>  
  

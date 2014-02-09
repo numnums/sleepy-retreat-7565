@@ -1,22 +1,26 @@
-<div class="container">
-  <div class="row">
-    <h1>Listing Payments</h1>
+<div id="register">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="col-md-12">
+        <h1>Listing Payments</h1>
 
-    <table class="table">
-      <tr>
-        <th>Payment Date</th>
-        <th>Parent</th>
-        <th>Student</th>
-      </tr>
-     
-    <% @payments.each do |payment| %>
-      <tr>    
-        <td><%= payment.created_at %></td>
-        <td><%= payment.parent.fullname %></td>
-        <td><%= payment.student.fullname %></td>
-      </tr>
-    <% end %>
-    </table>
+        <table class="table">
+          <tr>
+            <th>Payment Date</th>
+            <th>Parent</th>
+            <th>Student</th>
+          </tr>
+         
+        <% @payments.each do |payment| %>
+          <tr>    
+            <td><%= payment.created_at %></td>
+            <td><%= payment.parent.fullname %></td>
+            <td><%= payment.student.fullname %></td>
+          </tr>
+        <% end %>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
 
