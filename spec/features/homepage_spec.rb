@@ -52,13 +52,13 @@ feature "home page" , :js => true do
 		click_on "next"
 
 		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/students")
+		page.visit("/students")
 		# binding.pry
 		click_on student[:firstname]
 		expect(page).to have_content(student[:firstname])
 		expect(page).to have_content(student[:lastname])
 		expect(page).to have_content(student[:classroomdescription])
-
-		binding.pry
+		
 		find(:xpath, "//*[@id='firstname']").should have_content(student[:firstname])
 		find(:xpath, "//*[@id='lastname']").should have_content(student[:lastname])
 		find(:xpath, "//*[@id='classroomdescription']").should have_content(student[:classroomdescription])
@@ -98,6 +98,7 @@ feature "home page" , :js => true do
 		click_on "next"
 
 		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/students")
+		page.visit("/students")
 
 		click_on student[:firstname]
 
@@ -154,6 +155,7 @@ feature "home page" , :js => true do
 
 		#verify student creation
 		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/students")
+		page.visit("/students")
 
 		click_on student[:firstname]
 
@@ -170,7 +172,7 @@ feature "home page" , :js => true do
 
 		#verify parent creation    
 		click_on "Back to students"
-		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/parents")
+		page.visit("/parents")
 		# click_on "manage parents"
 		click_on parent[:firstname]
 
@@ -243,6 +245,7 @@ feature "home page" , :js => true do
 
 		#verify student creation
 		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/students")
+		page.visit("/students")
 
 		click_on student[:firstname]
 
@@ -259,7 +262,7 @@ feature "home page" , :js => true do
 
 		#verify parent creation    
 		click_on "Back to students"
-		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/parents")
+		page.visit("/parents")
 		# click_on "manage parents"
 		click_on parent[:firstname]
 
