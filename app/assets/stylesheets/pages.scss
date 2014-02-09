@@ -26,7 +26,7 @@
     }
     .yelp-link {
       float: right;
-      display: inline-block;
+      display: none;;
       background: hsla(0, 0.0000%, 0%, 0.3000);
       color: white;
       font-size: 30px;
@@ -43,6 +43,9 @@
       -webkit-transition: background-color 0.5s ease;
       -moz-transition: background-color 0.5s ease;
       transition: background-color 0.5s ease;
+      @media screen and (min-width: 768px) {
+        display: inline-block;
+      }
       &:hover {
         background: hsla(360, 100.0000%, 45.0000%, 1.0000);
       }
@@ -56,7 +59,7 @@
     .social-links {
       float: right;
       margin-right: 1px;
-      display: inline-block;
+      display: none;
       a {
         display: inline-block;
         background: hsla(0, 0.0000%, 0%, 0.3000);
@@ -75,6 +78,9 @@
         -webkit-transition: background-color 0.5s ease;
         -moz-transition: background-color 0.5s ease;
         transition: background-color 0.5s ease;
+      }
+      @media screen and (min-width: 768px) {
+        display: inline-block;
       }
       i {
         font-size: 22px;
@@ -154,8 +160,8 @@
     }
     .hero-button {
       display: block;
-      padding: 10px 20px;
-      font-size: 18px;
+      padding: 14px 20px;
+      font-size: 16px;
       background: hsla(0, 0%, 0.0000%, 0.3000);
       -webkit-border-radius: 5px;
       -moz-border-radius: 5px;
@@ -172,6 +178,9 @@
       transition: background-color 0.5s ease;
       &:hover {
       background: hsla(37, 100.0000%, 50.0000%, 1.0000);
+      }
+      @media screen and (min-width: 768px) {
+        font-size: 18px;
       }
       i {
         margin-left: 5px;
@@ -227,9 +236,9 @@
       }
     }
     h4 {
-      margin-top: 25px;
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 700;
+      text-transform: uppercase;
     }
   }
   .busrow {
@@ -338,8 +347,10 @@
     text-align: center;
     display: inline-block;
     max-width: 300px;
-    text-align: left;
     vertical-align: middle;
+    @media screen and (min-width: 508px) {
+      text-align: left;
+    }
     @media screen and (min-width: 992px) {
       text-align: center;
       display: block;
@@ -357,6 +368,13 @@
     font-weight: 300;
     line-height: 1.3;
   }
+  .side-link a {
+    color: hsla(13, 95.5556%, 82.3529%, 1.0000);
+    text-decoration: none;
+    font-weight: 700;
+    margin: 6px 0 0 8px;
+    line-height: 1.3;
+  }
 }
 .schools-page{
   background: hsla(162, 77.7778%, 28.2353%, 1.0000) image-url("schools-bg.jpg") no-repeat bottom right fixed;
@@ -365,6 +383,13 @@
     font-size: 16px;
     font-weight: 300;
     line-height: 1.4;
+  }
+  .side-link a {
+    color: hsla(157, 98.1132%, 58.4314%, 1.0000);
+    text-decoration: none;
+    font-weight: 700;
+    margin: 6px 0 0 8px;
+    line-height: 1.3;
   }
 }
 .parents-page, .schools-page {
@@ -478,6 +503,7 @@
 }
 .side-module {
   padding-left: 20px;
+  margin-bottom: 30px;
   h2 {
     margin-top: 0px;
     font-size: 25px;;

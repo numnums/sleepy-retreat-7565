@@ -1,33 +1,41 @@
-<div class="container">
-  <div class="row">
-    <h2>Success! Thank you for your registration. </h2>
+<div id="register">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <h1>Success! Thank you for your registration.</h1>
 
-    <div id="your_receipt" class="panel panel-primary">
-       <div class="panel-heading">
-        <h3 class="panel-title">Your receipt</h3>
+        <div id="your_receipt" class="panel panel-primary">
+           <div class="panel-heading">
+            <h3 class="panel-title">Your receipt</h3>
+          </div>
+          <div class="panel-body">    
+                <p>1 vision screening for <%= @student.firstname %> $20</p>       
+            <% if session[:buy_one_get_one] == "yes" %>
+            	<p>Thank you for your gift of one vision screening for a low-income preschooler $20</p>
+        	<% end %>
+        	<hr>
+        	<% if session[:buy_one_get_one] == "yes" %>
+         	<p>Total: $40</p>   	
+         	<% else %>
+         	<p>Total: $20</p>   	
+         	<% end %>
+          </div>  
+        </div>
+
+        <span>We have sent you an email receipt.</span>
+
+      	<h4>Questions?</h4>
+    		Please contact us at <a href="mailto:followup@seewelltolearn.org"><strong>followup@seewelltolearn.org</strong></a>.
+        </br>
+        </br>
+    		<span class="swtl-title">See Well to Learn</span>
+        <p>
+          (a <a href="http://www.eyeinfo.org" target="_blank"><strong>Prevent Blindness Northern California</strong></a> initiative)
+        </p>
+    		1388 Sutter Street #408</br>
+    		San Francisco, CA  94109
+
       </div>
-      <div class="panel-body">    
-            <p>1 vision screening for <%= @student.firstname %> $20</p>       
-        <% if session[:buy_one_get_one] == "yes" %>
-        	<p>Thank you for your gift of one vision screening for a low-income preschooler $20</p>
-    	<% end %>
-    	<hr>
-    	<% if session[:buy_one_get_one] == "yes" %>
-     	<p>Total: $40</p>   	
-     	<% else %>
-     	<p>Total: $20</p>   	
-     	<% end %>
-      </div>  
     </div>
-
-
-	<p>Questions?</br>
-		Please contact us at <a href="mailto:followup@seewelltolearn.org">followup@seewelltolearn.org</a>.
-	</p>
-	<p>
-		See Well to Learn (a <a href="http://www.eyeinfo.org" target="_blank">Prevent Blindness Northern California</a> initiative)</br>
-		1388 Sutter Street #408</br>
-		San Francisco, CA  94109
-	</p>
   </div>
 </div>

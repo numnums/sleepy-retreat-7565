@@ -31,8 +31,8 @@
       <li><a href="https://donatenow.networkforgood.org/1413766" target="_blank">Give</a></li>
       <li>  
         <% if session[:admin] then %>
-          <%= link_to 'Administration', root_path, class: '', "data-toggle"=>"dropdown" %>
-          <ul class="">
+          <%= link_to 'Administration', root_path, class: 'admin-link', "data-toggle"=>"dropdown" %>
+          <ul class="subnav admin-nav">
             <li><%= link_to 'manage schools', schools_path %></li>
             <li><%= link_to 'manage students', students_path %></li>
             <li><%= link_to 'manage parents', parents_path %></li>

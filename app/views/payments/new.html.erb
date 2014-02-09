@@ -1,119 +1,113 @@
-<div class="container">
-  <div class="row">
-    <h3>
-      Review and submit payment
-    </h3>
+<div id="register">  
+  <div class="container review-payment">
+    <div class="row">
+      <div class="col-md-9">
+        <h1>
+          Review and submit payment
+        </h1>
 
 
-    <div class="panel panel-primary">
-       <div class="panel-heading">
-        <h3 class="panel-title">Your child's information</h3>
-      </div>
-      <div class="panel-body">    
-            <strong>First Name:</strong>
-            <%= @student.firstname %>
-          </p>       
-          <p>
-            <strong>Last Name:</strong>
-            <%= @student.lastname %>
-          </p>
-          <p>
-          <strong>School:</strong>      
-          <%= @student.school.name if @student.school %>
-          </p>
-      </div>  
-    </div>
+        <div class="">
+           <div class="">
+            <h3 class="">Your child's information</h3>
+          </div>
+          <div class="">    
 
-    <div class="panel panel-primary">
-       <div class="panel-heading">
-        <h3 class="panel-title">Your information</h3>
-      </div>
-      <div class="panel-body">    
-            <strong>First Name:</strong>
-            <%= @parent.firstname %>
-          </p>       
-          <p>
-            <strong>Last Name:</strong>
-            <%= @parent.lastname %>
-          </p>
-          <p>
-          <strong>Email Address:</strong>      
-          <%= @parent.email %>
-          </p>
-      </div>  
-    </div>
+              <label><strong>First Name:</strong></label>
+              <%= @student.firstname %>
 
+              <label><strong>Last Name:</strong></label>
+              <%= @student.lastname %>
 
+              <label><strong>School:</strong></label>      
+              <%= @student.school.name if @student.school %>
 
-    <% if session[:buy_one_get_one] == "yes" %>
-
-        <div class="panel panel-primary">
-           <div class="panel-heading">
-            <h3 class="panel-title">Your payment</h3>
-           </div>
-          <div class="panel-body">    
-           <p>
-            <%= label_tag("Buy one, Give one: one (1) screening for my child + the gift of one (1) screening for a low-income child for $40.") %></br>
-           </p>
           </div>  
         </div>
 
-        <div class="pull-right">
-        <%= form_tag payments_path do %>
-          
-        <!-- show student and parent information here -->
+        <div class="">
+           <div class="">
+            <h3 class="">Your information</h3>
+          </div>
+          <div class="">
 
-          <article>
-            <label class="amount">
-              <span>Amount: $40.00</span>
-            </label>
-          </article>
+              <label><strong>First Name:</strong></label>
+              <%= @parent.firstname %>
 
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="See Well to Learn: 2 vision screenings"
-                  data-amount="4000"
-                  data-email=<%= @parent.email %>
-                  ></script>
-        <% end %>
-        </div>
+              <label><strong>Last Name:</strong></label>
+              <%= @parent.lastname %>
 
+              <label><strong>Email Address:</strong></label>      
+              <%= @parent.email %>
 
-    <% else %>
-        <div class="panel panel-primary">
-           <div class="panel-heading">
-            <h3 class="panel-title">Your payment</h3>
-           </div>
-          <div class="panel-body">    
-           <p>
-              <%= label_tag("One (1) screening for my child") %> </br>
-              A single vision screening costs $20.
-           </p>
           </div>  
         </div>
-        
-        <div class="pull-right">
-        <%= form_tag payments_path do %>
-          
-        <!-- show student and parent information here -->
 
-          <article>
-            <label class="amount">
-              <span>Amount: $20.00</span>
-            </label>
-          </article>
 
-          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                  data-description="See Well to Learn: 1 vision screening"
-                  data-amount="2000"
-                  data-email=<%= @parent.email %>
-                  ></script>
+
+        <% if session[:buy_one_get_one] == "yes" %>
+
+            <div class="">
+              <div class="">
+                <h3 class="">Your payment</h3>
+              </div>
+              <div class="">    
+                <%= label_tag("Buy one, Give one: one (1) screening for my child + the gift of one (1) screening for a low-income child for $40.") %>
+              </div>  
+            </div>
+
+            <div class="">
+            <%= form_tag payments_path do %>
+              
+            <!-- show student and parent information here -->
+
+              <article>
+                <label class="amount">
+                  <span>Amount: $40.00</span>
+                </label>
+              </article>
+              <div class="pay-button">
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                        data-description="See Well to Learn: 2 vision screenings"
+                        data-amount="4000"
+                        data-email=<%= @parent.email %>
+                        ></script>
+              </div>
+            <% end %>
+            </div>
+
+
+        <% else %>
+            <div class="yourpayment">
+              <h3>Your payment</h3>
+              <%= label_tag("One (1) screening for my child") %>
+              A single vision screening costs $20.  
+            </div>
+            
+            <div class="">
+              <%= form_tag payments_path do %>
+                
+              <!-- show student and parent information here -->
+
+                <label class="amount">
+                  <span>Amount: $20.00</span>
+                </label>
+
+                <div class="pay-button">
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                        data-description="See Well to Learn: 1 vision screening"
+                        data-amount="2000"
+                        data-email=<%= @parent.email %>
+                        ></script>
+                </div>
+              <% end %>
+            </div>
+
         <% end %>
-        </div>
-
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
 

@@ -1,19 +1,23 @@
-<div class="container">
-  <h1>Listing Schools</h1>
+<div id="register">
+  <div class="container">
+    <div class="col-md-9">
+      <h1>Listing Schools</h1>
 
-  <table class="table">
-    <tr>
-      <th>School Name</th>
-      <th>Description</th>      
-    </tr>
-   
-  <% @schools.each do |school| %>
-    <tr>
-      <td><%= link_to school.name, school_path(school) , data: { toggle: "modal", target: "#modal", remote: school_path(school)}  %></td>
-      <td><%= school.description %></td>
-    </tr>
-  <% end %>
-  </table>
+      <table class="table">
+        <tr>
+          <th>School Name</th>
+          <th>Description</th>      
+        </tr>
+       
+      <% @schools.each do |school| %>
+        <tr>
+          <td><%= link_to school.name, school_path(school) , data: { toggle: "modal", target: "#modal", remote: school_path(school)}  %></td>
+          <td><%= school.description %></td>
+        </tr>
+      <% end %>
+      </table>
 
-  <%= link_to "New school", new_school_path, id: "new_school", data: { toggle: "modal", target: "#modal" , remote: new_school_path} , class: 'btn btn-primary'%>
-</div>
+      <%= link_to "New school", new_school_path, id: "new_school", data: { toggle: "modal", target: "#modal" , remote: new_school_path} , class: 'btn btn-primary'%>
+    </div>
+  </div>
+<div>

@@ -34,7 +34,7 @@ img {
 // to make views framework-neutral
 body {
   width: 100%;
-  height: 100%;
+  min-height: 100%;
 }
 main {
   // background-color: #eee;
@@ -52,6 +52,7 @@ section {
 // general 
 html {
   // height: 100%;
+  background: hsla(0, 0.0000%, 92.9412%, 1.0000);
 }
 
 body {
@@ -76,7 +77,9 @@ h1, h2, h3, h4, h5 {
 h1 {
   font-family: "museo-slab";
 }
-
+input:focus, textarea, select, a { 
+  outline: none; 
+}
 p {
   font-size: 18px;
 }
@@ -152,7 +155,7 @@ header {
     display: block;
     position: relative;
     line-height: 1.35;
-    border-bottom: 1px solid hsla(0, 0%, 15.0000%, 1.0000);
+    border-bottom: 1px solid hsla(0, 0%, 25.0000%, 1.0000);
     &:last-child {
       border-bottom: none;
     }
@@ -181,6 +184,9 @@ header {
       -webkit-transition: all 0.5s ease;
       -moz-transition: all 0.5s ease;
       transition: all 0.5s ease;
+      a {
+        padding: 11px 10px 10px 18px;
+      }
     }
     .pschool-nav {
       margin-top: -39px;
@@ -188,12 +194,20 @@ header {
     .v360-nav {
       margin-top: -57px;
     }
+    .admin-nav {
+      width: 180px;
+      margin-top: -39px;
+    }
     &:hover {
       .pschool-nav {
-        height: 115px;
+        height: 119px;
       }
       .v360-nav {
-        height: 194px;
+        height: 199px;
+      }
+      .admin-nav {
+        width: 180px;
+        height: 160px;
       }
     }
   }
@@ -209,15 +223,31 @@ header {
       color: hsla(32, 78.0633%, 41.3711%, 1.0000);
     }
   }
+  .admin-link {
+    color: hsla(34, 100.0000%, 59.9383%, 1.0000);
+  }
 }
 
+.mobile-nav {
+  a {
+    color: hsla(0, 0.0000%, 42.9412%, 1.0000);
+    text-decoration: none;
+    &:hover {
+      color: white;
+    }
+  }
+  ul {
+    list-style: none;
+    padding-left: 10px;
+    li {
+      text-transform: none;
+    }
+  }
+}
 
 // form 
 #register {
   background: hsla(0, 0.0000%, 92.9412%, 1.0000);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
   padding: 80px 0 200px;
   @media screen and (min-width: 768px) {
     padding: 60px 0 200px 40px;
@@ -232,6 +262,9 @@ header {
     @media screen and (min-width: 768px) {
       font-size: 40px;
     }
+  }
+  h3 {
+    font-size: 20px;
   }
   form {
     padding-top: 30px;
@@ -275,4 +308,36 @@ header {
   .room {
     max-width: 140px;
   }
+  .parent-form {
+    padding-bottom: 500px;
+  }
+  .review-payment {
+    font-size: 17px;
+    label {
+      font-size: 15px;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+  }
+  .pay-button {
+    display: block;
+    margin-top: 10px;
+  }
+  .panel {
+    margin-top: 20px;
+  }
+  .panel-heading {
+    background-color: #717171;
+    border-color: #717171;
+  }
+  .panel-primary {
+    border-color: #717171;
+  }
+  .swtl-title {
+    font-size: 16px;
+    font-weight: 700;
+  }
 }
+
+
