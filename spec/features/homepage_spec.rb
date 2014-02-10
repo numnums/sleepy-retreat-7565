@@ -227,7 +227,7 @@ feature "home page" , :js => true do
 
 		click_on "next"
 
-		expect(page).to have_text("Review and submit payment")
+		expect(page).to have_text("REVIEW AND SUBMIT PAYMENT")
 
 		click_on "Pay with Card"
 		# expect(page).to have_text("Card Number")
