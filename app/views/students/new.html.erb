@@ -74,22 +74,18 @@
 
             </p>
 
-            <!-- if a parent is registering, assign this student to that parent automatically.  Otherwise, this is an admin who may assign a parent via dropdown -->
-            <% if @parent %>                 
-                <%= f.hidden_field :parent_id, :value => @parent.id %>          
-            <% else %>  
-              <p class = "form-group">
-                <%= f.label :parent_id, "Select a parent" %><br>
-                <%=
-                f.collection_select( :parent_id, @parents, :id, :firstname, {:prompt => true} , :required => true) 
-                %>
-            <% end %>
+            <p class = "form-group">
+              <%= f.label :parent_id, "Select a parent" %><br>
+              <%=
+              f.collection_select( :parent_id, @parents, :id, :firstname, {:prompt => true} , :required => true) 
+              %>
+
 
 
 
             <p class ="form-group pull-right">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <%= f.submit :class => 'btn btn-primary' %>
+              <%= f.submit :class => 'btn btn-primary', :id => 'save_student' %>
             </p>
           <% end %>
           </div> <!-- modal-body -->            

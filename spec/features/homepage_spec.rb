@@ -270,11 +270,12 @@ feature "home page" , :js => true do
 		find(:xpath, "//*[@id='lastname']").should have_content(parent[:lastname])
 		find(:xpath, "//*[@id='email']").should have_content(parent[:email])
 
+		#verify payments page
+		page.visit("/payments")		
+		expect(page).to have_text("LISTING PAYMENTS")
+		expect(page).to have_text(parent[:firstname])
+		expect(page).to have_text(student[:firstname])
+
 	end
 
-	scenario "new school" do
-		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/schools")
-
-
-	end
 end

@@ -135,4 +135,107 @@ feature "admin pages" , :js => true do
 		expect(page).not_to have_text(parent_updated_properties[:firstname])
 	end	
 
+	scenario "add new parent. Then add new student, edit and delete" do
+		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/parents")
+		page.visit("/parents")
+		click_on "new_parent"
+
+		parent = {
+			:firstname => "Uong",
+			:lastname => "Vu",
+			:email => "uvu@gmail.com"
+		}
+
+		# add new parent
+		fill_in "parent_firstname", :with => parent[:firstname]
+		fill_in "parent_lastname", :with => parent[:lastname]
+		fill_in "parent_email", :with => parent[:email]
+		click_on "save_parent"		
+
+		expect(page).to have_text(parent[:firstname])
+
+		page.visit("/parents")		
+		click_on parent[:firstname]
+		find(:xpath, "//*[@id='firstname']").should have_content(parent[:firstname])
+		find(:xpath, "//*[@id='lastname']").should have_content(parent[:lastname])
+		find(:xpath, "//*[@id='email']").should have_content(parent[:email])
+
+		## ADD: new student
+		page.visit("/students")
+		click_on "new_student"
+
+		student = {
+			:firstname => "Daniel",
+			:lastname => "Vu",
+			:classroomdescription => "2",
+			:gender => "M",
+			:wearsglasses => "N"
+		}
+
+		fill_in "student_firstname", :with => student[:firstname]
+		fill_in "student_lastname", :with => student[:lastname]
+		page.choose("student_gender_m")
+		page.choose("student_wearsglasses_n")
+		select(@school.name, :from => 'student[school_id]')
+		fill_in "student_classroomdescription", :with => student[:classroomdescription]
+		page.choose("student_classroomtime_am")		
+		select(parent[:firstname], :from => 'student[parent_id]')
+		click_on "save_student"
+
+		expect(page).to have_text(student[:firstname])
+
+		# verify new student
+		page.visit("/students")		
+		click_on student[:firstname]
+		find(:xpath, "//*[@id='firstname']").should have_content(student[:firstname])
+		find(:xpath, "//*[@id='lastname']").should have_content(student[:lastname])
+		find(:xpath, "//*[@id='gender']").should have_content(student[:gender])
+		find(:xpath, "//*[@id='schoolname']").should have_content(@school.name)
+		find(:xpath, "//*[@id='classroomdescription']").should have_content(student[:classroomdescription])
+		find(:xpath, "//*[@id='classroomtime']").should have_content("AM")
+		find(:xpath, "//*[@id='parent_full_name']").should have_content(parent[:firstname])
+		find(:xpath, "//*[@id='wearsglasses']").should have_content("N")
+		# edit new student
+		click_on "edit_student"
+
+		student_updated_properties = {
+			:firstname => "Nicole",
+			:lastname => "Smith",
+			:classroomdescription => "3",
+			:gender => "F",
+			:wearsglasses => "Y"
+		}
+
+		fill_in "student_firstname", :with => student_updated_properties[:firstname]
+		fill_in "student_lastname", :with => student_updated_properties[:lastname]
+		page.choose("student_gender_f")
+		page.choose("student_wearsglasses_y")
+		fill_in "student_classroomdescription", :with => student_updated_properties[:classroomdescription]
+		page.choose("student_classroomtime_pm")
+		click_on "save_student"
+
+		# verify the old student name doesn't show in index page
+		expect(page).to have_text(student_updated_properties[:firstname])		
+		expect(page).not_to have_text(student[:firstname])
+
+		# verify new properties of edited student
+		click_on student_updated_properties[:firstname]
+		find(:xpath, "//*[@id='firstname']").should have_content(student_updated_properties[:firstname])
+		find(:xpath, "//*[@id='lastname']").should have_content(student_updated_properties[:lastname])
+		find(:xpath, "//*[@id='gender']").should have_content(student_updated_properties[:gender])
+		find(:xpath, "//*[@id='schoolname']").should have_content(@school.name)
+		find(:xpath, "//*[@id='classroomdescription']").should have_content(student_updated_properties[:classroomdescription])
+		find(:xpath, "//*[@id='classroomtime']").should have_content("PM")
+		find(:xpath, "//*[@id='parent_full_name']").should have_content(parent[:firstname])
+		find(:xpath, "//*[@id='wearsglasses']").should have_content("Y")
+
+		# test delete
+		click_on "delete_student"		
+		page.driver.browser.switch_to.alert.accept
+
+		# verify delete
+		expect(page).not_to have_text(student_updated_properties[:firstname])
+	end	
+
+	
 end	

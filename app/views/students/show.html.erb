@@ -54,10 +54,10 @@
         <div class="modal-footer">
           <%= link_to 'Back to students', students_path, class: 'btn btn-default' %>
 
-          <%= link_to 'Edit student', edit_student_path(@student), class: 'btn btn-primary' %>
+          <%= link_to 'Edit student', edit_student_path(@student), class: 'btn btn-primary' , id: "edit_student"  %>
 
           <%= link_to 'Delete', student_path(@student), class: 'btn btn-danger',
-                              method: :delete, data: { confirm: 'Are you sure?' } %>
+                              method: :delete, data: { confirm: 'Are you sure?' } , id: "delete_student" %>
         </div> <!-- modal-footer -->
   </div> <!-- modal-content -->        
 </div>
