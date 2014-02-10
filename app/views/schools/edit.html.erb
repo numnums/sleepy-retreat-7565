@@ -1,31 +1,37 @@
-<div class="container">
-  <h1>Editing School</h1>
-   
-  <%= form_for :school, url: school_path(@school), method: :patch do |f| %>
-    <% if @school.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@school.errors.count, "error") %> prohibited
-        this school from being saved:</h2>
-      <ul>
-      <% @school.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-    <% end %>
-    <p class = "form-group">
-      <%= f.label :name %><br>
-      <%= f.text_field :name , :class => 'form-control'%>
-    </p>
-   
-    <p class = "form-group">
-      <%= f.label :description %><br>
-      <%= f.text_area :description , :class => 'form-control' %>
-    </p>
-   
-    <p>
-      <%= link_to 'Cancel', schools_path, class: 'btn btn-default' %>
-      <%= f.submit :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+<div id="register">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="col-md-12">
+        <h1>Editing School</h1>
+         
+        <%= form_for :school, url: school_path(@school), method: :patch do |f| %>
+          <% if @school.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@school.errors.count, "error") %> prohibited
+              this school from being saved:</h2>
+            <ul>
+            <% @school.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+          <% end %>
+          <p class = "form-group">
+            <%= f.label :name %><br>
+            <%= f.text_field :name , :class => 'form-control'%>
+          </p>
+         
+          <p class = "form-group">
+            <%= f.label :description %><br>
+            <%= f.text_area :description , :class => 'form-control' %>
+          </p>
+         
+          <p>
+            <%= link_to 'Cancel', schools_path, class: 'btn btn-default' %>
+            <%= f.submit :class => 'btn btn-primary' %>
+          </p>
+        <% end %>
+      </div>
+    </div> 
+  </div> 
 </div> 

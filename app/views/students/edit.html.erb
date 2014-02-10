@@ -1,84 +1,90 @@
-<div class="container">
-  <h1>Editing Student</h1>
-   
-  <%= form_for :student, url: student_path(@student), method: :patch do |f| %>
-    <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited
-        this student from being saved:</h2>
-      <ul>
-      <% @student.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div id="register">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="col-md-12">
+        <h1>Editing Student</h1>
+         
+        <%= form_for :student, url: student_path(@student), method: :patch do |f| %>
+          <% if @student.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@student.errors.count, "error") %> prohibited
+              this student from being saved:</h2>
+            <ul>
+            <% @student.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+          <% end %>
+          <p class = "form-group">
+            <%= f.label :firstname %><br>
+            <%= f.text_field :firstname , :class => 'form-control', :required => true %>
+          </p>
+         
+          <p class = "form-group">
+            <%= f.label :lastname %><br>
+            <%= f.text_area :lastname , :class => 'form-control' , :required => true%>
+          </p>
+         
+         <p class = "form-group">
+            <%= f.label :gender %><br>
+            <%= f.radio_button(:gender, "M") %>
+            <%= label_tag("Male") %>
+            <%= f.radio_button(:gender, "F") %>
+            <%= label_tag("Female") %>
+          </p>
+         <!-- <p class = "form-group">
+            <%= f.label :gender %><br>
+            <%= f.text_area :gender , :class => 'form-control' , :required => true %>
+          </p>
+         -->
+          
+          <p class = "form-group">
+            <%= f.label :wearsglasses, "Does your child wear glasses?" %><br>
+            <%= f.radio_button(:wearsglasses, "Y") %>
+            <%= label_tag("Yes") %>
+            <%= f.radio_button(:wearsglasses, "N") %>
+            <%= label_tag("No") %>
+          </p>
+          <p class = "form-group">
+              <%= f.label :birthdate, "Birth Date" %><br>
+              <%=date_select :student, :birthdate, { start_year: 30.years.ago.year, end_year: Date.today.year, default: Date.today, order: [:month, :day, :year]}  %>
+          </p>
+
+          <p class = "form-group">
+          <%= f.label :school_id, "Select a school" %><br>
+            <%=
+            f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
+            %>
+         
+            <p class = "form-group">
+            <%= f.label :classroomdescription, "What class is your child in? (Room #, Teacher)" %><br>
+            <%= f.text_field :classroomdescription , :class => 'form-control' , :required => true %>
+          </p>
+
+           <p class = "form-group">
+            <%= f.label :classroomtime, "Is class in the morning or the evening?" %><br>
+            <!-- <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %> -->
+
+             <%= f.radio_button(:classroomtime, "AM") %>
+            <%= label_tag("AM") %>
+            <%= f.radio_button(:classroomtime, "PM") %>
+            <%= label_tag("PM") %>
+
+          </p>
+
+          <p class = "form-group">
+            <%= f.label :parent_id, "Select a parent" %><br>
+            <%=
+            f.collection_select( :parent_id, @parents, :id, :fullname, {:prompt => true} , :required => true) 
+          %> 
+
+          <p class = "form-group">
+            <%= link_to 'Cancel', students_path, class: 'btn btn-default' %>
+            <%= f.submit :class => 'btn btn-primary' %>
+          </p>
+        <% end %>
+      </div>
     </div>
-    <% end %>
-    <p class = "form-group">
-      <%= f.label :firstname %><br>
-      <%= f.text_field :firstname , :class => 'form-control', :required => true %>
-    </p>
-   
-    <p class = "form-group">
-      <%= f.label :lastname %><br>
-      <%= f.text_area :lastname , :class => 'form-control' , :required => true%>
-    </p>
-   
-   <p class = "form-group">
-      <%= f.label :gender %><br>
-      <%= f.radio_button(:gender, "M") %>
-      <%= label_tag("Male") %>
-      <%= f.radio_button(:gender, "F") %>
-      <%= label_tag("Female") %>
-    </p>
-   <!-- <p class = "form-group">
-      <%= f.label :gender %><br>
-      <%= f.text_area :gender , :class => 'form-control' , :required => true %>
-    </p>
-   -->
-    
-    <p class = "form-group">
-      <%= f.label :wearsglasses, "Does your child wear glasses?" %><br>
-      <%= f.radio_button(:wearsglasses, "Y") %>
-      <%= label_tag("Yes") %>
-      <%= f.radio_button(:wearsglasses, "N") %>
-      <%= label_tag("No") %>
-    </p>
-    <p class = "form-group">
-        <%= f.label :birthdate, "Birth Date" %><br>
-        <%=date_select :student, :birthdate, { start_year: 30.years.ago.year, end_year: Date.today.year, default: Date.today, order: [:month, :day, :year]}  %>
-    </p>
-
-    <p class = "form-group">
-    <%= f.label :school_id, "Select a school" %><br>
-      <%=
-      f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
-      %>
-   
-      <p class = "form-group">
-      <%= f.label :classroomdescription, "What class is your child in? (Room #, Teacher)" %><br>
-      <%= f.text_field :classroomdescription , :class => 'form-control' , :required => true %>
-    </p>
-
-     <p class = "form-group">
-      <%= f.label :classroomtime, "Is class in the morning or the evening?" %><br>
-      <!-- <%= f.text_field :classroomtime , :class => 'form-control' , :required => true %> -->
-
-       <%= f.radio_button(:classroomtime, "AM") %>
-      <%= label_tag("AM") %>
-      <%= f.radio_button(:classroomtime, "PM") %>
-      <%= label_tag("PM") %>
-
-    </p>
-
-    <p class = "form-group">
-      <%= f.label :parent_id, "Select a parent" %><br>
-      <%=
-      f.collection_select( :parent_id, @parents, :id, :fullname, {:prompt => true} , :required => true) 
-    %> 
-
-    <p class = "form-group">
-      <%= link_to 'Cancel', students_path, class: 'btn btn-default' %>
-      <%= f.submit :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
-</div> 
+  </div> 
+</div>

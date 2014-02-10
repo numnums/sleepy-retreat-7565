@@ -32,16 +32,16 @@
           <%= f.label :gender %>
           <p class = "form-group">            
             <%= f.radio_button(:gender, "F") %>
-            <%= f.label :gender, "Female", :value => "F" %>
+            <%= label_tag("Female") %>
             <%= f.radio_button(:gender, "M") %>
-            <%= f.label :gender, "Male", :value => "M" %>
+            <%= label_tag("Male") %>
           </p>
           <%= f.label :wearsglasses, "Does your child wear glasses?" %><br>
           <p class = "form-group">
             <%= f.radio_button(:wearsglasses, "Y") %>
-            <%= f.label :wearsglasses, "Yes", :value => "Y" %>
+            <%= label_tag("Yes") %>
             <%= f.radio_button(:wearsglasses, "N") %>
-            <%= f.label :wearsglasses, "No", :value => "N" %>
+            <%= label_tag("No") %>
           </p>
           <p class = "form-group">
             <%= f.label :birthdate, "When is your child's birthdate?" %><br>
@@ -60,11 +60,11 @@
           <p class="form-group">
             <%= f.label :classroomtime, "When does your child attend preschool?" %><br>
             <%= f.radio_button(:classroomtime, "AM") %>
-            <%= f.label :classroomtime, "Morning", :value => "AM" %>
+            <%= label_tag("Morning") %>
             <%= f.radio_button(:classroomtime, "PM") %>
-            <%= f.label :classroomtime, "Afternoon", :value => "PM"  %>
+            <%= label_tag("Afternoon") %>
             <%= f.radio_button(:classroomtime, "DAY") %>
-            <%= f.label :classroomtime, "All Day", :value => "Cay"  %>
+            <%= label_tag("All Day") %>
           </p>
           <label> Please choose among the following options:</label> <br/>
           <p>
