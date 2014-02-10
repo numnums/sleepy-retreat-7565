@@ -89,7 +89,7 @@ feature "admin pages" , :js => true do
 			:email => "uvu@gmail.com"
 		}
 
-		# add new school
+		# add new parent
 		fill_in "parent_firstname", :with => parent[:firstname]
 		fill_in "parent_lastname", :with => parent[:lastname]
 		fill_in "parent_email", :with => parent[:email]
@@ -102,6 +102,24 @@ feature "admin pages" , :js => true do
 		find(:xpath, "//*[@id='firstname']").should have_content(parent[:firstname])
 		find(:xpath, "//*[@id='lastname']").should have_content(parent[:lastname])
 		find(:xpath, "//*[@id='email']").should have_content(parent[:email])
+
+		# edit new parent
+		click_on "edit_parent"
+
+		parent_updated_properties = {
+			:firstname => "Vong",
+			:lastname => "Nguyen",
+			:email => "vnguyen@gmail.com"
+		}
+
+		fill_in "parent_firstname", :with => parent_updated_properties[:firstname]
+		fill_in "parent_lastname", :with => parent_updated_properties[:lastname]
+		fill_in "parent_email", :with => parent_updated_properties[:email]
+		click_on "save_parent"		
+
+		# verify the old parent name doesn't show in index page
+		expect(page).to have_text(parent_updated_properties[:firstname])
+		expect(page).not_to have_text(parent[:firstname])
 
 	end	
 

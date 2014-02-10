@@ -26,9 +26,9 @@
 		</div> <!-- modal-body -->
 		<div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<%= link_to 'Edit Parent', edit_parent_path(@parent), class: 'btn btn-primary' %>
+			<%= link_to 'Edit Parent', edit_parent_path(@parent), class: 'btn btn-primary' , id: "edit_parent" %>
 			<%= link_to 'Delete', parent_path(@parent), class: 'btn btn-danger',
-			                    method: :delete, data: { confirm: 'Are you sure?' } %>
+			                    method: :delete, data: { confirm: 'Are you sure?' } , id: "delete_parent" %>
 		</div> <!-- modal-footer -->
     </div>
 </div>    
