@@ -25,7 +25,7 @@ feature "admin pages" , :js => true do
 	  	@basicauthpassword = "preventblindness!!" 
 	end
 
-	scenario "add new school" do
+	scenario "add new school, edit and delete" do
 		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/schools")
 		page.visit("/schools")
 
@@ -76,6 +76,33 @@ feature "admin pages" , :js => true do
 
 		# verify delete
 		expect(page).not_to have_text(school_updated_properties[:name])
-
 	end
+
+	scenario "add new parent, edit and delete" do
+		page.visit("http://#{@basicauthname}:#{@basicauthpassword}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}/parents")
+		page.visit("/parents")
+		click_on "new_parent"
+
+		parent = {
+			:firstname => "Uong",
+			:lastname => "Vu",
+			:email => "uvu@gmail.com"
+		}
+
+		# add new school
+		fill_in "parent_firstname", :with => parent[:firstname]
+		fill_in "parent_lastname", :with => parent[:lastname]
+		fill_in "parent_email", :with => parent[:email]
+		click_on "save_parent"		
+
+		expect(page).to have_text(parent[:firstname])
+
+		page.visit("/parents")		
+		click_on parent[:firstname]
+		find(:xpath, "//*[@id='firstname']").should have_content(parent[:firstname])
+		find(:xpath, "//*[@id='lastname']").should have_content(parent[:lastname])
+		find(:xpath, "//*[@id='email']").should have_content(parent[:email])
+
+	end	
+
 end	
