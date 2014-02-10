@@ -28,9 +28,9 @@
         </div>
       </div>
       <div class="col-md-4">
-        <%= mail_to "followup@seewelltolearn.org&subject=I'd like to learn more about See Well to Learn", class: 'contact-button-school' do %>
-          Contact us<i class="fa fa-arrow-right"></i></br>
-          followup@seewelltolearn.org
+        <%= mail_to "followup@seewelltolearn.org", subject: "I'd like to learn more about See Well to Learn", class: 'contact-button-school' do %>
+          Contact us<i class="fa fa-envelope-o"></i></br>
+          <span class="contact-addy">followup@seewelltolearn.org</span>
         <% end %>
         <div class="side-module sm-schools">
           <h2>How to make vision screening a success</h2>

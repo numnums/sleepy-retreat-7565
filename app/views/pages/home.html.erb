@@ -37,36 +37,34 @@
         <div class="col-md-12">
           <h3>Screen early to ensure children have their best vision for a lifetime of learning</h3>
         </div>
-        <div class="col-md-6"> 
-          <span>For</span>
-          <h4>private<br/>preschools,</h4>
+        <div class="col-md-6 school-type"> 
+          <span class="for">For</span>
+          <h4>private preschools,</h4>
           <p>
              we bring high-tech, thorough vision screening and well-trained, professional screeners to school sites. We send children home with the results of their screenings that very same day, along with any recommendations on follow-up care, so parents can take confident action.
           </p>
+          <%= link_to parents_static_path, class: "learnmore-link" do %>
+            Learn more<i class="fa fa-info-circle"></i> 
+          <% end %>
 
           <%= link_to register_student_path, class: "benefit-button" do %>
             Register your child<i class="fa fa-arrow-right"></i>
           <% end %>
 
-          <%= link_to parents_static_path, class: "learnmore-link" do %>
-            Learn more<i class="fa fa-info-circle"></i> 
-          <% end %>
-
         </div>
-        <div class="col-md-6">
-          <span>For</span>
-          <h4>Head Starts &amp; <br/>public preschools,</h4>
+        <div class="col-md-6 school-type">
+          <span class="for">For</span>
+          <h4>Head Starts &amp; public preschools,</h4>
           <p>
             we offer Vision 360⁰: the same high-tech, thorough vision screening and well-trained screeners, plus follow-up eye exams with professional optometrists and prescription glasses through our Eye Bus.
             We are committed to making sure all of Northern California’s children can see well. 
           </p>
-
-          <%= mail_to "followup@seewelltolearn.org", class: 'benefit-button' do %>
-          Contact us<i class="fa fa-arrow-right"></i>
-          <% end %>
-
           <%= link_to vision360_path, class: "learnmore-link" do %>
             Learn more<i class="fa fa-info-circle"></i> 
+          <% end %>
+
+          <%= mail_to "followup@seewelltolearn.org", subject: "I'd like to learn more about See Well to Learn", class: 'benefit-button' do %>
+          Contact us<i class="fa fa-arrow-right"></i>
           <% end %>
 
         </div>

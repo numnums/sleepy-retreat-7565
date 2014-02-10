@@ -17,7 +17,9 @@
         <p>We feel it’s important to help you, the parent, navigate vision healthcare and get the appropriate treatment your child needs.
         <br/>
         <br/>
-        Contact <strong>April Nakayoshi, MPH, CHES at 415-321-7503</strong> or at <strong><a href="mailto:followup@seewelltolearn.org&subject=inquiry from the See Well to Learn FAQ page">followup@seewelltolearn.org</a></strong> for professional assistance today.</p>
+        Contact <strong>April Nakayoshi, MPH, CHES at 415-321-7503</strong> or at <strong> <%= mail_to "followup@seewelltolearn.org", subject: "I'd like to learn more about See Well to Learn" do %>
+          followup@seewelltolearn.org</i>
+          <% end %></strong> for professional assistance today.</p>
       </div>
     </div>
   </div>

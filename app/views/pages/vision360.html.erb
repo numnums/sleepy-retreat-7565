@@ -40,7 +40,7 @@
               <li><a href="#partners">Our Partners</a></li>
               <li><a href="#getinvolved">Get Involved</a></li>
               <li>
-                <%= mail_to "followup@seewelltolearn.org&subject=See Well to Learn" do %>
+                <%= mail_to "followup@seewelltolearn.org" ,subject: "See Well to Learn" do %>
                   Contact us
                 <% end %>
               </li>
@@ -98,7 +98,7 @@
               <div class="test-quote">We wanted to share the feedback from the family advocates regarding SWTL services.  Thanks to the SWTL program we have better involvement of the parents regarding follow-up. Your SWTL screener was awesome working with the staff, parents &amp; children.</div>
               <span class="byline">-- Jennifer Briscoe, MA Health Services Coordinator at Oakland Head Start, Oakland</span>
             </div>
-<!--             <div class="testimonial">
+<!--        <div class="testimonial">
               <div class="test-quote">When my daughter was a toddler, she refused to leave my side. She clung to my legs. I blamed myself for her behavior. It turned out she had a vision problem. Once we got her glasses, she was all over the monkey bars and so friendly with other children.</div>
               <span class="byline">-- Thankful Parent</span>
             </div> -->
@@ -132,7 +132,9 @@
               <br/>
               (415) 567‐7500
               <br/>
-              <a href="mailto:wleung@eyeinfo.org">wleung@eyeinfo.org</a>
+              <%= mail_to "mailto:wleung@eyeinfo.org" do %>
+                wleung@eyeinfo.org
+              <% end %>
             </div>
           </div>
         </div>
@@ -176,13 +178,17 @@
             <br/>
             <a href="tel:+14155677500">(415)567-7500</a>
             <br/>
-            <a href="mailto:wleung@eyeinfo.org&subject=See Well to Learn Advisory Council">wleung@eyeinfo.org</a>
+            <%= mail_to "wleung@eyeinfo.org" ,subject: "See Well to Learn Advisory Council" do %>
+              wleung@eyeinfo.org
+            <% end %>
             </p>
           </div>
           <div class="peeps">
             <p>Erich P. Horn, MD, Board Chairperson
             <br/>
-            <a href="mailto:erichhorn@sbcglobal.net&subject=See Well to Learn Advisory Council">erichhorn@sbcglobal.net</a>
+            <%= mail_to "erichhorn@sbcglobal.net" ,subject: "See Well to Learn Advisory Council" do %>
+              erichhorn@sbcglobal.net
+            <% end %>
             </p>
           </div>
         </div>
