@@ -121,6 +121,18 @@ feature "admin pages" , :js => true do
 		expect(page).to have_text(parent_updated_properties[:firstname])
 		expect(page).not_to have_text(parent[:firstname])
 
+		# verify new properties of edited parent
+		click_on parent_updated_properties[:firstname]		
+		find(:xpath, "//*[@id='firstname']").should have_content(parent_updated_properties[:firstname])
+		find(:xpath, "//*[@id='lastname']").should have_content(parent_updated_properties[:lastname])
+		find(:xpath, "//*[@id='email']").should have_content(parent_updated_properties[:email])
+
+		# test delete
+		click_on "delete_parent"		
+		page.driver.browser.switch_to.alert.accept
+
+		# verify delete
+		expect(page).not_to have_text(parent_updated_properties[:firstname])
 	end	
 
 end	
