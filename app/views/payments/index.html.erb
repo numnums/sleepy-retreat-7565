@@ -15,7 +15,7 @@
           <tr>    
             <td><%= payment.created_at %></td>
             <td><%= payment.parent.fullname if payment.parent %></td>
-            <td><%= payment.student.fullname %></td>
+            <td><%= payment.student.fullname if payment.student %></td>
           </tr>
         <% end %>
         </table>
