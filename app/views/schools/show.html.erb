@@ -4,7 +4,7 @@
           <h4 class="modal-title" id="myModalLabel"><%= @school.name %></h4>          
         </div>
         <div class="modal-body">
-			<p>
+			<p id="school_description">
 			  <strong>Description:</strong>
 			  <br/>
 			  <%= @school.description %>
@@ -12,9 +12,9 @@
 		</div> <!-- modal-body -->
 		<div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			<%= link_to 'Edit School', edit_school_path(@school), class: 'btn btn-primary' %>
+			<%= link_to 'Edit School', edit_school_path(@school), class: 'btn btn-primary' , id: "edit_school" %>
 			<%= link_to 'Delete', school_path(@school), class: 'btn btn-danger',
-			                    method: :delete, data: { confirm: 'Are you sure?' } %>
+			                    method: :delete, data: { confirm: 'Are you sure?' } , id: "delete_school"%>
 		</div> <!-- modal-footer -->
     </div>
 </div>    

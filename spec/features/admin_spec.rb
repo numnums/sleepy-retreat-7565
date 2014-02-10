@@ -31,7 +31,51 @@ feature "admin pages" , :js => true do
 
 		click_on "new_school" # id of button
 
+		school = {
+			:name => "Marie Curie",
+			:description => "dan's elementary school"
+		}
 
+		# add new school
+		fill_in "school_name", :with => school[:name]
+		fill_in "school_description", :with => school[:description]
+		click_on "save_school"		
+
+		expect(page).to have_text(school[:name])
+
+		# verify new school
+		page.visit("/schools")		
+		click_on school[:name]
+		find(:xpath, "//*[@id='myModalLabel']").should have_content(school[:name])
+		find(:xpath, "//*[@id='school_description']").should have_content(school[:description])
+
+		# edit new school
+		click_on "edit_school"
+
+		school_updated_properties = {
+			:name => "Stanley Jr. High",
+			:description => "dan's junior high"
+		}
+
+		fill_in "school_name", :with => school_updated_properties[:name]
+		fill_in "school_description", :with => school_updated_properties[:description]
+		click_on "save_school"
+
+		# verify the old school name doesn't show in index page
+		expect(page).to have_text(school_updated_properties[:name])
+		expect(page).not_to have_text(school[:name])
+
+		# verify new properties of edited school
+		click_on school_updated_properties[:name]
+		find(:xpath, "//*[@id='myModalLabel']").should have_content(school_updated_properties[:name])
+		find(:xpath, "//*[@id='school_description']").should have_content(school_updated_properties[:description])
+
+		# test delete
+		click_on "delete_school"		
+		page.driver.browser.switch_to.alert.accept
+
+		# verify delete
+		expect(page).not_to have_text(school_updated_properties[:name])
 
 	end
 end	
