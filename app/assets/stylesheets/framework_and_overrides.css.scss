@@ -320,6 +320,16 @@ header {
       margin-bottom: 0px;
     }
   }
+  .disclaimer {
+    font-size: 13px;
+    color: hsla(0, 0.0000%, 40.3137%, 1.0000);
+    padding: 15px;
+    background: hsla(0, 0.0000%, 94.9516%, 1.0000);
+    .emphasis {
+      font-weight: 700;
+      color: hsla(356, 67.8961%, 44.6654%, 1.0000);
+    }
+  }
   .pay-button {
     display: block;
     margin-top: 10px;
