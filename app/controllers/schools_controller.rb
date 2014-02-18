@@ -14,8 +14,8 @@ class SchoolsController < ApplicationController
 		redirect_to :action => 'index'
 	end
 
-	def index
-	  @schools = School.all
+	def index	  
+	  @schools = School.order("lower(name)")
 	end
 
 	def show

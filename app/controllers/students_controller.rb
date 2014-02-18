@@ -6,8 +6,8 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
-	def new
-      @schools = School.all
+	def new      
+      @schools = School.order("lower(name)")
       @parents = Parent.all
       @student = Student.new
       if session[:new_parent_id]
@@ -19,9 +19,9 @@ class StudentsController < ApplicationController
 
   #shows edit form
   def edit
-    @student = Student.find(params[:id])
-   @schools = School.all
-   @parents = Parent.all
+    @student = Student.find(params[:id])   
+    @schools = School.order("lower(name)")
+    @parents = Parent.all
 
   end
 

@@ -9,7 +9,7 @@ class ChargesController < ApplicationController
 	end
 
 	def registerstudent
-		@schools = School.all
+		@schools = School.order("lower(name)")		
       	@parents = Parent.all
       	@student = Student.new
       	if session[:new_parent_id]
