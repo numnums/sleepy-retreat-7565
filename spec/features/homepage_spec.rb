@@ -171,7 +171,7 @@ feature "home page" , :js => true do
 		find(:xpath, "//*[@id='parent_full_name']").should have_content(parent[:lastname]) 
 
 		#verify parent creation    
-		click_on "Back to students"
+		click_on "Close"
 		page.visit("/parents")
 		# click_on "manage parents"
 		click_on parent[:firstname]
@@ -261,7 +261,7 @@ feature "home page" , :js => true do
 		find(:xpath, "//*[@id='parent_full_name']").should have_content(parent[:lastname]) 
 
 		#verify parent creation    
-		click_on "Back to students"
+		click_on "Close"
 		page.visit("/parents")
 		# click_on "manage parents"
 		click_on parent[:firstname]

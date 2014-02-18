@@ -28,7 +28,7 @@
           <p>
               <strong>Birth date</strong>
               <%= @student.birthdate %>
-
+          </p>
           <p id="schoolname">
             <strong>School:</strong>
             <br/>
@@ -38,12 +38,12 @@
           <p id="classroomdescription">
             <strong>Classroom Description:</strong>
             <%= @student.classroomdescription %>
-          <p>
+          </p>
 
           <p id="classroomtime">
             <strong>Classroom Time:</strong>
             <%= @student.classroomtime %>
-          <p>
+          </p>
 
           <p id="parent_full_name">
             <strong>Parent:</strong>
@@ -52,8 +52,8 @@
           </p>
         </div> <!-- modal-body -->
         <div class="modal-footer">
-          <%= link_to 'Back to students', students_path, class: 'btn btn-default' %>
-
+          
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <%= link_to 'Edit student', edit_student_path(@student), class: 'btn btn-primary' , id: "edit_student"  %>
 
           <%= link_to 'Delete', student_path(@student), class: 'btn btn-danger',
