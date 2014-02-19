@@ -21,8 +21,8 @@
 
       <% @students.each do |student| %>
         data.addRow(['<%= link_to student.firstname, student_path(student), data: { toggle: "modal", target: "#modal" , remote: student_path(student)} %>' , '<%= student.lastname %>', '<%= student.gender %>', '<%= student.wearsglasses %>',
-          '<%= student.birthdate %>', '<%= student.school.name if student.school %>', '<%= student.classroomdescription if student.classroomdescription %>',
-          '<%= student.classroomtime if student.classroomtime %>', '<%= student.parent.firstname if student.parent %>', '<%= student.parent.lastname if student.parent %>', '<%= student.created_at %>']);
+          '<%= student.birthdate.strftime("%m-%d-%Y") %>', '<%= student.school.name if student.school %>', '<%= student.classroomdescription if student.classroomdescription %>',
+          '<%= student.classroomtime if student.classroomtime %>', '<%= student.parent.firstname if student.parent %>', '<%= student.parent.lastname if student.parent %>', '<%= student.created_at.strftime("%m-%d-%Y") %>']);
       <% end %>      
       var table = new google.visualization.Table(document.getElementById('table_div'));
       table.draw(data, {showRowNumber: false, allowHtml: true});
