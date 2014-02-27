@@ -4,23 +4,44 @@
       <div class="col-md-9">
         <h1 class="">Please provide your contact information</h1>
         <div class="">    
-          We will use this information to follow up with you, process your payment information and communicate with you if you opt in below.
+          We will use this information to follow up with you and process your payment information.</br>We will also keep in touch with you if you opt in below.
           <%= form_for :parent, url: parents_path do |f| %>
             <p class = "form-group">
-              <%= f.label :firstname,  "Your First Name"  %><br>
+              <%= f.label :firstname,  "First Name"  %><br>
               <%= f.text_field :firstname, :class => 'form-control' , :required => true   %>
             </p>           
             <p class = "form-group">
-              <%= f.label :lastname, "Your Last Name" %><br>
+              <%= f.label :lastname, "Last Name" %><br>
               <%= f.text_field :lastname, :class => 'form-control'  ,:required => true %>
             </p>
             <p class = "form-group">
-              <%= f.label :email, "Your email address" %><br>
+              <%= f.label :email, "Email Address" %><br>
               <%= f.text_field :email, :class => 'form-control', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' ,:required => true %>
+            </p>
+             <p class = "form-group">
+              <%= f.label :phone, "Phone Number" %><br>
+              <%= f.text_field :phone, :class => 'form-control'  ,:required => true %>
+            </p>
+            <p class = "form-group">
+              <%= f.label :address, "Address" %><br>
+              <%= f.text_field :address, :class => 'form-control'  ,:required => true %>
+            </p>
+            <p class = "form-group">
+              <%= f.label :city, "City" %><br>
+              <%= f.text_field :city, :class => 'form-control'  ,:required => true %>
+            </p>
+            <p class = "form-group">
+              <%= f.label :state, "State" %><br>
+              <%= f.text_field :state, :class => 'form-control'  ,:required => true %>
+            </p>
+            <p class = "form-group">
+              <%= f.label :zip, "Zip Code" %><br>
+              <%= f.text_field :zip, :class => 'form-control'  ,:required => true %>
             </p>
             <p class = "form-group">
               <%= f.check_box :acceptsmarketing  %> I am interested in learning more about the work Prevent Blindness does to ensure all preschool-aged children in Northern California are prepared to succeed in school.
             </p>
+
               <%= f.submit "Next", :class => 'form-button', :id => 'next' %>            
           <% end %>
         </div>

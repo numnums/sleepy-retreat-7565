@@ -12,6 +12,11 @@
             <th>Children</th>
             <th>Schools</th>
             <th>Opt in</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
           </tr>
          
         <% @parents.each do |parent| %>
@@ -34,6 +39,11 @@
               </ul>
             </td>
 			<td><%= parent.acceptsmarketing %></td>
+			<td><%= parent.address %></td>
+			<td><%= parent.city %></td>
+			<td><%= parent.state %></td>
+			<td><%= parent.zip %></td>
+			<td><%= parent.phone %></td>
           </tr>
         <% end %>
         </table>
