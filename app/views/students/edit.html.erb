@@ -72,6 +72,19 @@
             <%= label_tag("PM") %>
 
           </p>
+         <p class="form-group">
+            <%= f.label :classroomday, "On which days of the week does your child attend preschool?" %><br>
+			<%= f.check_box :classroomdaymonday, {}, "x","" %>
+            <%= label_tag("Monday") %>
+			<%= f.check_box :classroomdaytuesday, {}, "x","" %>
+            <%= label_tag("Tuesday") %>
+			<%= f.check_box :classroomdaywednesday, {}, "x","" %>
+            <%= label_tag("Wednesday") %>
+			<%= f.check_box :classroomdaythursday, {}, "x","" %>
+            <%= label_tag("Thursday") %>
+			<%= f.check_box :classroomdayfriday, {}, "x","" %>
+            <%= label_tag("Friday") %>
+		</p>	
 
           <p class = "form-group">
             <%= f.label :parent_id, "Select a parent" %><br>
