@@ -15,7 +15,11 @@
       data.addColumn('string', 'School');
       data.addColumn('string', 'Room Number');
       data.addColumn('string', 'Class Time');
-      data.addColumn('string', 'Class Day');
+      data.addColumn('string', 'M');
+      data.addColumn('string', 'Tu');
+      data.addColumn('string', 'W');
+      data.addColumn('string', 'Th');
+      data.addColumn('string', 'F');
       data.addColumn('string', 'Parent First Name');
       data.addColumn('string', 'Parent Last Name');
       data.addColumn('string', 'Registration Date');
@@ -23,7 +27,7 @@
       <% @students.each do |student| %>
         data.addRow(['<%= link_to student.firstname, student_path(student), data: { toggle: "modal", target: "#modal" , remote: student_path(student)} %>' , '<%= student.lastname %>', '<%= student.gender %>', '<%= student.wearsglasses %>',
           '<%= student.birthdate.strftime("%m-%d-%Y") %>', '<%= student.school.name if student.school %>', '<%= student.classroomdescription if student.classroomdescription %>',
-          '<%= student.classroomtime if student.classroomtime %>', '<%= student.classroomday if student.classroomday %>','<%= student.parent.firstname if student.parent %>', '<%= student.parent.lastname if student.parent %>', '<%= student.created_at.strftime("%m-%d-%Y") %>']);
+          '<%= student.classroomtime if student.classroomtime %>', '<%= student.classroomdaymonday if student.classroomdaymonday %>','<%= student.classroomdaytuesday if student.classroomdaytuesday %>','<%= student.classroomdaywednesday if student.classroomdaywednesday %>','<%= student.classroomdaythursday if student.classroomdaythursday %>','<%= student.classroomdayfriday if student.classroomdayfriday %>','<%= student.parent.firstname if student.parent %>', '<%= student.parent.lastname if student.parent %>', '<%= student.created_at.strftime("%m-%d-%Y") %>']);
       <% end %>      
       var table = new google.visualization.Table(document.getElementById('table_div'));
       table.draw(data, {showRowNumber: false, allowHtml: true});
