@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140227022247) do
+ActiveRecord::Schema.define(version: 20140301020848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,11 @@ ActiveRecord::Schema.define(version: 20140227022247) do
     t.string   "wearsglasses"
     t.string   "classroomdescription"
     t.string   "classroomtime"
-    t.string   "classroomday"
+    t.string   "classroomdaymonday"
+    t.string   "classroomdaytuesday"
+    t.string   "classroomdaywednesday"
+    t.string   "classroomdaythursday"
+    t.string   "classroomdayfriday"
   end
 
   add_index "students", ["school_id"], name: "index_students_on_school_id", using: :btree
