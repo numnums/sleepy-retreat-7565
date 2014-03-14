@@ -84,15 +84,25 @@ feature "admin pages" , :js => true do
 		click_on "new_parent"
 
 		parent = {
-			:firstname => "Uong",
-			:lastname => "Vu",
-			:email => "uvu@gmail.com"
+		  :firstname => "Mr.",
+		  :lastname => "Jones",
+		  :email => "mrjones@gmail.com", 
+		  :phonenumber => "1-415-111-2222", 
+		  :address => "7110 Rock Valley Court",
+		  :city => "San Diego", 
+		  :state => "CA",
+		  :zip => "92122"
 		}
-
-		# add new parent
+	
 		fill_in "parent_firstname", :with => parent[:firstname]
 		fill_in "parent_lastname", :with => parent[:lastname]
 		fill_in "parent_email", :with => parent[:email]
+		fill_in "parent_phone", :with => parent[:phonenumber]
+		fill_in "parent_address", :with => parent[:address]
+		fill_in "parent_city", :with => parent[:city]
+		fill_in "parent_state", :with => parent[:state]
+		fill_in "parent_zip", :with => parent[:zip]	
+
 		click_on "save_parent"		
 
 		expect(page).to have_text(parent[:firstname])
@@ -102,6 +112,11 @@ feature "admin pages" , :js => true do
 		find(:xpath, "//*[@id='firstname']").should have_content(parent[:firstname])
 		find(:xpath, "//*[@id='lastname']").should have_content(parent[:lastname])
 		find(:xpath, "//*[@id='email']").should have_content(parent[:email])
+		find(:xpath, "//*[@id='phone']").should have_content(parent[:phonenumber])
+		find(:xpath, "//*[@id='address']").should have_content(parent[:address])
+		find(:xpath, "//*[@id='city']").should have_content(parent[:city])
+		find(:xpath, "//*[@id='state']").should have_content(parent[:state])
+		find(:xpath, "//*[@id='zip']").should have_content(parent[:zip])
 
 		# edit new parent
 		click_on "edit_parent"
@@ -141,15 +156,25 @@ feature "admin pages" , :js => true do
 		click_on "new_parent"
 
 		parent = {
-			:firstname => "Uong",
-			:lastname => "Vu",
-			:email => "uvu@gmail.com"
+		  :firstname => "Mr.",
+		  :lastname => "Jones",
+		  :email => "mrjones@gmail.com", 
+		  :phonenumber => "1-415-111-2222", 
+		  :address => "7110 Rock Valley Court",
+		  :city => "San Diego", 
+		  :state => "CA",
+		  :zip => "92122"
 		}
-
-		# add new parent
+	
 		fill_in "parent_firstname", :with => parent[:firstname]
 		fill_in "parent_lastname", :with => parent[:lastname]
 		fill_in "parent_email", :with => parent[:email]
+		fill_in "parent_phone", :with => parent[:phonenumber]
+		fill_in "parent_address", :with => parent[:address]
+		fill_in "parent_city", :with => parent[:city]
+		fill_in "parent_state", :with => parent[:state]
+		fill_in "parent_zip", :with => parent[:zip]	
+
 		click_on "save_parent"		
 
 		expect(page).to have_text(parent[:firstname])
@@ -159,6 +184,11 @@ feature "admin pages" , :js => true do
 		find(:xpath, "//*[@id='firstname']").should have_content(parent[:firstname])
 		find(:xpath, "//*[@id='lastname']").should have_content(parent[:lastname])
 		find(:xpath, "//*[@id='email']").should have_content(parent[:email])
+		find(:xpath, "//*[@id='phone']").should have_content(parent[:phonenumber])
+		find(:xpath, "//*[@id='address']").should have_content(parent[:address])
+		find(:xpath, "//*[@id='city']").should have_content(parent[:city])
+		find(:xpath, "//*[@id='state']").should have_content(parent[:state])
+		find(:xpath, "//*[@id='zip']").should have_content(parent[:zip])
 
 		## ADD: new student
 		page.visit("/students")
