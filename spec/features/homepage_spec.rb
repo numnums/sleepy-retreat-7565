@@ -144,12 +144,22 @@ feature "home page" , :js => true do
 		parent = {
 		  :firstname => "Mr.",
 		  :lastname => "Jones",
-		  :email => "mrjones@gmail.com"
+		  :email => "mrjones@gmail.com", 
+		  :phonenumber => "1-415-111-2222", 
+		  :parent_address => "7110 Rock Valley Court",
+		  :parent_city => "San Diego", 
+		  :parent_state => "CA",
+		  :parent_zip => "92122"
 		}
-
+	
 		fill_in "parent_firstname", :with => parent[:firstname]
 		fill_in "parent_lastname", :with => parent[:lastname]
 		fill_in "parent_email", :with => parent[:email]
+		fill_in "parent_phone", :with => parent[:phonenumber]
+		fill_in "parent_address", :with => parent[:parent_address]
+		fill_in "parent_city", :with => parent[:parent_city]
+		fill_in "parent_state", :with => parent[:parent_state]
+		fill_in "parent_zip", :with => parent[:parent_zip]
 
 		click_on "next"
 
@@ -218,12 +228,22 @@ feature "home page" , :js => true do
 		parent = {
 		  :firstname => "Mr.",
 		  :lastname => "Jones",
-		  :email => "mrjones@gmail.com"
+		  :email => "mrjones@gmail.com", 
+		  :phonenumber => "1-415-111-2222", 
+		  :parent_address => "7110 Rock Valley Court",
+		  :parent_city => "San Diego", 
+		  :parent_state => "CA",
+		  :parent_zip => "92122"
 		}
-
+	
 		fill_in "parent_firstname", :with => parent[:firstname]
 		fill_in "parent_lastname", :with => parent[:lastname]
 		fill_in "parent_email", :with => parent[:email]
+		fill_in "parent_phone", :with => parent[:phonenumber]
+		fill_in "parent_address", :with => parent[:parent_address]
+		fill_in "parent_city", :with => parent[:parent_city]
+		fill_in "parent_state", :with => parent[:parent_state]
+		fill_in "parent_zip", :with => parent[:parent_zip]		
 
 		click_on "next"
 
