@@ -124,12 +124,22 @@ feature "admin pages" , :js => true do
 		parent_updated_properties = {
 			:firstname => "Vong",
 			:lastname => "Nguyen",
-			:email => "vnguyen@gmail.com"
+			:email => "vnguyen@gmail.com",
+			:phonenumber => "1-915-222-3333", 
+			:address => "2161 Allston Way",
+			:city => "Berekely", 
+			:state => "NV",
+			:zip => "94545"			
 		}
 
 		fill_in "parent_firstname", :with => parent_updated_properties[:firstname]
 		fill_in "parent_lastname", :with => parent_updated_properties[:lastname]
 		fill_in "parent_email", :with => parent_updated_properties[:email]
+		fill_in "parent_phone", :with => parent_updated_properties[:phonenumber]
+		fill_in "parent_address", :with => parent_updated_properties[:address]
+		fill_in "parent_city", :with => parent_updated_properties[:city]
+		fill_in "parent_state", :with => parent_updated_properties[:state]
+		fill_in "parent_zip", :with => parent_updated_properties[:zip]			
 		click_on "save_parent"		
 
 		# verify the old parent name doesn't show in index page
@@ -141,6 +151,11 @@ feature "admin pages" , :js => true do
 		find(:xpath, "//*[@id='firstname']").should have_content(parent_updated_properties[:firstname])
 		find(:xpath, "//*[@id='lastname']").should have_content(parent_updated_properties[:lastname])
 		find(:xpath, "//*[@id='email']").should have_content(parent_updated_properties[:email])
+		find(:xpath, "//*[@id='phone']").should have_content(parent_updated_properties[:phonenumber])
+		find(:xpath, "//*[@id='address']").should have_content(parent_updated_properties[:address])
+		find(:xpath, "//*[@id='city']").should have_content(parent_updated_properties[:city])
+		find(:xpath, "//*[@id='state']").should have_content(parent_updated_properties[:state])
+		find(:xpath, "//*[@id='zip']").should have_content(parent_updated_properties[:zip])
 
 		# test delete
 		click_on "delete_parent"		
