@@ -224,6 +224,10 @@ feature "admin pages" , :js => true do
 		select(@school.name, :from => 'student[school_id]')
 		fill_in "student_classroomdescription", :with => student[:classroomdescription]
 		page.choose("student_classroomtime_am")		
+		
+		page.check("student_classroomdaymonday")
+		page.check("student_classroomdaywednesday")
+		page.check("student_classroomdayfriday")		
 		select(parent[:firstname], :from => 'student[parent_id]')
 		click_on "save_student"
 
@@ -240,6 +244,12 @@ feature "admin pages" , :js => true do
 		find(:xpath, "//*[@id='classroomtime']").should have_content("AM")
 		find(:xpath, "//*[@id='parent_full_name']").should have_content(parent[:firstname])
 		find(:xpath, "//*[@id='wearsglasses']").should have_content("N")
+		find(:xpath, "//*[@id='classroomday_monday']").should have_content("x")
+		find(:xpath, "//*[@id='classroomday_tuesday']").should_not have_content("x")
+		find(:xpath, "//*[@id='classroomday_wednesday']").should have_content("x")
+		find(:xpath, "//*[@id='classroomday_thursday']").should_not have_content("x")
+		find(:xpath, "//*[@id='classroomday_friday']").should have_content("x")
+		
 		# edit new student
 		click_on "edit_student"
 
@@ -257,6 +267,12 @@ feature "admin pages" , :js => true do
 		page.choose("student_wearsglasses_y")
 		fill_in "student_classroomdescription", :with => student_updated_properties[:classroomdescription]
 		page.choose("student_classroomtime_pm")
+		page.uncheck("student_classroomdaymonday")
+		page.uncheck("student_classroomdaywednesday")
+		page.uncheck("student_classroomdayfriday")		
+		page.check("student_classroomdaytuesday")
+		page.check("student_classroomdaythursday")		
+
 		click_on "save_student"
 
 		# verify the old student name doesn't show in index page
@@ -274,6 +290,12 @@ feature "admin pages" , :js => true do
 		find(:xpath, "//*[@id='parent_full_name']").should have_content(parent[:firstname])
 		find(:xpath, "//*[@id='wearsglasses']").should have_content("Y")
 
+		find(:xpath, "//*[@id='classroomday_monday']").should_not have_content("x")
+		find(:xpath, "//*[@id='classroomday_tuesday']").should have_content("x")
+		find(:xpath, "//*[@id='classroomday_wednesday']").should_not have_content("x")
+		find(:xpath, "//*[@id='classroomday_thursday']").should have_content("x")
+		find(:xpath, "//*[@id='classroomday_friday']").should_not have_content("x")
+		
 		# test delete
 		click_on "delete_student"		
 		page.driver.browser.switch_to.alert.accept
