@@ -1,12 +1,14 @@
 <% content_for :head do -%>
   <script type='text/javascript' src='https://www.google.com/jsapi'></script>
   <script type='text/javascript'>
-    google.load('visualization', '1', {packages:['table']});
+    google.load('visualization', '1', {packages:['table', 'corechart']});
     // google.setOnLoadCallback(drawTable);
     
     
+    var view;
     function drawTable() {
       var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Link');      
       data.addColumn('string', 'First Name');
       data.addColumn('string', 'Last Name');
       data.addColumn('string', 'Gender');
@@ -25,12 +27,21 @@
       data.addColumn('string', 'Registration Date');
 
       <% @students.each do |student| %>
-        data.addRow(['<%= link_to student.firstname, student_path(student), data: { toggle: "modal", target: "#modal" , remote: student_path(student)} %>' , '<%= student.lastname %>', '<%= student.gender %>', '<%= student.wearsglasses %>',
+        data.addRow([
+          '<%= link_to student.firstname, student_path(student), data: { toggle: "modal", target: "#modal" , remote: student_path(student)} %>' , 
+          '<%= student.firstname %>',          
+          '<%= student.lastname %>', '<%= student.gender %>', '<%= student.wearsglasses %>',
           '<%= student.birthdate.strftime("%m-%d-%Y") if student.birthdate %>', '<%= student.school.name if student.school %>', '<%= student.classroomdescription if student.classroomdescription %>',
           '<%= student.classroomtime if student.classroomtime %>', '<%= student.classroomdaymonday if student.classroomdaymonday %>','<%= student.classroomdaytuesday if student.classroomdaytuesday %>','<%= student.classroomdaywednesday if student.classroomdaywednesday %>','<%= student.classroomdaythursday if student.classroomdaythursday %>','<%= student.classroomdayfriday if student.classroomdayfriday %>','<%= student.parent.firstname if student.parent %>', '<%= student.parent.lastname if student.parent %>', '<%= student.created_at.strftime("%m-%d-%Y") %>']);
       <% end %>      
+      
+      
+      view = new google.visualization.DataView(data);
+      view.setColumns([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]); // <-- exclude column 1
+      // view.draw(data, {showRowNumber: false, allowHtml: true});
+      // drawToolbar(downloadCSV(dataTableToCSV(data)));
       var table = new google.visualization.Table(document.getElementById('table_div'));
-      table.draw(data, {showRowNumber: false, allowHtml: true});
+      table.draw(view, {showRowNumber: false, allowHtml: true});
 
       google.visualization.events.addListener(table, 'select', selectHandler);
 
@@ -43,7 +54,73 @@
           $("#modal").modal("show"); 
         });
       }
+  }//drawTable
+
+    /**
+   * Convert an instance of google.visualization.DataTable to CSV
+   * @param {google.visualization.DataTable} dataTable_arg DataTable to convert
+   * @return {String} Converted CSV String
+   */
+  function dataTableToCSV(dataTable_arg) {
+      var dt_cols = dataTable_arg.getNumberOfColumns();
+      var dt_rows = dataTable_arg.getNumberOfRows();
+      
+      var csv_cols = [];
+      var csv_out;
+      
+      // Iterate columns
+      for (var i=0; i<dt_cols; i++) {
+          // Replace any commas in column labels
+          csv_cols.push(dataTable_arg.getColumnLabel(i).replace(/,/g,""));
+      }
+      
+      // Create column row of CSV
+      csv_out = csv_cols.join(",")+"\r\n";
+      
+      // Iterate rows
+      for (i=0; i<dt_rows; i++) {
+          var raw_col = [];
+          for (var j=0; j<dt_cols; j++) {
+              // Replace any commas in row values
+              raw_col.push(dataTable_arg.getFormattedValue(i, j, 'label').replace(/,/g,""));
+          }
+          // Add row to CSV text
+          csv_out += raw_col.join(",")+"\r\n";
+      }
+   
+      return csv_out;
   }
+
+  function downloadCSV () {
+    //csv_out = dataTableToCSV(data);
+    csv_out = dataTableToCSV(view);
+    var blob = new Blob([csv_out], {type: 'text/csv;charset=utf-8'});
+    var url  = window.URL || window.webkitURL;
+    var link = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
+    link.href = url.createObjectURL(blob);
+    link.download = "filenameOfChoice.csv"; 
+
+    var event = document.createEvent("MouseEvents");
+    event.initEvent("click", true, false);
+    link.dispatchEvent(event); 
+  }
+
+  function drawToolbar(data) {
+    var components = [
+        {type: 'igoogle', datasource: 'https://spreadsheets.google.com/tq?key=pCQbetd-CptHnwJEfo8tALA',
+         gadget: 'https://www.google.com/ig/modules/pie-chart.xml',
+         userprefs: {'3d': 1}},
+        {type: 'html', datasource: data},
+        {type: 'csv', datasource: data},
+        {type: 'htmlcode', datasource: 'https://spreadsheets.google.com/tq?key=pCQbetd-CptHnwJEfo8tALA',
+         gadget: 'https://www.google.com/ig/modules/pie-chart.xml',
+         userprefs: {'3d': 1},
+         style: 'width: 800px; height: 700px; border: 3px solid purple;'}
+    ];
+
+    var container = document.getElementById('toolbar_div');
+    google.visualization.drawToolbar(container, components);
+  };
 
   </script>
 <% end -%>
@@ -51,6 +128,7 @@
 <script>
   $(document).ready(function () {
       drawTable();
+      $("#download-csv").click(downloadCSV);
   });
 </script>
 
@@ -59,6 +137,7 @@
     <div class="row-fluid">
       <div class="col-md-12">
         <h1>Listing Students</h1>
+        <a id="download-csv">Download to CSV</a>        
         <div id='table_div'></div>
         <br></br>
         <%= link_to "New student", new_student_path, id: "new_student", data: { toggle: "modal", target: "#modal" , remote: new_student_path} , class: 'btn btn-primary'%>

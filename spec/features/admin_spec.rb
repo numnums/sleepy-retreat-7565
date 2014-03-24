@@ -235,7 +235,8 @@ feature "admin pages" , :js => true do
 
 		# verify new student
 		page.visit("/students")		
-		click_on student[:firstname]
+		#click_on student[:firstname]
+		find(:xpath, "//*[@id='table_div']/div/div/table/tbody/tr/td[1][contains(.,'"+student[:firstname]+"')]").click
 		find(:xpath, "//*[@id='firstname']").should have_content(student[:firstname])
 		find(:xpath, "//*[@id='lastname']").should have_content(student[:lastname])
 		find(:xpath, "//*[@id='gender']").should have_content(student[:gender])
@@ -280,7 +281,8 @@ feature "admin pages" , :js => true do
 		expect(page).not_to have_text(student[:firstname])
 
 		# verify new properties of edited student
-		click_on student_updated_properties[:firstname]
+		# click_on student_updated_properties[:firstname]
+		find(:xpath, "//*[@id='table_div']/div/div/table/tbody/tr/td[1][contains(.,'" + student_updated_properties[:firstname] + "')]").click
 		find(:xpath, "//*[@id='firstname']").should have_content(student_updated_properties[:firstname])
 		find(:xpath, "//*[@id='lastname']").should have_content(student_updated_properties[:lastname])
 		find(:xpath, "//*[@id='gender']").should have_content(student_updated_properties[:gender])
