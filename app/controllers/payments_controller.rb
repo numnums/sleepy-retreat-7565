@@ -40,6 +40,10 @@ class PaymentsController < ApplicationController
 		@payment.parent = @parent
 		@payment.save
 
+		@student = Student.find(session[:new_student_id])
+		@student.payment = @payment
+		@student.save
+
 		rescue Stripe::CardError => e
 	  		flash[:error] = e.message
 		  	redirect_to charges_path

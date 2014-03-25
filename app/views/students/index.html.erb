@@ -31,6 +31,7 @@
       data.addColumn('string', 'State');
       data.addColumn('string', 'Zip Code');
       data.addColumn('string', 'Phone Number');
+      data.addColumn('string', 'Payment Date');
       data.addColumn('string', 'Registration Date');
 
       <% @students.each do |student| %>
@@ -40,12 +41,12 @@
           '<%= student.lastname %>', '<%= student.gender %>', '<%= student.wearsglasses %>',
           '<%= student.birthdate.strftime("%m-%d-%Y") if student.birthdate %>', '<%= student.school.name if student.school %>', '<%= student.classroomdescription if student.classroomdescription %>',
           '<%= student.classroomtime if student.classroomtime %>', '<%= student.classroomdaymonday if student.classroomdaymonday %>','<%= student.classroomdaytuesday if student.classroomdaytuesday %>','<%= student.classroomdaywednesday if student.classroomdaywednesday %>','<%= student.classroomdaythursday if student.classroomdaythursday %>','<%= student.classroomdayfriday if student.classroomdayfriday %>','<%= student.parent.firstname if student.parent %>', '<%= student.parent.lastname if student.parent %>', '<%= student.parent.email if student.parent %>', '<%= student.parent.acceptsmarketing if student.parent %>',
-          '<%= student.parent.address if student.parent %>', '<%= student.parent.city if student.parent %>', '<%= student.parent.state if student.parent %>', '<%= student.parent.zip if student.parent %>', '<%= student.parent.phone if student.parent %>', '<%= student.created_at.strftime("%m-%d-%Y") %>']);
+          '<%= student.parent.address if student.parent %>', '<%= student.parent.city if student.parent %>', '<%= student.parent.state if student.parent %>', '<%= student.parent.zip if student.parent %>', '<%= student.parent.phone if student.parent %>', '<%= student.payment.created_at.strftime("%m-%d-%Y") if student.payment %>', '<%= student.created_at.strftime("%m-%d-%Y") %>']);
       <% end %>      
       
       
       view = new google.visualization.DataView(data);
-      view.setColumns([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]); // <-- exclude column 1
+      view.setColumns([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]); // <-- exclude column 1
       // view.draw(data, {showRowNumber: false, allowHtml: true});
       // drawToolbar(downloadCSV(dataTableToCSV(data)));
       var table = new google.visualization.Table(document.getElementById('table_div'));

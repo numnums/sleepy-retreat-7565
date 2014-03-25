@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
   before_filter :authenticate, :except => [:new, :create]
 
   def index
-    @students = Student.all
+    @students = Student.all    
   end
 
 	def new      
