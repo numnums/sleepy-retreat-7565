@@ -107,7 +107,7 @@
     var url  = window.URL || window.webkitURL;
     var link = document.createElementNS("http://www.w3.org/1999/xhtml", "a");
     link.href = url.createObjectURL(blob);
-    link.download = "filenameOfChoice.csv"; 
+    link.download = "student-data-export.csv"; 
 
     var event = document.createEvent("MouseEvents");
     event.initEvent("click", true, false);
