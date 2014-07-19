@@ -6,32 +6,36 @@
   <div class="leftnav-links">
     <ul>
       <li>
-      <%= link_to register_student_path, class: 'register-link' do %>
-        Register<i class="fa fa-arrow-right"></i>
-      <% end %>
+        <a href="https://donatenow.networkforgood.org/1413766" target="_blank">Why</a>
       </li>
       <li>
-        <%= link_to 'Private Preschools', parents_static_path %>
+        <%= link_to 'Eye Bus', vision360_path %>
+        <ul class="subnav v360-nav">
+          <li><%= link_to 'Components', vision360_path %></li>
+          <li><%= link_to 'Impact', vision360_path(:anchor => 'ourwork') %></li>
+          <li><%= link_to 'Partners', vision360_path(:anchor => 'ourimpact') %></li>
+          <li><%= link_to 'Supporters', vision360_path(:anchor => 'partners') %></li>
+        </ul>
+      </li>
+      <li>
+        <%= link_to 'Screening Services', vision360_path %>
+        <ul class="subnav v360-nav">
+          <li><%= link_to 'Parents', parents_static_path %></li>
+          <li><%= link_to 'Schools', schools_static_path %></li>
+          <li><%= link_to 'Faq', faq_path %></li>
+          <li><%= link_to 'Registration', register_student_path %></li>
+        </ul>
+      </li>
+      <li>
+        <%= link_to 'About', parents_static_path %>
         <ul class="subnav pschool-nav">
-          <li><%= link_to 'parents', parents_static_path %></li>
-          <li><%= link_to 'schools', schools_static_path %></li>
+          <li><%= link_to 'Staff', parents_static_path %></li>
+          <li><%= link_to 'Advisory Council', schools_static_path %></li>
           <li><%= link_to 'FAQ', faq_path %></li>
         </ul>
-      </li>
-      <li>
-        <%= link_to 'Head Starts & Public Preschools', vision360_path %>
-        <ul class="subnav v360-nav">
-          <li><%= link_to 'Vision 360⁰', vision360_path %></li>
-          <li><%= link_to 'our work', vision360_path(:anchor => 'ourwork') %></li>
-          <li><%= link_to 'our impact', vision360_path(:anchor => 'ourimpact') %></li>
-          <li><%= link_to 'our partners', vision360_path(:anchor => 'partners') %></li>
-          <li><%= link_to 'get involved', vision360_path(:anchor => 'getinvolved') %></li>
-        </ul>
-      </li>
-      <li><a href="https://donatenow.networkforgood.org/1413766" target="_blank">Give</a></li>
-      <li><a href="http://www.eyeinfo.org" target="_blank">About PBNC</a></li>
-      <li>  
-        <% if session[:admin] then %>
+      </li>  
+      <% if session[:admin] then %>
+        <li>
           <%= link_to 'Administration', root_path, class: 'admin-link', "data-toggle"=>"dropdown" %>
           <ul class="subnav admin-nav">
             <li><%= link_to 'manage schools', schools_path %></li>
@@ -39,8 +43,16 @@
             <li><%= link_to 'manage parents', parents_path %></li>
             <li><%= link_to 'view payments', payments_path %></li>
           </ul>
-        <% end %>
-      </li>
+        </li>
+      <% end %>
+      <%= link_to register_student_path, class: 'nav-button' do %>
+        Register
+        <br/>
+        <span>For a Screening</span>
+      <% end %>
+      <%= link_to register_student_path, class: 'nav-button' do %>
+        Donate
+      <% end %>
     </ul>
   </div>
 </div>

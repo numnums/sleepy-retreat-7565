@@ -1,12 +1,14 @@
 #homepage {
   .container {
+    width: 100%; 
+    padding-right: 40px;
     @media screen and (min-width: 768px) {
-      padding-left: 240px;
+      padding-left: 220px;
     }
   }
   .hero {
     color: white;
-    background: hsla(36, 75.6345%, 38.6275%, 1.0000) image-url("hero-bg-yella.jpg") no-repeat top right fixed; 
+    background: hsla(34, 84.4936%, 55.8333%, 1.0000); 
     -webkit-background-size: 100% auto;
     -moz-background-size: 100% auto;
     background-size: 100% auto;
@@ -14,7 +16,6 @@
       -webkit-background-size: 100% auto;
       -moz-background-size: 100% auto;
       background-size: 100% auto;
-      min-height: 650px;
     }
     @media screen and (min-width: 1200px) {
       -webkit-background-size: 80% auto;
@@ -115,9 +116,7 @@
         margin-top: 180px;
       }
       @media screen and (min-width: 768px) {
-        margin-top: 0px;
-        margin-left: 40px;
-        max-width: 500px;
+        margin: 0px 40px 40px;
       }
     }
     .count {
@@ -131,25 +130,22 @@
       display: inline-block;
     }
     h1 {
-      text-transform: uppercase;
-      font-weight: 900;
-      font-size: 27px;
-      @media screen and (min-width: 480px) {
-        font-size: 46px;
-      }
+      font-weight: 600;
+      font-size: 36px;
       @media screen and (min-width: 992px) {
-        font-size: 50px;
+        font-size: 42px;
       }
     }
     h4 {
-      font-size: 15px;
+      font-size: 18px;
       font-family: "museo-sans";
-      font-weight: 500;
+      font-weight: 400;
       line-height: 22px;
       letter-spacing: 0.0425em;
+      color: hsla(36, 77.7778%, 7.0588%, 1.0000);
        @media screen and (min-width: 768px) {
         font-size: 16px;
-        line-height: 26px;
+        line-height: 24px;
         margin-bottom: 20px;
       }
     }
@@ -157,34 +153,6 @@
       font-size: 18px;
       font-weight: 700;
       max-width: 450px;
-    }
-    .hero-button {
-      display: block;
-      padding: 14px 20px;
-      font-size: 16px;
-      background: hsla(0, 0%, 0.0000%, 0.3000);
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-      color: white;
-      font-weight: 700;
-      font-family: "museo-slab";
-      text-transform: uppercase;
-      text-decoration: none;
-      text-align: center;
-      margin-bottom: 30px;
-      -webkit-transition: background-color 0.5s ease;
-      -moz-transition: background-color 0.5s ease;
-      transition: background-color 0.5s ease;
-      &:hover {
-      background: hsla(37, 100.0000%, 50.0000%, 1.0000);
-      }
-      @media screen and (min-width: 768px) {
-        font-size: 18px;
-      }
-      i {
-        margin-left: 5px;
-      }
     }
   }
   .splash {
@@ -201,17 +169,36 @@
     display: block;
   }
   .visionscreening {
-    background: hsla(201, 80.0830%, 47.2549%, 1.0000) image-url("visionscreen-bg.png") no-repeat 30% top;
-    -webkit-background-size: 150% auto;
-    -moz-background-size: 150% auto;
-    background-size: 150% auto;
+    background: black image-url("Eye_Bus_Homepage.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     padding-bottom: 30px;
     color: white;
+    position: relative;
+    overflow: hidden;
     @media screen and (min-width: 768px) {
-      background: hsla(201, 80.0830%, 47.2549%, 1.0000) image-url("visionscreen-bg.png") no-repeat left top;
-      -webkit-background-size: 100% auto;
-      -moz-background-size: 100% auto;
-      background-size: 100% auto;
+      background: black image-url("Eye_Bus_Homepage.jpg") no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    .shade-layer {
+      position: absolute;
+      background: -moz-linear-gradient(left,  rgba(0,0,0,0.7) 25%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, right top, color-stop(25%,rgba(0,0,0,0.7)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left,  rgba(0,0,0,0.7) 25%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left,  rgba(0,0,0,0.7) 25%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(left,  rgba(0,0,0,0.7) 25%,rgba(0,0,0,0) 100%); /* IE10+ */
+      background: linear-gradient(to right,  rgba(0,0,0,0.7) 25%,rgba(0,0,0,0) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+      height: 100%;
+      width: 100%;
+    }
+    .container {
+      z-index: 2;
     }
     .row-fluid {
       padding-left: 0px;
@@ -228,7 +215,7 @@
       padding-top: 60px;
     }
     h3 {
-      font-weight: 700;
+      font-weight: 500;
       font-family: "museo-slab";
       font-size: 25px;
       @media screen and (min-width: 480px) {
@@ -237,13 +224,13 @@
     }
     h4 {
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 500;
       font-family: "museo-slab";
-      text-transform: uppercase;
       margin-top: 2px;
+      line-height: 1.5;
     }
-    .school-type {
-      margin-top: 40px;
+    .bus-type {
+      margin: 70px 0 50px;
     }
     .for {
       text-transform: uppercase;
@@ -251,50 +238,7 @@
       color: hsla(202, 77.4436%, 73.9216%, 1.0000);
     }
   }
-  .busrow {
-    padding-top: 80px;
-    @media screen and (min-width: 480px) {
-      margin-top: 110px;
-    }
-    @media screen and (min-width: 1600px) {
-      padding-top: 210px;
-    }
 
-  }
-  .dabus {
-    padding: 0 10px;
-    @media screen and (min-width: 768px) {
-      padding: 0;
-    }
-  }
-  .benefit-button {
-    background: hsla(0, 0.0000%, 0.0000%, 0.2500);
-    font-family: "museo-slab";
-    font-weight: 700;
-    text-transform: uppercase;
-    display: block;
-    color: white;
-    padding: 12px 0;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    text-align: center;
-    margin: 20px 0 10px;
-    text-decoration: none;
-    -webkit-transition: background-color 0.5s ease;
-    -moz-transition: background-color 0.5s ease;
-    transition: background-color 0.5s ease;
-    &:hover {
-      background: hsla(198, 100.0000%, 50.0267%, 1.0000);
-    }
-    i {
-      margin-left: 5px;
-    }
-    &:hover {
-      color: white;
-      text-decoration: none;
-    }
-  }
   .learnmore-link {
     text-decoration: none;
     color: white;
@@ -306,9 +250,9 @@
       margin-left: 5px;
     }
   }
-  .benefits {
+  .screening-text {
     color: white;
-    padding-bottom: 30px;
+    margin: 70px 0 50px;
     @media screen and (min-width: 768px) {
       padding-top: 30px;
     }
@@ -324,65 +268,72 @@
         font-size: 50px;
       }
     }
+  }
+  .benefit-button {
+    background: hsla(34, 84.8889%, 55.8824%, 1.0000);
+    font-family: "museo-slab";
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    color: black;
+    padding: 12px 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px 0 10px;
+    text-decoration: none;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+    &:hover {
+      background: hsla(43, 100.0000%, 50.0000%, 1.0000);
+    }
+    i {
+      margin-left: 5px;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .screening-section {
+    background: black image-url("screeningservice-bg.jpg") no-repeat center 25%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-bottom: 100px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    .shade-layer {
+      position: absolute;
+      background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 18%, rgba(0,0,0,0.7) 77%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(18%,rgba(0,0,0,0)), color-stop(77%,rgba(0,0,0,0.7))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0.7) 77%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0.7) 77%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0.7) 77%); /* IE10+ */
+      background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 18%,rgba(0,0,0,0.7) 77%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=1 ); /* IE6-9 */
+      height: 100%;
+      width: 100%;
+    }
+    .container {
+      z-index: 2;
+    }
     h4 {
-      font-size: 20px;
-      font-weight: 900;
-      font-family: "museo-slab";
-      text-align: center;
-      margin: 0 auto;
-      max-width: 800px;
-    }
-  }
-  .icon-group {
-    margin: 0 auto;
-  }
-  .benefit-group {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .benefit-icon {
-    width: 180px;
-    display: inline-block;
-    @media screen and (min-width: 480px) {
-      width: 131px;
-    }
-    @media screen and (min-width: 992px) {
-      display: block;
-      width: auto;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-  }
-  .benefit-detail {
-    font-size: 16px;
-    padding: 0 20px;
-    font-weight: 400;
-    text-align: center;
-    display: inline-block;
-    max-width: 300px;
-    vertical-align: middle;
-    @media screen and (min-width: 508px) {
       text-align: left;
-    }
-    @media screen and (min-width: 992px) {
-      text-align: center;
-      display: block;
-      width: auto;
+      font-size: 20px;
+      font-weight: 500;
+      font-family: "museo-slab";
+      margin-top: 2px;
+      line-height: 1.5;
     }
   }
   .pbnc-section {
-    padding-bottom: 100px;
-    text-align: center;
-    background: hsla(201, 80.0830%, 47.2549%, 1.0000);
-    color: white;
-    .row-fluid {
-      padding-top: 30px;
-      border-top: 1px dotted hsla(203, 85.9155%, 27.8431%, 1.0000);
-    }
-    a {
-      color: white;
-      font-weight: 700;
-    }
+    background: white;
+    padding: 70px 0 100px;
   }
 }
 
