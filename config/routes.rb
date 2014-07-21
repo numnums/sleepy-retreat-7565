@@ -19,6 +19,8 @@ PBNC::Application.routes.draw do
 
 #dvu:   , :as => 'parents'...this gives us an alias like "parents_path" which we can use in our code/templates
   get "pages/home", :as => 'home'
+  get "pages/eyebus", :as => 'eyebus'
+  get "pages/components", :as => 'components'
   get "pages/parents", :as => 'parents_static'
   # get "pages/payments"
   get "pages/schools", :as => 'schools_static'

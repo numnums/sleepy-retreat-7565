@@ -29,7 +29,7 @@
     <div class="shade-layer"></div>
     <div class="container">
       <div class="row-fluid">
-        <div class="col-md-6 bus-type"> 
+        <div class="col-md-6 bus-type wow zoomIn"> 
           <h4>
              Our flagship <strong>Eye Bus</strong> program brings high-tech vision care through school-based screenings done by certified professionals, including follow-up eye exams with optometrists and free prescription glasses aboard the Eye Bus.
           </h4>
@@ -45,7 +45,7 @@
     <div class="shade-layer"></div>
     <div class="container">
       <div class="row-fluid screening-text">
-        <div class="col-md-6 col-md-offset-6 screen-type"> 
+        <div class="col-md-6 col-md-offset-6 screen-type wow zoomIn"> 
           <h4>
              Through onsite <strong>Screening Services</strong>, parents can be sure that their preschooler has the healthy eyes and clear vision they need to be ready for kindergarten and beyond.  
           </h4>
@@ -60,7 +60,7 @@
   <section class="pbnc-section">
     <div class="container">
       <div class="row-fluid">
-        <div class="col-md-3"> 
+        <div class="col-md-3 "> 
           <%= image_tag "pbnc-home-logo.png" %>
         </div>
         <div class="col-md-6"> 
@@ -73,5 +73,14 @@
     </div>
   </section>  
 
-
 </div>
+
+<% content_for :head do %>
+  <script src="js/wow.min.js"></script>
+<% end %>
+
+<% content_for :script do %>
+  <script>
+   new WOW().init();
+  </script>
+<% end %>
