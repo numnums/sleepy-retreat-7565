@@ -5,20 +5,18 @@
 
   <div class="leftnav-links">
     <ul>
-      <li>
-        <a href="https://donatenow.networkforgood.org/1413766" target="_blank">Why</a>
-      </li>
+      <li><%= link_to 'Why', why_path %></li>
       <li>
         <%= link_to 'Eye Bus', eyebus_path %>
         <ul class="subnav v360-nav">
           <li><%= link_to 'Components', components_path %></li>
-          <li><%= link_to 'Impact', vision360_path(:anchor => 'ourwork') %></li>
-          <li><%= link_to 'Partners', vision360_path(:anchor => 'ourimpact') %></li>
-          <li><%= link_to 'Supporters', vision360_path(:anchor => 'partners') %></li>
+          <li><%= link_to 'Outcomes', outcomes_path %></li>
+          <li><%= link_to 'Partners', partners_path %></li>
+          <li><%= link_to 'Supporters', supporters_path %></li>
         </ul>
       </li>
       <li>
-        <%= link_to 'Screening Services', vision360_path %>
+        <%= link_to 'Screening Services', screening_services_path %>
         <ul class="subnav v360-nav">
           <li><%= link_to 'Parents', parents_static_path %></li>
           <li><%= link_to 'Schools', schools_static_path %></li>
@@ -31,7 +29,6 @@
         <ul class="subnav pschool-nav">
           <li><%= link_to 'Staff', parents_static_path %></li>
           <li><%= link_to 'Advisory Council', schools_static_path %></li>
-          <li><%= link_to 'FAQ', faq_path %></li>
         </ul>
       </li>  
       <% if session[:admin] then %>

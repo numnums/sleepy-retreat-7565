@@ -1,4 +1,5 @@
 #homepage {
+  
   .container {
     width: 100%; 
     @media screen and (min-width: 768px) {
@@ -354,6 +355,8 @@
 
 //Standard Page Layouts
 .standard-page {
+  position: relative;
+  height: 100%;
   .hero-image {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -371,6 +374,9 @@
     margin-top: -100px;
     padding: 30px 55px 55px 55px;
   }
+  .push200 {
+    height: 200px;
+  }
 }
 
 .eyebus-page {
@@ -387,6 +393,7 @@
 
 //Components Page
 .components-page {
+  padding: 50px 0;
   .cbp_tmtimeline {
     margin: 30px 0 0 0;
     padding: 0;
@@ -416,7 +423,7 @@
     width: 10px;
     background: hsla(36, 94.2857%, 79.4118%, 1.0000);
     left: 20%;
-    margin-left: -97px;
+    margin-left: -100px;
   }
 
   /* Right content */
@@ -466,7 +473,6 @@
     -webkit-font-smoothing: antialiased;
     position: absolute;
     color: #fff;
-    background: hsla(34, 94.5946%, 63.7255%, 1.0000);
     border-radius: 50%;
     box-shadow: 0 0 0 8px hsla(36, 94.2857%, 79.4118%, 1.0000);
     text-align: center;
@@ -489,6 +495,25 @@
 
   .cbp_tmicon-earth:before {
     content: "\e003";
+  }
+
+  .tmicon1 {
+    background: hsl(34, 94.5946%, 63.7255%) image-url("components/component1.jpg") no-repeat center center;
+  }
+  .tmicon2 {
+    background: hsl(34, 94.5946%, 63.7255%) image-url("components/component2.jpg") no-repeat center center;
+  }
+  .tmicon3 {
+    background: hsl(34, 94.5946%, 63.7255%) image-url("components/component3.jpg") no-repeat center center;
+  }
+  .tmicon4 {
+    background: hsl(34, 94.5946%, 63.7255%) image-url("components/component4.jpg") no-repeat center center;
+  }
+  .tmicon5 {
+    background: hsl(34, 94.5946%, 63.7255%) image-url("components/component5.jpg") no-repeat center center;
+  }
+  .tmicon6 {
+    background: hsl(34, 94.5946%, 63.7255%) image-url("components/component6.jpg") no-repeat center center;
   }
 
   /* Example Media Queries */

@@ -1,45 +1,56 @@
-<div class="schools-page">
-  <div class="container">  
-    <div class="row">
-      <div class="col-md-8 schools-body">
-        <h1>Schools</h1>
-          <h3>Help parents find vision issues before they become learning and behavioral issues</h3>
-        <p>
-          California is working to ensure that every preschooler can see well.  As part of Race to the Top, a new Quality Rating Improvement System (QRIS) has been designed to improve early childhood care and help parents identify high quality programs.  Included in the QRIS is a requirement for vision screening – let us help you check off this requirement at your center at no cost to your school!
-        </p>
-        <div class="howitworks">
-          <h2>How our vision screening services work</h2>
+<div class="eyebus-page standard-page">
+  <section class="hero-image">  
+  </section>
+  <section class="content">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="col-md-8 info-box">
+          <h1 class="page-title">Schools</h1>
+
+          <p>
+            <strong>Help parents find vision issues before they become learning and behavioral issues</strong>
+            <br/>
+            <br/>
+            California is working to ensure that every preschooler can see well.  As part of the state’s education reform through the President’s Race to the Top program, a new Quality Rating Improvement System (QRIS) has been designed to improve early childhood care and help parents identify high quality programs.  Included in the QRIS is a requirement for vision screening – let us help you check off this requirement for your center at no cost to your school!  
+          </p>
+
+          <strong>How our vision screening services work</strong>
           <ul>
-            <li>Survey parents’ interest and book a date to bring our advanced vision screening technology into your school – at no cost to the school – along with our staff of kid-friendly, highly-trained professionals.</li>
-            <li>Parents who opt to have their child screened prepay a low $20 fee through our online payment system. Your staff does not have to handle any financial transactions. </li>
-            <li>On screening day, electronic vision-screening results are available within minutes. Each child who participates in the screening is sent home with test results at the end of the day. </li>
-            <li>We handle all follow-up questions from parents via phone or email.</li>
+            <li>Survey parents’ interest and book a date to bring our advanced vision screening technology into your school – at no cost to the school – along with our staff of kid-friendly, highly trained professionals.</li>
+            <li>Parents who opt to have their child screened prepay a low $20 fee through our online payment system. Your staff does not have to handle any sign-ups or financial transactions.</li>
+            <li>On screening day, electronic vision-screening results are available within minutes. Each child who participates in the screening is sent home with test results at the end of the day.</li>
+            <li>We handle all initial and follow-up questions from parents via phone or email.</li>
           </ul>
-        </div>
-        <div class="testi-module">
-          <div class="testimonial">
-            <div class="test-quote">We were so pleased to work with the See Well to Learn screener.  She did a great job of encouraging our students to complete the vision screening process and we so appreciated her patience, thoroughness, and sense of humor.</div>
-            <span class="byline">-- Susan Hemberger, Director of Mother Goose Preschool, San Francisco</span>
-          </div>
-          <div class="testimonial">
-            <div class="test-quote">It was incredibly convenient having Cyrus' vision screened at school. His teachers worked with the vision screeners and the process was seamless for me as a parent. I am so grateful to have Cyrus' vision problems detected early on through this screening.</div>
-            <span class="byline">-- Stacey, mom of Cyrus (screened at age 4)</span>
+
+          <div class="testi-module">
+            <div class="testimonial">
+              <div class="test-quote">We were so pleased to work with the See Well to Learn screener.  She did a great job of encouraging our students to complete the vision screening process and we so appreciated her patience, thoroughness, and sense of humor.</div>
+              <span class="byline">--Susan Hemberger, Director of Mother Goose Preschool, San Francisco</span>
+            </div>
+            <div class="testimonial">
+              <div class="test-quote">It was incredibly convenient having Cyrus' vision screened at school. His teachers worked with the vision screeners and the process was seamless for me as a parent. I am so grateful to have Cyrus' vision problems detected early on through this screening.</div>
+              <span class="byline">--Stacey, mom of Cyrus (screened at age 4)</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <%= mail_to "followup@seewelltolearn.org", subject: "I'd like to learn more about See Well to Learn", class: 'contact-button-school' do %>
-          Contact us<i class="fa fa-envelope-o"></i></br>
-          <span class="contact-addy">followup@seewelltolearn.org</span>
-        <% end %>
-        <div class="side-module sm-schools">
-          <h2>How to make vision screening a success</h2>
-          <p>While we take care of the logistics, all you need to do is spread the word about our valuable vision screening service and get parents to sign-up online. As your teachers and staff are the best advocates, the program is most successful when they are excited and involved.
-          </p>
-        </div>
-        <div class="side-link"><i class="fa fa-info-circle"></i><%= link_to 'Information for parents', parents_static_path %></div>
-        <div class="side-link"><i class="fa fa-question-circle"></i><%= link_to 'FAQ', faq_path %></div>
-      <div>
+      <div class="col-md-4 info-box">
+        <h3>How to make vision screening a success</h3>
+        While we take care of the logistics, all you need to do is spread the word about our valuable vision screening services and get parents to sign-up online. Because your teachers and staff are the best advocates, the program is most successful when they are excited and involved.
+      </div>
     </div>
-  </div>
+  </section>
+  <div class="push200"></div>
 </div>
+
+<% content_for :head do %>
+  <script src="js/wow.min.js"></script>
+<% end %>
+
+<% content_for :script do %>
+  <script>
+   new WOW().init();
+  </script>
+<% end %>
+
+

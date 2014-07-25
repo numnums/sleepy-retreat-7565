@@ -1,26 +1,50 @@
-<div id="faq-page">
-  <div class="container">  
-    <div class="row-fluid">
-      <div class="col-md-12 faq-body">
-        <h1>FAQ</h1>
-        <h3>What information do schools receive for their records?</h3>
-        <p>Before the screening, schools will receive a list of all children whose parents have prepaid for the screening.  After the screening, schools will also receive a list of all children screened and their results for their records. </p>
-        <h3>Are there a minimum number of required participants to book a screening?</h3>
-        <p>We do require a minimum number of participants to ensure a successful screening.  We will work with your school to determine an appropriate minimum number of participants based on the size of your school.</p>
-        <h3>What if parents want to pay by cash?</h3>        
-        <p>Unfortunately we are unable to process cash payments but our online payment system is accessible via any smart phone or computer.</p>
-        <h3>What if parents want siblings to be screened?</h3>
-        <p>Unfortunately we are not able to accommodate siblings who are not enrolled at the preschool on the day of screening.</p>
-        <h3>I’m a parent and want my school to provide vision screening services, what can I do?</h3>
-        <p>Contact our Program Director, <strong>April Nakayoshi, MPH, CHES at 415-321-7503</strong> to talk about how we can work together to encourage your school to offer our vision screening services.</p>
-        <h3>Who do I contact if my child needs follow-up care?</h3>
-        <p>We feel it’s important to help you, the parent, navigate vision healthcare and get the appropriate treatment your child needs.
-        <br/>
-        <br/>
-        Contact <strong>April Nakayoshi, MPH, CHES at 415-321-7503</strong> or at <strong> <%= mail_to "followup@seewelltolearn.org", subject: "I'd like to learn more about See Well to Learn" do %>
-          followup@seewelltolearn.org</i>
-          <% end %></strong> for professional assistance today.</p>
+<div class="eyebus-page standard-page">
+  <section class="hero-image">  
+  </section>
+  <section class="content">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="col-md-12 info-box">
+          <h1 class="page-title">FAQ</h1>
+          <strong>What information do schools receive for their records?</strong>
+          <br/><br/>
+          Before the screening, schools will receive a list of all children whose parents have prepaid for the screening.  After the screening, schools will also receive a list of all children screened and their results for their records.
+          <br/>
+          <br/>
+          <strong>What if parents want to pay by cash?</strong>
+          <br/><br/>
+          Unfortunately we are unable to process cash payments but our online payment system is accessible via any smart phone or computer.
+          <br/>
+          <br/>
+          <strong>What if parents want siblings to be screened?</strong>
+          <br/><br/>
+          Unfortunately we are not able to accommodate siblings who are not enrolled at the preschool on the day of screening.
+          <br/>
+          <br/>
+          <strong>I’m a parent and want my school to provide vision screening services, what can I do?</strong>
+          <br/><br/>
+          Contact our Program Director, April Nakayoshi, MPH, CHES at 415-321-7503 to talk about how we can work together to encourage your school to offer our vision screening services.   
+          <br/>
+          <br/>
+          <strong>Who do I contact if my child needs follow-up care?</strong>
+          <br/><br/>
+          We feel it’s important to help you, the parent, navigate vision healthcare and get the appropriate treatment your child needs.  Contact April Nakayoshi, MPH, CHES at 415-321-7503 for professional assistance today. 
+          <br/>
+          <br/>
+
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+  <div class="push200"></div>
 </div>
+
+<% content_for :head do %>
+  <script src="js/wow.min.js"></script>
+<% end %>
+
+<% content_for :script do %>
+  <script>
+   new WOW().init();
+  </script>
+<% end %>

@@ -77,6 +77,11 @@ h1, h2, h3, h4, h5 {
 h1 {
   font-family: "museo-slab";
 }
+.page-title {
+  color: hsla(34, 94.5652%, 63.9216%, 1.0000);
+  font-weight: 700;
+  font-size: 48px;
+}
 input:focus, textarea, select, a { 
   outline: none; 
 }
@@ -158,7 +163,7 @@ header {
     display: block;
     position: relative;
     line-height: 1.35;
-    border-bottom: 1px solid hsla(0, 0%, 25.0000%, 1.0000);
+    border-bottom: 1px solid hsla(0, 0%, 100.0000%, 0.1500);
     &:last-child {
       border-bottom: none;
     }
@@ -204,7 +209,7 @@ header {
     }
     &:hover {
       .pschool-nav {
-        height: 119px;
+        height: 79px;
       }
       .v360-nav {
         height: 159px;

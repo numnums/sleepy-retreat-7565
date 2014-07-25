@@ -1,43 +1,53 @@
-<div class="parents-page">
-  <div class="container">  
-    <div class="row">
-      <div class="col-md-8 parents-body">
-        <h1>Parents</h1>
-        <h3>For the price of a movie date, you can be sure that your child’s vision is where it needs to be for success at school and in life.</h3>
-        <p>
-          From academic readiness to social readiness, preschool sets your child up for success over the next decade-plus of education and growth.  And one of the most important factors to your child’s education is his or her vision.
-          <br/>
-          <br/>
-          Catching vision problems at this pivotal age will ensure that your child has an educational advantage. Our thorough screening service combines the latest in vision technology with highly trained professionals who excel at working with preschool-aged children.
-          <br/>
-          <br/>
-          Preschoolers needing glasses scored poorly on standardized tests predicting their future academic success. After just 6 weeks of wearing glasses, their test scores jumped to match the scores of other preschoolers. – Data from July 2007 study on impact of vision correction on academic success
-          <br/>
-          <br/>
-          Through our Buy one, Give one program, you will have the opportunity to be sure your child can see well to learn and give that same gift to a child whose family would otherwise not be able to afford it!   
-        </p>  
-        <div class="testi-module">
-          <div class="testimonial">
-            <div class="test-quote">After my daughter failed her vision screening, I took her to two different doctors to further check her eyes.  The SWTL staff was incredibly supportive in helping me understand the diagnosis my daughter received and how to get the best care for her.  She has vision today in both eyes because of them.</div>
-            <span class="byline">--Darla, mom of Natalie (screened at age 5)</span>
-          </div>
-          <div class="testimonial">
-            <div class="test-quote">I’m so grateful to SWTL for detecting Lyra’s eye condition. I was unaware of any visual difficulties and was even starting to think that Lyra might not be as bright as my other children. Who knows when I would’ve discovered that she could barely see out of her left eye!</div>
-            <span class="byline">--Michele, mom of Lyra (screened at age 4)</span>
+<div class="eyebus-page standard-page">
+  <section class="hero-image">  
+  </section>
+  <section class="content">
+    <div class="container">
+      <div class="row-fluid">
+        <div class="col-md-8 info-box">
+          <h1 class="page-title">Parents</h1>
+
+          <p>
+            <strong>For the price of a few lattes, you can be sure that your child’s vision is where it needs to be for success at school and in life.</strong>
+            <br/>
+            <br/>
+            From academic readiness to social readiness, preschool sets your child up for success over the next decade-plus of education and growth.  And one of the most important factors to your child’s education is his or her vision.  Register your child today for our thorough, high-tech vision screening.
+            <br/>
+            <br/>
+            Correcting vision issues can have an immediate impact on the academic performance of children. In one study, preschoolers needing glasses scored poorly on standardized tests predicting their future academic success. After just 6 weeks of wearing glasses, their test scores jumped to match the scores of other preschoolers.
+            <br/>
+            <br/>
+            Help all children see well through our Buy one, Give one program where you will have the opportunity to be sure your child can see well to learn and give that same gift to a child whose family would otherwise not be able to afford it!   
+          </p>
+          <div class="testi-module">
+            <div class="testimonial">
+              <div class="test-quote">After my daughter failed her vision screening, I took her to two different doctors to further check her eyes.  The See Well to Learn staff was incredibly supportive in helping me understand the diagnosis my daughter received and how to get the best care for her.  She has vision today in both eyes because of them.</div>
+              <span class="byline">--Darla, mom of Natalie (screened at age 5)</span>
+            </div>
+            <div class="testimonial">
+              <div class="test-quote">I’m so grateful to See Well to Learn for detecting Lyra’s eye condition. I was unaware of any visual difficulties and was even starting to think that Lyra might not be as bright as my other children. Who knows when I would’ve discovered that she could barely see out of her left eye!</div>
+              <span class="byline">--Michele, mom of Lyra (screened at age 4)</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <%= link_to register_student_path, class: 'register-button-parent' do %>
-          Register<i class="fa fa-arrow-right"></i>
-        <% end %>
-        <div class="side-module sm-parents">
-          <h2>Won’t well-child checkups catch any vision problems?</h2>
-          <p>Unfortunately, not necessarily. We’ve screened over a million children in the last fifty years and we’ve caught vision issues that even well-child checks have missed. In fact, in one study, over 30 percent of the children who failed our high-tech vision screening had previously passed a routine screening at their well-child checkup. </p>
-        </div>
-        <div class="side-link"><i class="fa fa-info-circle"></i><%= link_to 'Information for schools', schools_static_path %></div>
-        <div class="side-link"><i class="fa fa-question-circle"></i><%= link_to 'FAQ', faq_path %></div>
+      <div class="col-md-4 info-box">
+        <h3>Won’t well-child checkups catch any vision problems?</h3>
+        Unfortunately, not necessarily. We’ve screened over a million children in the last fifty years and we’ve caught vision issues that even well-child checks have missed. In fact, in one study, over 30 percent of the children who failed our high-tech vision screening and ended up needing glasses, had previously passed a routine screening at their pediatrician’s office. 
       </div>
     </div>
-  </div>
-</div>    
+  </section>
+  <div class="push200"></div>
+</div>
+
+<% content_for :head do %>
+  <script src="js/wow.min.js"></script>
+<% end %>
+
+<% content_for :script do %>
+  <script>
+   new WOW().init();
+  </script>
+<% end %>
+
+

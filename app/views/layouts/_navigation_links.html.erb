@@ -4,19 +4,28 @@
       Register
     <% end %>
   </li>
-  <li><%= link_to 'Private Preschools', parents_static_path %>
+  <li><%= link_to 'Home', home_path %></li>
+  <li><%= link_to 'Why', why_path %></li>
+  <li><%= link_to 'Eye Bus', eyebus_path %></li>
+    <ul class="">
+      <li><%= link_to 'Components', components_path %></li>
+      <li><%= link_to 'Outcomes', outcomes_path %></li>
+      <li><%= link_to 'Partners', partners_path %></li>
+      <li><%= link_to 'Supporters', supporters_path %></li>
+    </ul>
+  </li>
+  <li><%= link_to 'Screening Services', parents_static_path %>
     <ul class="">
       <li><%= link_to 'Parents', parents_static_path %></li>
       <li><%= link_to 'Schools', schools_static_path %></li>
       <li><%= link_to 'FAQ', faq_path %></li>
+      <li><%= link_to 'Registration', register_student_path %></li>
     </ul>
   </li>
-  <li><%= link_to 'Head Starts & Public Preschools', vision360_path %>
+  <li><%= link_to 'About', about_path %>
     <ul class="subnav v360-nav">
-      <li><%= link_to 'our work', vision360_path(:anchor => 'ourwork') %></li>
-      <li><%= link_to 'our impact', vision360_path(:anchor => 'ourimpact') %></li>
-      <li><%= link_to 'our partners', vision360_path(:anchor => 'partners') %></li>
-      <li><%= link_to 'get involved', vision360_path(:anchor => 'getinvolved') %></li>
+      <li><%= link_to 'Staff', staff_path %></li>
+      <li><%= link_to 'Advisory Council', council_path %></li>
     </ul>
   </li>
   <li><a href="https://donatenow.networkforgood.org/1413766">Give</a></li>
