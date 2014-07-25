@@ -25,10 +25,10 @@
         </ul>
       </li>
       <li>
-        <%= link_to 'About', parents_static_path %>
+        <%= link_to 'About', about_path %>
         <ul class="subnav pschool-nav">
-          <li><%= link_to 'Staff', parents_static_path %></li>
-          <li><%= link_to 'Advisory Council', schools_static_path %></li>
+          <li><%= link_to 'Staff', staff_path %></li>
+          <li><%= link_to 'Advisory Council', council_path %></li>
         </ul>
       </li>  
       <% if session[:admin] then %>
