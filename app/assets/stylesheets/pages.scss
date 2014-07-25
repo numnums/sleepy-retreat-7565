@@ -568,6 +568,41 @@
   }
 }
 
+//Outcomes Page
+.outcomes-page {
+  .comp-graphics-row {
+    padding: 0 10px;
+  }
+  .col-md-3 {
+    padding: 5px;
+    height: 100%;
+  }
+  .comp-graphics {
+    background: hsl(36, 96.9072%, 61.9608%);
+    color: white;
+  }
+  .outcome-descript {
+    padding: 0px 15px 15px;
+    text-align: center;
+    min-height: 140px;
+    h2 {
+      font-size: 42px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-weight: 900;
+    }
+    h3 {
+      font-size: 22px;
+      margin-top: 0px;
+      margin-bottom: 5px;
+    }
+    span {
+      font-weight: 300;
+      line-height: 1;
+    }
+  }
+}
+
 //Parents & School pages
 .parents-page {
   background: hsla(13, 61.0619%, 44.3137%, 1.0000) image-url("parents-bg.jpg") no-repeat bottom right fixed;
@@ -684,8 +719,12 @@
 
 .testimonial {
   margin: 20px 0;
-  padding-left: 42px;
+  padding: 30px 40px 30px 72px;
   position: relative;
+  background: hsl(0, 0.0000%, 96.8628%);
+  -webkit-box-shadow: inset 7px 0px 0px 0px hsl(34, 94.5652%, 63.9216%);
+  -moz-box-shadow:    inset 7px 0px 0px 0px hsl(34, 94.5652%, 63.9216%);
+  box-shadow:         inset 7px 0px 0px 0px hsl(34, 94.5652%, 63.9216%);
   &:before {
     content: "\f10d";
     position: absolute;
