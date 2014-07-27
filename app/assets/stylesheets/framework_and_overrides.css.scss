@@ -53,9 +53,6 @@ section {
 html {
   height: 100%;
   background: hsla(34, 94.5652%, 63.9216%, 1.0000); 
-  @media screen and (max-width: 767px) {
-    background: white; 
-  }
 }
 
 body {
@@ -72,6 +69,10 @@ body {
   @media screen and (min-width: 768px) {
     padding-left: 250px;
   }
+}
+
+.row-fluid {
+  transition: all 0.5s ease;
 }
 
 h1, h2, h3, h4, h5 {

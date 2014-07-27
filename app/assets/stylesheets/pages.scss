@@ -529,6 +529,9 @@
 .alt-page {
   background: white;
   padding-top: 60px;
+  @media screen and (max-width: 768px) {
+    padding-top: 80px;
+  }
   .container {
     position: relative;
     margin: 0;
@@ -617,7 +620,6 @@
 
 //Components Page
 .components-page {
-  padding: 50px 0;
   background: white;
   .cbp_tmtimeline {
     margin: 30px 0 0 0;
@@ -772,7 +774,7 @@
 
     .cbp_tmtimeline > li .cbp_tmlabel {
       margin: 0 0 30px 0;
-      padding: 1em;
+      padding: 25px;
       font-weight: 400;
       font-size: 95%;
     }
@@ -795,7 +797,8 @@
       float: right;
       z-index: 1;
       left: auto;
-      margin: 0px 25px 10px 25px;
+      margin: 20px 25px 10px 25px;
+      transition: all 0.5s ease;
     } 
   }
 }
@@ -850,7 +853,7 @@
       font-size: 20px;
     }
     @media screen and (max-width: 480px) {
-      width: 5%;
+      width: 50%;
     }
     h2 {
       font-size: 42px;
@@ -956,6 +959,19 @@
     border-top: none;
   }
 
+}
+
+//Supporters Page
+
+.supporter {
+  margin-bottom: 30px;
+  img {
+    margin: 0px;
+  }
+}
+
+.supporter-row2 {
+  clear: both;
 }
 
 //Staff Page 
