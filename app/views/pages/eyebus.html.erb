@@ -2,7 +2,7 @@
   <section class="hero-image">  
   </section>
   <section class="content">
-    <div class="container">
+    <div class="sp-container">
       <div class="row-fluid">
         <div class="col-md-12 info-box">
           <h1 class="page-title">Eye Bus</h1>
@@ -14,11 +14,18 @@
           <br/>
           Currently the Eye Bus program is serving students in the San Francisco and Oakland school districts.  In 2014, we are aiming to bring this program to other Bay Area school districts and Head Starts.  Please contact us if you are interested in supporting our expansion efforts.
           </p>
+          <br/>
+          <div class="alt-links">
+          Learn more: 
+          <%= link_to 'Components', components_path %> | 
+          <%= link_to 'Outcomes', outcomes_path %> | 
+          <%= link_to 'Partners', partners_path %> | 
+          <%= link_to 'Supporters', supporters_path %>
+          </div>
         </div>
       </div>
     </div>
   </section>
-  <div class="push200"></div>
 </div>
 
 <% content_for :head do %>

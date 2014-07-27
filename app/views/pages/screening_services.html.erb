@@ -2,7 +2,7 @@
   <section class="hero-image">  
   </section>
   <section class="content">
-    <div class="container">
+    <div class="sp-container">
       <div class="row-fluid">
         <div class="col-md-12 info-box">
           <h1 class="page-title">Screening Services</h1>
@@ -16,11 +16,16 @@
             <li>Instantly available results that are sent home same day with the screened child</li>
             <li>Expert assistance for parents as they navigate follow-up care for their child</li>
           </ul>
+          <br/>
+          Learn more:
+          <%= link_to 'Parents', parents_static_path %> | 
+          <%= link_to 'Schools', schools_static_path %> | 
+          <%= link_to 'Faq', faq_path %> | 
+          <%= link_to 'Registration', register_student_path %>
         </div>
       </div>
     </div>
   </section>
-  <div class="push200"></div>
 </div>
 
 <% content_for :head do %>

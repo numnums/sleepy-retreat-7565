@@ -2,7 +2,7 @@
   <section class="hero-image">  
   </section>
   <section class="content">
-    <div class="container">
+    <div class="sp-container">
       <div class="row-fluid">
         <div class="col-md-12 info-box">
           <h1 class="page-title">About</h1>
@@ -14,11 +14,14 @@
           <br/>
           See Well to Learn is a part of Preschool Vision Care of California, a state-wide network of mobile vision programs that deliver comprehensive eye care at school sites to vulnerable preschoolers.  The network also has programs in Los Angeles, San Diego and Orange County. 
           </p>
+          <br/>
+          Learn more:
+          <%= link_to 'Staff', staff_path %> | 
+          <%= link_to 'Advisory Council', council_path %>
         </div>
       </div>
     </div>
   </section>
-  <div class="push200"></div>
 </div>
 
 <% content_for :head do %>

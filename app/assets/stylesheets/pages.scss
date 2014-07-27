@@ -1,3 +1,113 @@
+//general
+
+.sp-container {
+  position: relative;
+  margin: 0;
+  @media screen and (min-width: 768px) {
+    padding-left: 250px;
+    max-width: 900px;
+  }
+  @media screen and (min-width: 992px) {
+    max-width: 1000px;
+  }
+  @media screen and (min-width: 1200px) {
+    max-width: 1300px;
+  }
+}
+
+.push200 {
+  display: block;
+  height: 200px;
+}
+
+.register-button-parent, .contact-button-school {
+  background: hsla(0, 0.0000%, 0.0000%, 0.2500);
+  font-family: "museo-slab";
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  color: white;
+  padding: 12px 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 40px 0 30px;
+  text-decoration: none;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  i {
+    margin-left: 5px;
+  }
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+.testi-module {
+  margin-top: 35px;
+}
+.testimonial {
+  margin: 20px 0;
+  padding: 30px 40px 30px 72px;
+  position: relative;
+  background: hsl(0, 0.0000%, 96.8628%);
+  -webkit-box-shadow: inset 7px 0px 0px 0px hsl(34, 94.5652%, 63.9216%);
+  -moz-box-shadow:    inset 7px 0px 0px 0px hsl(34, 94.5652%, 63.9216%);
+  box-shadow:         inset 7px 0px 0px 0px hsl(34, 94.5652%, 63.9216%);
+  &:before {
+    content: "\f10d";
+    position: absolute;
+    font-style: normal;
+    z-index: 0;
+    margin-left: -40px;
+    margin-top: -4;
+    font-family: "fontAwesome";
+    font-size: 30px;
+    color:  hsla(0, 0.0000%, 0.0000%, 0.1500);
+  }
+}
+.test-quote {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  z-index: 2;
+  &:after {
+    content: "\f10e";
+    font-style: normal;
+    font-family: "fontAwesome";
+    margin-left: 4px;
+    color:  hsla(0, 0.0000%, 0.0000%, 0.1500);
+  }
+}
+.byline {
+  display: block;
+  margin-top: 7px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.side-module {
+  padding-left: 20px;
+  margin-bottom: 30px;
+  h2 {
+    margin-top: 0px;
+    font-size: 25px;;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+}
+.sm-parents {
+  border-left: 5px solid hsla(10, 100.0000%, 59.9145%, 1.0000);
+}
+.sm-schools {
+  border-left: 5px solid hsla(157, 69.2965%, 40.6267%, 1.0000);
+}
+
+
+
+
 #homepage {
   
   .container {
@@ -353,13 +463,74 @@
   }
 }
 
-//Standard Page Layouts
+//Standard Page Layout
 .standard-page {
   position: relative;
   height: 100%;
   background: hsla(34, 94.5652%, 63.9216%, 1.0000); 
-  
-  .sp-container {
+  @media screen and (max-width: 767px) {
+    background: white; 
+  }
+
+  .content {
+    position: relative;
+  }
+
+  .hero-image {
+    height: 500px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    border-bottom: 6px solid white;
+    @media screen and (max-width: 767px) {
+      height: 400px;
+      margin-top: 50px;
+    }
+    @media screen and (max-width: 480px) {
+      height: 300px;
+    }
+  }
+  h1 {
+    color: hsla(34, 94.5652%, 63.9216%, 1.0000);
+    font-weight: 700;
+    font-size: 48px;
+    margin-top: 0px;
+    @media screen and (max-width: 480px) {
+      font-size: 34px;
+      margin-top: 0px;
+    }
+  }
+  h3 {
+    @media screen and (max-width: 480px) {
+      font-size: 20px;
+    }
+  }
+  .info-box {
+    background: white;
+    margin-top: -100px;
+    padding: 30px 40px 55px 40px;
+    @media screen and (max-width: 767px) {
+      margin-top: 0px;
+    }
+  }
+  .side-box {
+    background: hsl(34, 94.5652%, 63.9216%);
+    margin-top: 0px;
+    padding: 30px 40px 55px 40px;
+  }
+  .push200 {
+    height: 200px;
+  }
+}
+
+//Alt Page Layout
+
+.alt-page {
+  background: white;
+  padding-top: 60px;
+  .container {
+    position: relative;
     margin: 0;
     @media screen and (min-width: 768px) {
       padding-left: 250px;
@@ -371,33 +542,6 @@
     @media screen and (min-width: 1200px) {
       max-width: 1300px;
     }
-  }
-
-  .hero-image {
-    height: 500px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    border-bottom: 6px solid white;
-  }
-  h1 {
-    color: hsla(34, 94.5652%, 63.9216%, 1.0000);
-    font-weight: 700;
-    font-size: 48px;
-  }
-  .info-box {
-    background: white;
-    margin-top: -100px;
-    padding: 30px 40px 55px 40px;
-  }
-  .side-box {
-    background: hsl(34, 94.5652%, 63.9216%);
-    margin-top: 0px;
-    padding: 30px 40px 55px 40px;
-  }
-  .push200 {
-    height: 200px;
   }
 }
 
@@ -474,6 +618,7 @@
 //Components Page
 .components-page {
   padding: 50px 0;
+  background: white;
   .cbp_tmtimeline {
     margin: 30px 0 0 0;
     padding: 0;
@@ -517,6 +662,9 @@
     line-height: 1.4;
     position: relative;
     border-radius: 5px;
+    @media screen and (max-width: 47.2em) {
+      min-height: 140px;
+    }
   }
 
   .cbp_tmtimeline > li .cbp_tmlabel h2 { 
@@ -647,28 +795,63 @@
       float: right;
       z-index: 1;
       left: auto;
-      margin: -55px 5px 0 0px;
+      margin: 0px 25px 10px 25px;
     } 
   }
 }
 
 //Outcomes Page
 .outcomes-page {
+
   .comp-graphics-row {
     padding: 0 10px;
   }
   .col-md-3 {
     padding: 5px;
     height: 100%;
+    @media screen and (max-width: 991px) {
+      clear: both;
+    }
   }
   .comp-graphics {
     background: hsl(36, 96.9072%, 61.9608%);
     color: white;
+    position: relative;
+    @media screen and (max-width: 991px) {
+      overflow: hidden;
+    }
+  }
+  .outcomes-img {
+    @media screen and (max-width: 991px) {
+      display: inline-block;
+      float: left;
+      width: 33%;
+    }
+    @media screen and (max-width: 480px) {
+      width: 43%;
+    }
   }
   .outcome-descript {
     padding: 0px 15px 15px;
     text-align: center;
     min-height: 140px;
+    @media screen and (max-width: 1200px) {
+      min-height: 200px;
+    }
+    @media screen and (max-width: 991px) {
+      display: inline-block;
+      width: 66%;
+      text-align: left;
+      padding: 25px;
+      min-height: 140px;
+    }
+    @media screen and (min-width: 620px) and (max-width: 767px) {
+      padding: 35px 25px 25px 40px;
+      font-size: 20px;
+    }
+    @media screen and (max-width: 480px) {
+      width: 5%;
+    }
     h2 {
       font-size: 42px;
       margin-top: 0px;
@@ -702,39 +885,68 @@
   }
   .row1 {
     .col-md-4 {
-      border-top: 1px solid hsl(0, 0.0000%, 90.9804%);
       &:nth-child(1) {
-        border-left: 1px solid hsl(0, 0.0000%, 90.9804%);
+        -webkit-box-shadow: inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        -moz-box-shadow:    inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        box-shadow:         inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
       }
       &:nth-child(3) {
-        border-right: 1px solid hsl(0, 0.0000%, 90.9804%);
+        -webkit-box-shadow: inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        -moz-box-shadow:    inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        box-shadow:         inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
       }
+    }
+    .partner-logo-box {
+      -webkit-box-shadow: inset 0px 1px 0px 0px hsl(0, 0.0000%, 90.9804%);
+      -moz-box-shadow:    inset 0px 1px 0px 0px hsl(0, 0.0000%, 90.9804%);
+      box-shadow:         inset 0px 1px 0px 0px hsl(0, 0.0000%, 90.9804%);
     }
   }
   .row2 {
     .col-md-4 {
       &:nth-child(1) {
-        border-left: 1px solid hsl(0, 0.0000%, 90.9804%);
+        -webkit-box-shadow: inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        -moz-box-shadow:    inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        box-shadow:         inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
       }
       &:nth-child(3) {
-        border-right: 1px solid hsl(0, 0.0000%, 90.9804%);
+        -webkit-box-shadow: inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        -moz-box-shadow:    inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        box-shadow:         inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
       }
     }
   }
   .row3 {
     .col-md-4 {
-      border-bottom: 1px solid hsl(0, 0.0000%, 90.9804%);
       &:nth-child(1) {
-        border-left: 1px solid hsl(0, 0.0000%, 90.9804%);
+        -webkit-box-shadow: inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        -moz-box-shadow:    inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        box-shadow:         inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
       }
       &:nth-child(3) {
-        border-right: 1px solid hsl(0, 0.0000%, 90.9804%);
+        -webkit-box-shadow: inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        -moz-box-shadow:    inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        box-shadow:         inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+      }
+    }
+  }
+  .row4 {
+    .col-md-4 {
+      &:nth-child(1) {
+        -webkit-box-shadow: inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        -moz-box-shadow:    inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+        box-shadow:         inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
+      }
+      &:nth-child(3) {
+        -webkit-box-shadow: inset -2px 0px 2px 0px hsl(0, 0.0000%, 90.9804%);
+        -moz-box-shadow:    inset -2px 0px 2px 0px hsl(0, 0.0000%, 90.9804%);
+        box-shadow:         inset -2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
       }
     }
   }
   .partner-logo-box {
     border: 1px solid hsl(0, 0.0000%, 90.9804%);
-    height: 180px;
+    padding: 20px;
     img {
       vertical-align: middle;
     }
@@ -746,92 +958,21 @@
 
 }
 
-//general
+//Staff Page 
 
-.push200 {
-  display: block;
-  height: 200px;
-}
-
-.register-button-parent, .contact-button-school {
-  background: hsla(0, 0.0000%, 0.0000%, 0.2500);
-  font-family: "museo-slab";
-  font-weight: 700;
-  text-transform: uppercase;
-  display: block;
-  color: white;
-  padding: 12px 0;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  text-align: center;
-  margin: 40px 0 30px;
-  text-decoration: none;
-  -webkit-transition: background-color 0.5s ease;
-  -moz-transition: background-color 0.5s ease;
-  transition: background-color 0.5s ease;
-  i {
-    margin-left: 5px;
-  }
-  &:hover {
-    color: white;
-    text-decoration: none;
+.staff-page {
+  padding-bottom: 100px;
+  .staff-member {
+    padding-bottom: 20px;
+    border-bottom: 1px solid hsl(0, 0.0000%, 73.9067%);
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 16px;
+    }
   }
 }
-
-.testimonial {
-  margin: 20px 0;
-  padding: 30px 40px 30px 72px;
-  position: relative;
-  background: hsl(0, 0.0000%, 96.8628%);
-  -webkit-box-shadow: inset 7px 0px 0px 0px hsl(34, 94.5652%, 63.9216%);
-  -moz-box-shadow:    inset 7px 0px 0px 0px hsl(34, 94.5652%, 63.9216%);
-  box-shadow:         inset 7px 0px 0px 0px hsl(34, 94.5652%, 63.9216%);
-  &:before {
-    content: "\f10d";
-    position: absolute;
-    font-style: normal;
-    z-index: 0;
-    margin-left: -40px;
-    margin-top: -4;
-    font-family: "fontAwesome";
-    font-size: 30px;
-    color:  hsla(0, 0.0000%, 0.0000%, 0.1500);
-  }
-}
-.test-quote {
-  font-size: 16px;
-  font-weight: 400;
-  font-style: italic;
-  z-index: 2;
-  &:after {
-    content: "\f10e";
-    font-style: normal;
-    font-family: "fontAwesome";
-    margin-left: 4px;
-    color:  hsla(0, 0.0000%, 0.0000%, 0.1500);
-  }
-}
-.byline {
-  display: block;
-  margin-top: 7px;
-}
-.side-module {
-  padding-left: 20px;
-  margin-bottom: 30px;
-  h2 {
-    margin-top: 0px;
-    font-size: 25px;;
-  }
-  p {
-    margin-bottom: 0px;
-  }
-}
-.sm-parents {
-  border-left: 5px solid hsla(10, 100.0000%, 59.9145%, 1.0000);
-}
-.sm-schools {
-  border-left: 5px solid hsla(157, 69.2965%, 40.6267%, 1.0000);
-}
-
 
