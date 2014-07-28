@@ -1,5 +1,9 @@
 //general
 
+.clear-float {
+  clear: both;
+}
+
 .sp-container {
   position: relative;
   margin: 0;
@@ -15,24 +19,23 @@
   }
 }
 
-.push200 {
+.push100 {
   display: block;
-  height: 200px;
+  height: 100px;
 }
 
-.register-button-parent, .contact-button-school {
+.contact-button-school {
   background: hsla(0, 0.0000%, 0.0000%, 0.2500);
   font-family: "museo-slab";
   font-weight: 700;
-  text-transform: uppercase;
   display: block;
   color: white;
-  padding: 12px 0;
+  padding: 12px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
   text-align: center;
-  margin: 40px 0 30px;
+  margin: 10px 0 20px;
   text-decoration: none;
   -webkit-transition: background-color 0.5s ease;
   -moz-transition: background-color 0.5s ease;
@@ -41,12 +44,17 @@
     margin-left: 5px;
   }
   &:hover {
+    background: hsla(0, 0.0000%, 0.0000%, 0.3000);
     color: white;
     text-decoration: none;
   }
 }
 .testi-module {
   margin-top: 35px;
+  h2 {
+    font-family: 'museo-slab';
+    font-weight: 700;
+  }
 }
 .testimonial {
   margin: 20px 0;
@@ -121,6 +129,19 @@
     padding-left: 0px;
     @media screen and (min-width: 768px) {
       padding-left: 30px;
+    }
+  }
+  h4 {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "museo-slab";
+    margin-top: 2px;
+    line-height: 1.5;
+    @media screen and (max-width: 480px) {
+      font-size: 17px;
+    }
+    a {
+      color: hsl(34, 93.5484%, 63.5294%);
     }
   }
   .hero {
@@ -324,21 +345,6 @@
       font-size: 40px;
       padding-top: 60px;
     }
-    h3 {
-      font-weight: 500;
-      font-family: "museo-slab";
-      font-size: 25px;
-      @media screen and (min-width: 480px) {
-        font-size: 40px;
-      }
-    }
-    h4 {
-      font-size: 20px;
-      font-weight: 500;
-      font-family: "museo-slab";
-      margin-top: 2px;
-      line-height: 1.5;
-    }
     .bus-type {
       margin: 70px 0 70px;
       @media screen and (max-width: 991px) {
@@ -450,16 +456,21 @@
     }
     h4 {
       text-align: left;
-      font-size: 20px;
-      font-weight: 500;
-      font-family: "museo-slab";
-      margin-top: 2px;
-      line-height: 1.5;
     }
   }
   .pbnc-section {
     background: white;
     padding: 70px 0 100px;
+  }
+  .pbnc-logo-home {
+    @media screen and (max-width: 991px) {
+      margin-bottom: 20px;
+    }
+  }
+  .tpc-logo-home {
+    @media screen and (max-width: 991px) {
+      margin-top: 30px;
+    }
   }
 }
 
@@ -518,6 +529,11 @@
     background: hsl(34, 94.5652%, 63.9216%);
     margin-top: 0px;
     padding: 30px 40px 55px 40px;
+    h3 {
+      font-weight: 700;
+      font-size: 20px;
+      font-family: 'museo-slab';
+    }
   }
   .push200 {
     height: 200px;
@@ -666,6 +682,12 @@
     border-radius: 5px;
     @media screen and (max-width: 47.2em) {
       min-height: 140px;
+      background: hsl(35, 96.8912%, 62.1569%);
+    }
+    @media screen and (max-width: 480px) {
+      p {
+        font-size: 15px;
+      }
     }
   }
 
@@ -773,7 +795,7 @@
     }
 
     .cbp_tmtimeline > li .cbp_tmlabel {
-      margin: 0 0 30px 0;
+      margin: 0 0 10px 0;
       padding: 25px;
       font-weight: 400;
       font-size: 95%;
@@ -882,9 +904,6 @@
   }
   .partner-logo-matrix {
     padding: 15px;
-    .col-md-4 {
-      padding: 0px;
-    }
   }
   .row1 {
     .col-md-4 {
@@ -935,6 +954,7 @@
   }
   .row4 {
     .col-md-4 {
+      border-bottom: 1px solid hsl(0, 0.0000%, 90.9804%);
       &:nth-child(1) {
         -webkit-box-shadow: inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
         -moz-box-shadow:    inset 2px 0px 0px 0px hsl(0, 0.0000%, 90.9804%);
@@ -947,9 +967,22 @@
       }
     }
   }
+  .col-md-4 {
+    padding: 0px;
+    width: 33.333333%;
+    display: inline-block;
+    float: left;
+    @media screen and (max-width: 480px) {
+      display: block;
+      width: 100%;
+    }
+  }
   .partner-logo-box {
     border: 1px solid hsl(0, 0.0000%, 90.9804%);
     padding: 20px;
+    @media screen and (max-width: 480px) {
+      padding: 30px;
+    }
     img {
       vertical-align: middle;
     }
@@ -963,15 +996,23 @@
 
 //Supporters Page
 
-.supporter {
-  margin-bottom: 30px;
-  img {
-    margin: 0px;
+.supporters-page {
+  h3 {
+    font-family: 'museo-slab';
+    font-weight: 700;
+    color: hsl(34, 93.5484%, 63.5294%);
   }
 }
 
-.supporter-row2 {
-  clear: both;
+.supporter {
+  margin-bottom: 30px;
+  span {
+    font-weight: 700;
+  }
+  img {
+    margin: 15px 0;
+    max-height: 148px;
+  }
 }
 
 //Staff Page 

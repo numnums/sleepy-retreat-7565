@@ -1,12 +1,12 @@
 
-   <li>
+  <li>
     <%= link_to register_student_path, class: 'register-link' do %>
       Register
     <% end %>
   </li>
   <li><%= link_to 'Home', home_path %></li>
   <li><%= link_to 'Why', why_path %></li>
-  <li><%= link_to 'Eye Bus', eyebus_path %></li>
+  <li><%= link_to 'Eye Bus', eyebus_path %>
     <ul class="">
       <li><%= link_to 'Components', components_path %></li>
       <li><%= link_to 'Outcomes', outcomes_path %></li>
@@ -28,7 +28,6 @@
       <li><%= link_to 'Advisory Council', council_path %></li>
     </ul>
   </li>
-  <li><a href="https://donatenow.networkforgood.org/1413766">Give</a></li>
   <li><a href="http://www.eyeinfo.org">About PBNC</a></li>
   <li>  
     <% if session[:admin] then %>
@@ -41,3 +40,4 @@
       </ul>
     <% end %>
   </li>
+  <li><a href="https://donatenow.networkforgood.org/1413766">Give</a></li>

@@ -3,20 +3,21 @@
   </section>
   <section class="content">
     <div class="sp-container">
-      <div class="row-fluid">
+      <div class="row-fluid wow fadeIn">
         <div class="col-md-12 info-box">
           <h1 class="page-title">Eye Bus</h1>
           <p>The See Well to LearnTM Eye Bus program is the only program in Northern California to employ an innovative, school‐based approach to accurately detect vision problems among low-income preschoolers, at no cost to the students.  We want to ensure that these children receive the care they need for vision correction so they can enter Kindergarten ready to learn.
           <br/>
           <br/>
-          While the program has 6 major components, the design of the Eye Bus is a whimsical way to introduce the importance of vision care to students.  Children are excited when they see the Eye Bus pull up and are curious to learn more about what happens inside.  While we need the community to support our vision care efforts, it’s important that the children themselves are also excited to learn about taking care of their vision.
+          While the program has <strong><%= link_to '6 major components', components_path %></strong>, the design of the Eye Bus is a whimsical way to introduce the importance of vision care to students.  Children are excited when they see the Eye Bus pull up and are curious to learn more about what happens inside.  While we need the community to support our vision care efforts, it’s important that the children themselves are also excited to learn about taking care of their vision.
           <br/>
           <br/>
-          Currently the Eye Bus program is serving students in the San Francisco and Oakland school districts.  In 2014, we are aiming to bring this program to other Bay Area school districts and Head Starts.  Please contact us if you are interested in supporting our expansion efforts.
+          Currently the Eye Bus program is serving students in the San Francisco and Oakland school districts.  In 2014, we are aiming to bring this program to other Bay Area school districts and Head Starts.  Please <strong><%= mail_to "anakayoshi@seewelltolearn.org ", "contact us" %></strong> if you are interested in supporting our expansion efforts.
           </p>
           <br/>
           <div class="alt-links">
-          Learn more: 
+          Learn more:
+          <br/>
           <%= link_to 'Components', components_path %> | 
           <%= link_to 'Outcomes', outcomes_path %> | 
           <%= link_to 'Partners', partners_path %> | 
