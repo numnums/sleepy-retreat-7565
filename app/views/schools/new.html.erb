@@ -14,6 +14,51 @@
                 <%= f.label :description %><br>
                 <%= f.text_field :description, :class => 'form-control'  %>
               </p>
+
+              <p class = "form-group">
+                <%= f.label :address %><br>
+                <%= f.text_field :address, :class => 'form-control'  %>
+              </p>
+
+              <p class = "form-group">
+                <%= f.label :address2 %><br>
+                <%= f.text_field :address2, :class => 'form-control'  %>
+              </p>
+
+              <p class = "form-group">
+                <%= f.label :city %><br>
+                <%= f.text_field :city, :class => 'form-control'  %>
+              </p>
+
+              <p class = "form-group">
+                <%= f.label :state %><br>
+                <%= f.text_field :state, :class => 'form-control'  %>
+              </p>
+
+              <p class = "form-group">
+                <%= f.label :zip %><br>
+                <%= f.text_field :zip, :class => 'form-control'  %>
+              </p>
+
+              <p class = "form-group">
+                <%= f.label :"Point of contact" %><br>
+                <%= f.text_field :POC, :class => 'form-control'  %>
+              </p>
+
+              <p class = "form-group">
+                <%= f.label :title %><br>
+                <%= f.text_field :title, :class => 'form-control'  %>
+              </p>
+              <p class = "form-group">
+                <%= f.label :email %><br>
+                <%= f.text_field :email, :class => 'form-control'  %>
+              </p>
+
+              <p class = "form-group">
+                <%= f.label :phone %><br>
+                <%= f.text_field :phone, :class => 'form-control'  %>
+              </p>
+
               <p class = "form-group pull-right">              	
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <%= f.submit :class => 'btn btn-primary' , :id => 'save_school' %>
