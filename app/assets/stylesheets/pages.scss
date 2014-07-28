@@ -254,6 +254,12 @@
       @media screen and (min-width: 768px) {
         margin-top: 20px;
       }
+      @media screen and (min-width: 992px) {
+        max-width: 900px;
+      }
+      p {
+        color: black;
+      }
     }
     .count {
       font-family: "museo-slab";
@@ -270,6 +276,9 @@
       font-size: 36px;
       @media screen and (min-width: 992px) {
         font-size: 42px;
+      }
+      @media screen and (max-width: 480px) {
+        font-size: 28px;
       }
     }
     h4 {
@@ -348,7 +357,10 @@
     .bus-type {
       margin: 70px 0 70px;
       @media screen and (max-width: 991px) {
-        margin: 210px 0 50px;;
+        margin: 210px 0 50px;
+      }
+      @media screen and (min-width: 992px) {
+        max-width: 420px;
       }
     }
     .for {
@@ -380,6 +392,9 @@
   }
   .screen-type {
     float: none;
+    @media screen and (min-width: 991px) {
+      max-width: 420px;
+    }
     h1 {
       font-size: 35px;
       font-family: "museo-slab";
