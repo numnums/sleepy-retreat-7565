@@ -30,7 +30,7 @@ class SchoolsController < ApplicationController
 	def update
 	  @school = School.find(params[:id])
 	 
-	  if @school.update(params[:school].permit(:name, :description))
+	  if @school.update(params[:school].permit(:name,:description,:address,:address2,:city,:state,:zip,:POC,:title,:email,:phone))
 	    redirect_to :action => 'index'
 	  else
 	    render 'edit'
@@ -46,7 +46,7 @@ class SchoolsController < ApplicationController
 
 	private 
 	def school_params
-		params.require(:school).permit(:name,:description)		
+		params.require(:school).permit(:name,:description,:address,:address2,:city,:state,:zip,:POC,:title,:email,:phone)		
 	end		
 
 	private
