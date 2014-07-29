@@ -37,11 +37,14 @@ body {
   min-height: 100%;
 }
 main {
-  // background-color: #eee;
+  background: hsl(36, 85.3211%, 57.2549%);
   // padding: 60px 0 0; // accommodate the navbar
   height: 100%;
   width: 100%;
   position: relative;
+  @media screen and (max-width: 768px) {
+    background: white;
+  }
 }
 section {
   @extend .row;
@@ -53,6 +56,9 @@ section {
 html {
   height: 100%;
   background: hsla(34, 94.5652%, 63.9216%, 1.0000); 
+  @media screen and (max-width: 768px) {
+    background: white;
+  }
 }
 
 body {

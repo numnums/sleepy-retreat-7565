@@ -49,8 +49,11 @@
           <h4>
              Through onsite <strong><%= link_to 'Screening Services', screening_services_path %></strong>, parents can be sure that their preschooler has the healthy eyes and clear vision they need to be ready for kindergarten and beyond.  
           </h4>
-          <%= link_to register_student_path, class: "benefit-button" do %>
-            Our Screening Services</i>
+          <%= link_to screening_services_path, class: "benefit-button" do %>
+            Our Screening Services
+          <% end %>
+          <%= link_to register_student_path, class: "register-link" do %>
+            Register for a screening &nbsp; <i class="fa fa-chevron-right"></i>
           <% end %>
         </div>
       </div>

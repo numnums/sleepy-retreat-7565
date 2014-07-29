@@ -7,21 +7,33 @@
 .sp-container {
   position: relative;
   margin: 0;
+  padding-right: 35px;
+  @media screen and (max-width: 767px) {
+    padding: 0px;
+  }
   @media screen and (min-width: 768px) {
-    padding-left: 250px;
+    padding-left: 240px;
     max-width: 900px;
   }
   @media screen and (min-width: 992px) {
-    max-width: 1000px;
-  }
-  @media screen and (min-width: 1200px) {
-    max-width: 1300px;
+    max-width: 1200px;
   }
 }
 
 .push100 {
   display: block;
   height: 100px;
+}
+
+.bullet-color {
+  list-style: none;
+  li:before {
+      content: "\2022";
+      font-size: 30px;
+      line-height: 0.6;
+      margin: 0 10px 0 -23px;
+      color: hsl(33, 89.2683%, 59.8039%);
+  }
 }
 
 .contact-button-school {
@@ -95,6 +107,7 @@
   font-weight: 700;
   font-size: 14px;
 }
+
 .side-module {
   padding-left: 20px;
   margin-bottom: 30px;
@@ -469,6 +482,20 @@
     .container {
       z-index: 2;
     }
+    .register-link {
+      display: block;
+      margin-top: 10px;
+      color: white;
+      font-size: 18px;
+      font-weight: 500;
+      &:hover {
+        color: hsl(33, 89.2683%, 59.8039%);
+      }
+      i {
+        font-size: 16px;
+        color: hsl(33, 89.2683%, 59.8039%);
+      }
+    }
     h4 {
       text-align: left;
     }
@@ -492,8 +519,7 @@
 //Standard Page Layout
 .standard-page {
   position: relative;
-  height: 100%;
-  background: hsla(34, 94.5652%, 63.9216%, 1.0000); 
+  background: hsla(34, 94.5652%, 63.9216%, 1.0000) image-url("sp-bg-pattern.png") repeat-x center bottom; 
   @media screen and (max-width: 767px) {
     background: white; 
   }
@@ -528,6 +554,7 @@
     }
   }
   h3 {
+    font-weight: 700;
     @media screen and (max-width: 480px) {
       font-size: 20px;
     }
@@ -541,7 +568,6 @@
     }
   }
   .side-box {
-    background: hsl(34, 94.5652%, 63.9216%);
     margin-top: 0px;
     padding: 30px 40px 55px 40px;
     h3 {
@@ -912,6 +938,10 @@
 
 //Partners
 .partners-page {
+  height: 100%;
+  @media screen and (max-width: 480px) {
+    height: 100%;
+  }
   .intro {
     p {
       margin-bottom: 30px;
@@ -1037,6 +1067,9 @@
   .staff-member {
     padding-bottom: 20px;
     border-bottom: 1px solid hsl(0, 0.0000%, 73.9067%);
+    &:last-child {
+      border-bottom: none;
+    }
     h3 {
       font-size: 20px;
       font-weight: 700;
@@ -1046,5 +1079,11 @@
       font-size: 16px;
     }
   }
+}
+
+//Council Page 
+
+.council-page {
+  height: 100%;
 }
 
