@@ -36,6 +36,88 @@
   }
 }
 
+.yelp-link {
+  right: 0px;
+  display: none;
+  background: hsla(0, 0.0000%, 0%, 0.3000);
+  color: white;
+  font-size: 30px;
+  width: 40px;
+  text-align: center;
+  margin: 0 25px 0 2px;
+  height: 47px;
+  -webkit-border-bottom-right-radius: 25px;
+  -webkit-border-bottom-left-radius: 25px;
+  -moz-border-radius-bottomright: 25px;
+  -moz-border-radius-bottomleft: 25px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  -webkit-transition: background-color 0.5s ease;
+  -moz-transition: background-color 0.5s ease;
+  transition: background-color 0.5s ease;
+  z-index: 1000;
+  position: absolute;
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+  }
+  &:hover {
+    background: hsla(360, 100.0000%, 45.0000%, 1.0000);
+  }
+  .yelp-icon {
+    width: 18px;
+    height: 22px;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+}
+.social-links {
+  right: 67px;
+  margin-right: 1px;
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  a {
+    display: inline-block;
+    background: hsla(0, 0.0000%, 0%, 0.3000);
+    color: white;
+    font-size: 30px;
+    width: 40px;
+    text-align: center;
+    margin-right: 1px;
+    height: 47px;
+    -webkit-border-bottom-right-radius: 25px;
+    -webkit-border-bottom-left-radius: 25px;
+    -moz-border-radius-bottomright: 25px;
+    -moz-border-radius-bottomleft: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    -webkit-transition: background-color 0.5s ease;
+    -moz-transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease;
+  }
+  @media screen and (min-width: 768px) {
+    display: inline-block;
+  }
+  i {
+    font-size: 22px;
+  }
+  .fb {
+    &:hover {
+      background: hsla(224, 48.4411%, 52.8582%, 1.0000);
+    }
+  }
+  .tw {
+    &:hover {
+      background: hsla(207, 59.2812%, 50.1569%, 1.0000);
+    }
+  }
+  .yt {
+    &:hover {
+      background: hsla(360, 100.0000%, 45.0000%, 1.0000);
+    }
+  }
+}
+
 .contact-button-school {
   background: hsla(0, 0.0000%, 0.0000%, 0.2500);
   font-family: "museo-slab";
@@ -176,83 +258,7 @@
     .row {
       padding: 60px 0;
     }
-    .yelp-link {
-      float: right;
-      display: none;;
-      background: hsla(0, 0.0000%, 0%, 0.3000);
-      color: white;
-      font-size: 30px;
-      width: 40px;
-      text-align: center;
-      margin: 0 25px 0 2px;
-      height: 47px;
-      -webkit-border-bottom-right-radius: 25px;
-      -webkit-border-bottom-left-radius: 25px;
-      -moz-border-radius-bottomright: 25px;
-      -moz-border-radius-bottomleft: 25px;
-      border-bottom-right-radius: 25px;
-      border-bottom-left-radius: 25px;
-      -webkit-transition: background-color 0.5s ease;
-      -moz-transition: background-color 0.5s ease;
-      transition: background-color 0.5s ease;
-      @media screen and (min-width: 768px) {
-        display: inline-block;
-      }
-      &:hover {
-        background: hsla(360, 100.0000%, 45.0000%, 1.0000);
-      }
-      .yelp-icon {
-        width: 18px;
-        height: 22px;
-        margin: 0 auto;
-        padding-top: 10px;
-      }
-    }
-    .social-links {
-      float: right;
-      margin-right: 1px;
-      display: none;
-      a {
-        display: inline-block;
-        background: hsla(0, 0.0000%, 0%, 0.3000);
-        color: white;
-        font-size: 30px;
-        width: 40px;
-        text-align: center;
-        margin-right: 1px;
-        height: 47px;
-        -webkit-border-bottom-right-radius: 25px;
-        -webkit-border-bottom-left-radius: 25px;
-        -moz-border-radius-bottomright: 25px;
-        -moz-border-radius-bottomleft: 25px;
-        border-bottom-right-radius: 25px;
-        border-bottom-left-radius: 25px;
-        -webkit-transition: background-color 0.5s ease;
-        -moz-transition: background-color 0.5s ease;
-        transition: background-color 0.5s ease;
-      }
-      @media screen and (min-width: 768px) {
-        display: inline-block;
-      }
-      i {
-        font-size: 22px;
-      }
-      .fb {
-        &:hover {
-          background: hsla(224, 48.4411%, 52.8582%, 1.0000);
-        }
-      }
-      .tw {
-        &:hover {
-          background: hsla(207, 59.2812%, 50.1569%, 1.0000);
-        }
-      }
-      .yt {
-        &:hover {
-          background: hsla(360, 100.0000%, 45.0000%, 1.0000);
-        }
-      }
-    }
+    
     .hero-logo {
       float: left;
       width: 280px;
@@ -265,7 +271,7 @@
       margin-top: 80px;
       margin: 80px 0px 40px;
       @media screen and (min-width: 768px) {
-        margin-top: 20px;
+        margin-top: 50px;
       }
       @media screen and (min-width: 992px) {
         max-width: 900px;
