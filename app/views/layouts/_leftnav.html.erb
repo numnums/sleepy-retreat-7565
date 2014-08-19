@@ -24,7 +24,7 @@
           <li><%= link_to 'Registration', register_student_path %></li>
         </ul>
       </li>
-      <li>
+      <li class="about-nav-link">
         <%= link_to 'About', about_path %>
         <ul class="subnav pschool-nav">
           <li><%= link_to 'Staff', staff_path %></li>
@@ -49,6 +49,8 @@
       <% end %>
       <%= link_to "https://donatenow.networkforgood.org/1413766", class: 'nav-button' do %>
         Donate
+        <br/>
+        <span>now</span>
       <% end %>
     </ul>
   </div>

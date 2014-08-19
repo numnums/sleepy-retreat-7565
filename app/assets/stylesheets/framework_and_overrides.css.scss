@@ -64,7 +64,7 @@ html {
 body {
   height: 100%;
   font-family: "ff-tisa-sans-web-pro";
-  font-size: 16px;
+  font-size: 18px;
   text-rendering: optimizeLegibility;
   font-weight: 400;
   position: relative;
@@ -111,6 +111,7 @@ p {
 }
 ul, ol {
   padding-left: 23px;
+  margin-bottom: 0px;
 }
 
 // header/nav styles
@@ -173,13 +174,13 @@ header {
 
 .leftnav-links {
   height: 100%;
-  background: hsla(0, 0%, 0.0000%, 0.7500);
+  background: hsla(0, 0%, 0.0000%, 1.0000);
   -webkit-border-bottom-right-radius: 10px;
   -moz-border-radius-bottomright: 10px;
   border-bottom-right-radius: 10px;
   ul {
     list-style: none;
-    padding: 0;
+    padding: 0 0 10px;
   }
   li {
     font-family: "museo-slab";
@@ -189,9 +190,9 @@ header {
     display: block;
     position: relative;
     line-height: 1.35;
-    border-bottom: 1px solid hsla(0, 0%, 100.0000%, 0.1500);
+    border-top: 1px solid hsla(0, 0%, 100.0000%, 0.2500);
     &:last-child {
-      border-bottom: none;
+      border-bottom: 1px solid hsla(0, 0%, 100.0000%, 0.2500);
     }
     a {
       color: white;
@@ -218,8 +219,9 @@ header {
       -webkit-transition: all 0.5s ease;
       -moz-transition: all 0.5s ease;
       transition: all 0.5s ease;
+      padding-bottom: 0px;
       a {
-        padding: 12px 10px 11px 18px;
+        padding: 11px 10px 11px 18px;
         font-size: 12px;
       }
     }
@@ -235,10 +237,10 @@ header {
     }
     &:hover {
       .pschool-nav {
-        height: 79px;
+        height: 77px;
       }
       .v360-nav {
-        height: 159px;
+        height: 157px;
       }
       .admin-nav {
         width: 180px;
@@ -246,7 +248,9 @@ header {
       }
     }
   }
-
+  .about-nav-link {
+    border-bottom: 1px solid hsla(0, 0%, 100.0000%, 0.2500);
+  }
   .nav-button {
     display: block;
     background: hsla(34, 94.5652%, 63.9216%, 1.0000);
