@@ -23,7 +23,7 @@
           <h4>
              Our flagship <strong><%= link_to 'Eye Bus', eyebus_path %></strong> program brings high-tech vision care through school-based screenings done by certified professionals, including follow-up eye exams with optometrists and free prescription glasses aboard the Eye Bus.
           </h4>
-          <%= link_to register_student_path, class: "benefit-button" do %>
+          <%= link_to eyebus_path, class: "benefit-button" do %>
             Our Eye Bus program
           <% end %>
         </div>
@@ -54,13 +54,17 @@
     <div class="container">
       <div class="row-fluid">
         <div class="col-md-3"> 
-          <%= image_tag "pbnc-home-logo.png", class: "pbnc-logo-home" %>
+	        <%= link_to "http://www.eyeinfo.org", :target => "_blank" do %>
+	          	<%= image_tag "pbnc-home-logo.png", class: "pbnc-logo-home" %>
+	      	<% end %>
         </div>
         <div class="col-md-6"> 
-          See Well to Learn&trade; is a Prevent Blindness Northern California program that ensures all children have their best vision in order to succeed in school. Seed funding and ongoing support is provided by Tipping Point Community.
+          See Well to Learn&trade; is a <%= link_to 'Prevent Blindness Northern California', "http://www.eyeinfo.org", :target => "_blank" %> program that ensures all children have their best vision in order to succeed in school. Seed funding and ongoing support is provided by <%= link_to 'Tipping Pont Community', "http://www.tippingpoint.org" , :target => "_blank" %>.
         </div>
         <div class="col-md-3"> 
-          <%= image_tag "tipping-point-logo.png", class: "tpc-logo-home" %>
+	        <%= link_to "http://www.tippingpoint.org", :target => "_blank" do %>
+	        	<%= image_tag "tipping-point-logo.png", class: "tpc-logo-home" %>
+ 	      	<% end %>       	
         </div>
       </div>
     </div>
