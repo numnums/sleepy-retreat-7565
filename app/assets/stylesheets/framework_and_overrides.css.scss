@@ -114,6 +114,35 @@ ul, ol {
   margin-bottom: 0px;
 }
 
+// Sticky Footer 
+
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -110px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: 110px; 
+}
+.site-footer {
+  background: hsl(36, 85.3211%, 57.2549%);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+
 // header/nav styles
 
 header {

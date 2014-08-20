@@ -525,6 +525,7 @@
 .standard-page {
   position: relative;
   background: hsla(34, 94.5652%, 63.9216%, 1.0000) image-url("sp-bg-pattern.png") repeat-x center bottom; 
+  padding-bottom: 50px;
   @media screen and (max-width: 767px) {
     background: white; 
   }

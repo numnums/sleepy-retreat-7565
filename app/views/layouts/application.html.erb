@@ -30,20 +30,24 @@
     </header>
     <%= render 'layouts/leftnav' %>
     <main role="main" class="container-full">
-      <a href="http://www.yelp.com/biz/prevent-blindness-northern-california-san-francisco" class="yelp-link" target="_blank">
-        <div class="yelp-icon">
-          <%= image_tag "yelp-icon.png" %>
+      <div class="page-wrap">
+        <a href="http://www.yelp.com/biz/prevent-blindness-northern-california-san-francisco" class="yelp-link" target="_blank">
+          <div class="yelp-icon">
+            <%= image_tag "yelp-icon.png" %>
+          </div>
+        </a>
+        <div class="social-links">
+          <a href="https://www.facebook.com/PreventBlindnessNorthernCalifornia?ref=hl" class="fb" target="_blank"><i class="fa fa-facebook"></i></a>
+          <a href="https://twitter.com/PBNorcal" class="tw" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="http://www.youtube.com/user/PBNCgroup?feature=watch" class="yt" target="_blank"><i class="fa fa-youtube"></i></a>
         </div>
-      </a>
-      <div class="social-links">
-        <a href="https://www.facebook.com/PreventBlindnessNorthernCalifornia?ref=hl" class="fb" target="_blank"><i class="fa fa-facebook"></i></a>
-        <a href="https://twitter.com/PBNorcal" class="tw" target="_blank"><i class="fa fa-twitter"></i></a>
-        <a href="http://www.youtube.com/user/PBNCgroup?feature=watch" class="yt" target="_blank"><i class="fa fa-youtube"></i></a>
+        <div>
+          <%= render 'layouts/messages' %>
+        </div>
+        <%= yield %>
       </div>
-      <div>
-        <%= render 'layouts/messages' %>
-      </div>
-      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </main>
       <div class="modal" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       </div><!-- /.modal -->
       <!-- 
@@ -63,8 +67,6 @@
         });
 
       </script>
-      
       <%= yield :script %>
-    </main>
   </body>
 </html>
