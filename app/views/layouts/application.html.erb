@@ -54,6 +54,10 @@
         Twitters modal has a bug where it won't reload after items that refresh
         it's content.  This is the workaround from : 
         http://stackoverflow.com/questions/12449890/reload-content-in-modal-twitter-bootstrap -->
+
+      <script>
+        $( '#nav li:has(ul)' ).doubleTapToGo();
+      </script>
       <script>
 
         $("a[data-target=#modal]").click(function(ev) {
