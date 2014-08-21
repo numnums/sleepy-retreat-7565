@@ -10,10 +10,13 @@
     <!-- TYPEKIT -->
     <script type="text/javascript" src="//use.typekit.net/cxo4ylv.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <!-- WOW.JS -->
+    <script src="js/wow.min.js"></script>
     <!-- FONTAWESOME -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- favicon -->
+    <%= favicon_link_tag '/favicon.ico', :rel => 'shortcut icon' %>
     <!-- GOOGLE ANALYTICS -->
-    <%= favicon_link_tag 'favicon.ico' %>
     <script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -55,9 +58,30 @@
         it's content.  This is the workaround from : 
         http://stackoverflow.com/questions/12449890/reload-content-in-modal-twitter-bootstrap -->
 
+      <!-- mobile nav double click enabling -->
       <script>
         $( '.leftnav-links li:has(ul)' ).doubleTapToGo();
       </script>
+
+      <!-- WOW.JS -->
+
+      <% content_for :script do %>
+        <script>
+        var wow = new WOW(
+          {
+            boxClass:     'wow',      // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset:       0,          // distance to the element when triggering the animation (default is 0)
+            mobile:       false,       // trigger animations on mobile devices (default is true)
+            live:         true        // act on asynchronously loaded content (default is true)
+          }
+        );
+         new WOW().init();
+        </script>
+      <% end %>
+
+      <!-- modal window display -->
+
       <script>
 
         $("a[data-target=#modal]").click(function(ev) {

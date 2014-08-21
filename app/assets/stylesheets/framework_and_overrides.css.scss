@@ -142,6 +142,14 @@ html, body {
   padding: 30px 20px;
   font-size: 14px;
 }
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  &:hover {
+    color: white;
+  }
+}
 
 // header/nav styles
 
