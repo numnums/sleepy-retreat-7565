@@ -78,6 +78,8 @@
 
 <% content_for :script do %>
   <script>
-   new WOW().init();
+    $(function () {
+      new WOW().init();
+    })();
   </script>
 <% end %>
