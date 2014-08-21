@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require wow
+//= require DoubleTapToGo
 //= require_tree .
