@@ -52,6 +52,9 @@
             <%=
             f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
             %>
+            <%= mail_to "anakayoshi@seewelltolearn.org ", class: "school-contact" do %>
+              Don't see your school listed? Contact us here for assistance.
+            <% end %>
           </p>
           <p class = "form-group">
             <%= f.label :classroomdescription, "What is your child's room number?" %><br>

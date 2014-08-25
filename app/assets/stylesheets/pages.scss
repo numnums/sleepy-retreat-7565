@@ -122,6 +122,7 @@
   background: hsla(0, 0.0000%, 0.0000%, 0.2500);
   font-family: "museo-slab";
   font-weight: 700;
+  font-size: 16px;
   display: block;
   color: white;
   padding: 12px;
@@ -136,6 +137,11 @@
   transition: background-color 0.5s ease;
   i {
     margin-left: 5px;
+  }
+  span {
+    font-size: 12px;
+    font-weight: 500;
+    display: block;
   }
   &:hover {
     background: hsla(0, 0.0000%, 0.0000%, 0.3000);
@@ -624,7 +630,7 @@
 
 .eyebus-page {
   .hero-image {
-    background: black image-url("hero-images/Eye_Bus_Homepage.jpg") no-repeat center center;
+    background: black image-url("hero-images/eyebus-bg.jpg") no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
