@@ -52,8 +52,8 @@
             <%=
             f.collection_select( :school_id, @schools, :id, :name, {:prompt => true} , :required => true) 
             %>
-            <%= mail_to "anakayoshi@seewelltolearn.org ", class: "school-contact" do %>
-              Don't see your school listed? Contact us here for assistance.
+            <%= mail_to "anakayoshi@seewelltolearn.org ", subject: "Vision Screening for My Child's School", class: "school-contact" do %>
+              Don't see your school listed? Please contact us here for assistance.
             <% end %>
           </p>
           <p class = "form-group">
@@ -91,7 +91,7 @@
           <p class="form-group">
             <%= radio_button_tag(:buy_one_get_one, "yes") %>
             <%= label_tag("Buy one, Give one","Buy one, Give one: one (1) screening for my child + the gift of one (1) screening for a low-income child") %></br>
-              See Well to Learn also provides vision screening services to low-income children, whose families cannot afford it.  For a total amount of $40, please consider gifting a screening today to help another preschooler have a clear future.
+              See Well to Learn also provides vision screening services to low-income children, whose families cannot afford it.  For a total cost of $40, please consider adding the gift of a screening today to help another preschooler have a clear future.
           </p>
 
           <%= f.submit "Next", :class => 'form-button', :id => "next" %>
