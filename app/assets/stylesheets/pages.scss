@@ -1068,13 +1068,8 @@
   }
 }
 .tp-logo {
-  @media screen and (max-width: 982px) {
-    height: 100px;
-    background: image-url("tipping-point-logo.png") no-repeat;
-    background: 100% auto;
-    img {
-      display: none;
-    }
+  img {
+    margin-left: 0px;
   }
 }
 .supporter {
