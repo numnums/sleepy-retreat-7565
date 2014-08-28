@@ -126,6 +126,9 @@ html, body {
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -110px; 
+  @media screen and (max-width: 480px) {
+    margin-bottom: -150px; 
+  }
 }
 .page-wrap:after {
   content: "";
@@ -134,6 +137,9 @@ html, body {
 .site-footer, .page-wrap:after {
   /* .push must be the same height as footer */
   height: 110px; 
+  @media screen and (max-width: 480px) {
+    height: 150px; 
+  }
 }
 .site-footer {
   background: hsl(36, 85.3211%, 57.2549%);
