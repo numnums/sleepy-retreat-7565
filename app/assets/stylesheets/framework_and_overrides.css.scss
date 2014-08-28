@@ -96,7 +96,7 @@ h1 {
     font-size: 40px;
   }
 }
-input:focus, textarea, select, a { 
+input:focus, textarea, select, a, button { 
   outline: none; 
 }
 a {
@@ -161,6 +161,10 @@ header {
 
 .navbar {
   padding: 8px 0;
+  @media screen and (max-width: 480px) {
+    position: absolute;
+  }
+
 }
 .navbar-collapse {
   @media screen and (max-width: 767px) {
