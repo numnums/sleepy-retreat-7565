@@ -8,14 +8,27 @@
           <tr>
             <th>School Name</th>
             <th>Description</th>      
+            <th>Address</th>      
+            <th>Point of Contact</th>      
           </tr>
          
         <% @schools.each do |school| %>
           <tr>
             <td><%= link_to school.name, school_path(school) , data: { toggle: "modal", target: "#modal", remote: school_path(school)}  %></td>
             <td><%= school.description %></td>
+            <td>
+            	<%= school.address %>&nbsp;<%= school.address2 %></br>
+				<%= school.city %>, <%= school.state %> <%= school.zip %>
+       		</td>
+            <td>
+	            <%= school.POC %> <br/> 
+	    		<%= school.title %> <br/> 
+				<%= school.email %> <br/>
+				<%= school.phone %> <br/> 
+			</td>
           </tr>
         <% end %>
+        
         </table>
 
         <%= link_to "New school", new_school_path, id: "new_school", data: { toggle: "modal", target: "#modal" , remote: new_school_path} , class: 'btn btn-primary'%>
