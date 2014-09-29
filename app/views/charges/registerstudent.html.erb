@@ -88,12 +88,15 @@
             <%= label_tag("One (1) screening for my child") %> </br>
             A single vision screening costs $20.
           </p> 
-          <p class="form-group">
+          <p>
             <%= radio_button_tag(:buy_one_get_one, "yes") %>
             <%= label_tag("Buy one, Give one","Buy one, Give one: one (1) screening for my child + the gift of one (1) screening for a low-income child") %></br>
               See Well to Learn also provides vision screening services to low-income children, whose families cannot afford it.  For a total cost of $40, please consider adding the gift of a screening today to help another preschooler have a clear future.
           </p>
-
+          <p class="form-group">
+            <%= radio_button_tag(:buy_one_get_one, "scholarship") %>
+            <%= label_tag("My child has a Prevent Blindness-funded scholarship for the screening","My child has a Prevent Blindness-funded scholarship for the screening") %></br>
+          </p>
           <%= f.submit "Next", :class => 'form-button', :id => "next" %>
 
         <% end %>
