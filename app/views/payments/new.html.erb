@@ -1,69 +1,40 @@
 <div id="register">  
   <div class="container review-payment">
     <div class="row">
-      <div class="col-md-9">
 
+      <div class="col-md-9">
         <h1>
           Review and submit payment
         </h1>
 
         <div>
-
           <h3 >Your child's information</h3> 
-
-          <label><strong>First Name:</strong></label>
-          <%= @student.firstname %>
-
-          <label><strong>Last Name:</strong></label>
-          <%= @student.lastname %>
-
-          <label><strong>School:</strong></label>      
-          <%= @student.school.name if @student.school %>
-
-        </div>
+			<p>
+	          <%= @student.firstname %> <%= @student.lastname %> </br>
+	          <%= @student.school.name if @student.school %>
+			</p>
+		</div>
 
         <div>
-
           <h3>Your information</h3>
 
-          <label><strong>First Name:</strong></label>
-          <%= @parent.firstname %>
-
-          <label><strong>Last Name:</strong></label>
-          <%= @parent.lastname %>
-
-          <label><strong>Email Address:</strong></label>      
+          <p>
+          <%= @parent.firstname %> <%= @parent.lastname %></br>
           <%= @parent.email %>
-
+          </p>
         </div>
 
-
-
         <% if session[:buy_one_get_one] == "yes" %>
-
+        <%= form_tag payments_path do %>  
+          <h3>Your payment</h3>
+            <%= label_tag("Buy one, Give one: one (1) screening for my child + the gift of one (1) screening for a low-income child for $40.") %>
           <div class="">
-            <div class="">
-              <h3 class="">Your payment</h3>
-            </div>
-            <div class="">    
-              <%= label_tag("Buy one, Give one: one (1) screening for my child + the gift of one (1) screening for a low-income child for $40.") %>
-            </div>  
-          </div>
-
-          <div class="">
-            <%= form_tag payments_path do %>
-              
-            <!-- show student and parent information here -->
-
-            <article>
-              <label class="amount">
-                <span>Amount: $40.00</span>
-              </label>
-            </article>
-
+            <label class="amount">
+              <span>Amount: $40.00</span>
+            </label>
+            </br>
             <p>By registering and paying for a screening, you agree to the following.</p>
-
-      			<div class="disclaimer">
+      		<div class="disclaimer">
               I understand vision screening is not a substitute for a complete eye examination.  Vision screening can detect many vision issues but there may be occasions when a child with a vision problem passes the screening or a child without a vision problem fails the screening. I give permission for my child’s screening results to be stored in a secure database.  Any information used for reporting purposes will be in aggregate form (with no individual identifying information).
             </div>
             <div class="pay-button">
@@ -77,26 +48,48 @@
               >
               </script>
             </div>
+       
           <% end %>
         </div>
 
+<!-- left off here --- adding additional if else makes the footer bump up to the middle of the page ... i suspect there's some weird nesting of div tags-->
+<!-- figured out with Collin that the other end statments I was seeing was closing out the form do tags -->
+
+        <% elsif session[:buy_one_get_one] == "scholarship" %>
+          <div class="">
+            <div class="">
+              <h3 class="">Your payment</h3>
+            </div>
+            <div class="">    
+              <%= label_tag("no payment", "With your PBNC-funded scholarship, no payment is required for your screening. Your registration is complete.") %>
+             </br>
+            </div>  
+          </div>
+
+          <div class="">
+              
+            <!-- show student and parent information here -->
+
+            <p>By registering for a screening, you agree to the following.</p>
+
+      		<div class="disclaimer">
+              I understand vision screening is not a substitute for a complete eye examination.  Vision screening can detect many vision issues but there may be occasions when a child with a vision problem passes the screening or a child without a vision problem fails the screening. I give permission for my child’s screening results to be stored in a secure database.  Any information used for reporting purposes will be in aggregate form (with no individual identifying information).
+            </div>
+        </div>
+
+
 
         <% else %>
-
-          <div class="yourpayment">
-            <h3>Your payment</h3>
+        <%= form_tag payments_path do %>  
+          <h3>Your payment</h3>
             <%= label_tag("One (1) screening for my child") %>
-            A single vision screening costs $20.  
-          </div>
-              
           <div class="">
-            <%= form_tag payments_path do %>  
-            <!-- show student and parent information here -->
             <label class="amount">
               <span>Amount: $20.00</span>
             </label>
+            </br>
             <p>By registering and paying for a screening, you agree to the following.</p>
-      			<div class="disclaimer panel">
+      		<div class="disclaimer panel">
               I understand vision screening is not a substitute for a complete eye examination.  Vision screening can detect many vision issues but there may be occasions when a child with a vision problem passes the screening or a child without a vision problem fails the screening. I give permission for my child’s screening results to be stored in a secure database.  Any information used for reporting purposes will be in aggregate form (with no individual identifying information).
             </div>
             <div class="pay-button">
