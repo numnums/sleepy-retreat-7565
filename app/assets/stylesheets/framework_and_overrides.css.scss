@@ -125,9 +125,9 @@ html, body {
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-  margin-bottom: -110px; 
+  margin-bottom: -190px; 
   @media screen and (max-width: 480px) {
-    margin-bottom: -150px; 
+    margin-bottom: -220px; 
   }
 }
 .page-wrap:after {
@@ -136,16 +136,16 @@ html, body {
 }
 .site-footer, .page-wrap:after {
   /* .push must be the same height as footer */
-  height: 110px; 
+  height: 190px; 
   @media screen and (max-width: 480px) {
-    height: 150px; 
+    height: 220px; 
   }
 }
 .site-footer {
   background: hsl(36, 85.3211%, 57.2549%);
   color: white;
   text-align: center;
-  padding: 30px 20px;
+  padding: 50px 50px;
   font-size: 14px;
 }
 .footer-link {
@@ -156,6 +156,28 @@ html, body {
     color: white;
   }
 }
+.footer-social-links {
+  text-align: center;
+  margin-top: 15px;
+  a {
+    color: white;
+    margin: 0 5px;
+  }
+  i {
+    font-size: 30px;
+  }
+}
+.yelp-link-footer {
+  display: inline-block;
+  .yelp-icon {
+    height: 30px;
+  }
+  img {
+    height: 30px;
+    padding-top: 5px;
+  }
+}
+
 
 // header/nav styles
 
