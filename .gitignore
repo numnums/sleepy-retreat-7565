@@ -21,3 +21,4 @@ Gemfile.lock
 Gemfile.lock
 Gemfile.lock
 Gemfile.lock
+config/initializers/stripe.rb
