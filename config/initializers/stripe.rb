@@ -8,9 +8,9 @@ Rails.configuration.stripe = {
 # Stripe.api_key = "sk_test_sN2aKAVijawg4PbLfDh7br9Y"
 
 if(Rails.env == 'development' || Rails.env == 'staging')
-  Stripe.api_key = "sk_test_mfiW5pBwJFSj9ohtkKKLG0u9"  
-  Rails.configuration.stripe[:publishable_key] = "pk_test_QwZn8MgHhFeWmGEzqV2yIjYF"
+  Stripe.api_key = ENV['STRIPE_TEST_SECRET']  
+  Rails.configuration.stripe[:publishable_key] = ENV['STRIPE_TEST_PUBLIC']
 elsif(Rails.env == 'production')
-  Stripe.api_key = "sk_live_OXpnaKVv52yOAkF23JpfwVPD"  
-  Rails.configuration.stripe[:publishable_key] = "pk_live_AxUORWvRyaJaeoxt38rPIBJQ"
+  Stripe.api_key = ENV['STRIPE_LIVE_SECRET']  
+  Rails.configuration.stripe[:publishable_key] = ENV['STRIPE_LIVE_PUBLIC']
 end
