@@ -14,5 +14,3 @@ elsif(Rails.env == 'production')
   Stripe.api_key = "sk_live_OXpnaKVv52yOAkF23JpfwVPD"  
   Rails.configuration.stripe[:publishable_key] = "pk_live_AxUORWvRyaJaeoxt38rPIBJQ"
 end
-
-#test commit from Carm
